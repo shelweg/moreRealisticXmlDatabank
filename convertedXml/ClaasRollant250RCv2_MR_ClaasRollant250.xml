@@ -2,17 +2,31 @@
 <vehicle type="Rollant250RC">
 	<annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
 
+    <!-- mr
+        MR data found at: http://www.mountainviewequip.com/fckimages/pdf/claas250.pdf
+        Compared to NHrollBelt150: 
+            rotocut = more pickup HP, less throughput, denser bales
+            fixed chamber = less HP, softer core
+            old design = less performant in general
+        
+        neededPower, price, powerConsumer, wheels, brakeForce, capacity, turnedOnRotationNodes, mass / center of mass
+    -->
+    
+    <moreRealistic>
+        <baler baleMassDependantPtoPower="15" pickingDependantPtoPower="58" maxLitersPerSecond="90" /> 
+    </moreRealistic>
+    
     <storeData>
         <name>Rollant 250 RotoCut</name>
         <specs>
             <workingWidth>2.2</workingWidth>
-            <neededPower>100</neededPower>
+            <neededPower>95</neededPower> <!-- tractor from 95hp recommended -->
         </specs>
         <functions>
             <function>$l10n_function_baler</function>
         </functions>
         <image>store.dds</image>
-        <price>21200</price>
+        <price>28200</price> <!-- performance compared to NHrollBelt150 -->
         <dailyUpkeep>40</dailyUpkeep>
         <lifetime>600</lifetime>
         <rotation>0</rotation>
@@ -30,18 +44,25 @@
 
     <size width="2.5" length="5.0" />
     <speedLimit value="22" />
-    <powerConsumer ptoRpm="540" neededPtoPower="48"/>
+    <powerConsumer ptoRpm="540" neededPtoPower="5"/>
 
     <wheelConfigurations>
         <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
+            <!-- new tires for MR, 19.0/45 - 17 10 PR (Rollant 240/250/254/255) -->
+            <objectChange node="0>8|0" visibilityActive="false" visibilityInactive="true"/>
+            <objectChange node="0>9|0" visibilityActive="false" visibilityInactive="true"/>
+            <objectChange node="0>8|1" visibilityActive="false" visibilityInactive="true"/>
+            <objectChange node="0>9|1" visibilityActive="false" visibilityInactive="true"/>
+            <objectChange node="0>8" scaleActive="1 1 1" translationActive="-1.012 0.462 -0.595"/>
+            <objectChange node="0>9" scaleActive="1 1 1" translationActive="1.083 0.462 -0.595"/>
             <wheels>
-                <wheel  restLoad="0.7" repr="0>8" radius="0.48" initialCompression="30" suspTravel="0.05" spring="20" damper="50" mass="0.075" maxLatStiffness="72" maxLatStiffnessLoad="3" hasTireTracks="true" tireTrackAtlasIndex="2"/>
-                <wheel  restLoad="0.7" repr="0>9" radius="0.48" initialCompression="30" suspTravel="0.05" spring="20" damper="50" mass="0.075" maxLatStiffness="72" maxLatStiffnessLoad="3" hasTireTracks="true" tireTrackAtlasIndex="2"/>
+                <wheel restLoad="1.4" repr="0>8" filename="$data/vehicles/wheels/trelleborg/AW305_480_45R17.xml" isLeft="false" color="0.750 0.002 0.002 1" initialCompression="0" suspTravel="0.2" spring="35" damper="7" hasTireTracks="true" hasParticles="true" />
+                <wheel restLoad="1.4" repr="0>9" filename="$data/vehicles/wheels/trelleborg/AW305_480_45R17.xml" isLeft="true"  color="0.750 0.002 0.002 1" initialCompression="0" suspTravel="0.2" spring="35" damper="7" hasTireTracks="true" hasParticles="true" />
             </wheels>
         </wheelConfiguration>
     </wheelConfigurations>
 
-    <brakeForce>0.4</brakeForce>
+    <brakeForce>0.6</brakeForce>
 
     <lights>
         <low>
@@ -64,7 +85,7 @@
     </turnLights>
 
     <fillUnits>
-        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="windrow" capacity="4000" />
+        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="windrow" capacity="2800" /> <!-- old design + fixed chamber less dense vs NHrollBelt150 -->
     </fillUnits>
 	
     <workAreas>
@@ -89,10 +110,10 @@
         </baleTypes>
         <baleAnimation node="5|0" baleDropAnimTime="9" unloadAnimationName="unloadBale" unloadAnimationSpeed="5" closeAnimationName="closeDoor" closeAnimationSpeed="5"/>
         <fillParticleSystems>
-            <emitterShape node="0>12|4|0" particleType="PICKUP"         emitCountScale="6" worldSpace="false" />
+            <emitterShape node="0>12|4|0" particleType="PICKUP"         emitCountScale="26" worldSpace="false" /> <!-- increased emitCountScale -->
             <emitterShape node="0>12|4|1" particleType="SMOKE"          emitCountScale="1"/>
             <!--emitterShape node="0>12|4|2" particleType="PICKUP_FALLING" emitCountScale="2" worldSpace="false"/-->
-            <emitterShape node="0>23|0" particleType="PICKUP"         emitCountScale="6" worldSpace="false" />
+            <!--emitterShape node="0>23|0" particleType="PICKUP"         emitCountScale="6" worldSpace="false" /-->
             <!--emitterShape node="0>23|1"     particleType="PICKUP_FALLING" emitCountScale="2" worldSpace="false"/-->
         </fillParticleSystems>
     </baler>
@@ -150,7 +171,7 @@
         </animation>
 
         <animation name="rotatePickup">
-			<part node="12" startTime="0" endTime="2" startRot="-5 0 0" endRot="14 0 0"/> <!--pickup-->
+			<part node="12" startTime="0" endTime="1" startRot="-5 0 0" endRot="14 0 0"/> <!--pickup-->
         </animation>		
     </animations>
 
@@ -158,7 +179,6 @@
 		<sign index="0>13" trigger="0>26" isVisible="false"/>
 		<sign index="0>13" trigger="0>27" isVisible="false"/>		
 	</warningSigns>	
-
     <support animationName="moveSupport" />
 	
 	<pickupAnimation name="rotatePickup" lowerSpeed="2" liftSpeed="-1" />
@@ -171,15 +191,15 @@
 	<pickupWheels index1="12|0" index2="18|0" />
 
 	<turnedOnRotationNodes>
-	<turnedOnRotationNode index="4|5|1" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
-	<turnedOnRotationNode index="4|5|2" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
-	<turnedOnRotationNode index="4|5|3" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
-	<turnedOnRotationNode index="4|5|4" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
-	<turnedOnRotationNode index="4|5|5" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
-	<turnedOnRotationNode index="4|5|6" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
-	<turnedOnRotationNode index="4|5|7" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
-	<turnedOnRotationNode index="4|5|8" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
-	<turnedOnRotationNode index="4|5|9" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
+	<turnedOnRotationNode index="4|5|1" type="baler" rotSpeed="450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" /> <!-- inverted roller-->
+	<turnedOnRotationNode index="4|5|2" type="baler" rotSpeed="450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" /> <!-- inverted roller-->
+	<turnedOnRotationNode index="4|5|3" type="baler" rotSpeed="450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" /> <!-- inverted roller-->
+	<turnedOnRotationNode index="4|5|4" type="baler" rotSpeed="450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" /> <!-- inverted roller-->
+	<turnedOnRotationNode index="4|5|5" type="baler" rotSpeed="450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" /> <!-- inverted roller-->
+	<turnedOnRotationNode index="4|5|6" type="baler" rotSpeed="450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" /> <!-- inverted roller-->
+	<turnedOnRotationNode index="4|5|7" type="baler" rotSpeed="450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" /> <!-- inverted roller-->
+	<turnedOnRotationNode index="4|5|8" type="baler" rotSpeed="450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" /> <!-- inverted roller-->
+	<turnedOnRotationNode index="4|5|9" type="baler" rotSpeed="450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" /> <!-- inverted roller-->
 	<turnedOnRotationNode index="7" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
 	<turnedOnRotationNode index="15|0" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
 	<turnedOnRotationNode index="15|1" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
@@ -192,8 +212,8 @@
 	<turnedOnRotationNode index="15|8" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
 	<turnedOnRotationNode index="15|9" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
 	<turnedOnRotationNode index="15|10" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
-	<turnedOnRotationNode index="12|1" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
-	<turnedOnRotationNode index="12|3" type="baler" rotSpeed="-450"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" />
+	<turnedOnRotationNode index="12|1" type="baler" rotSpeed="-600"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" /> <!-- pickup 600 rpm -->
+	<turnedOnRotationNode index="12|3" type="baler" rotSpeed="1200"  rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5" /> <!-- cutter 2x pickup rpm -->
 	</turnedOnRotationNodes>
 
     <washable dirtDuration="30" washDuration="1" workMultiplier="4" />	
@@ -210,8 +230,8 @@
 	</dynamicHose>
 	
     <components count="2">
-        <component1 centerOfMass="0 0 0" solverIterationCount="4" />
-        <component2 solverIterationCount="8" />
+        <component1 centerOfMass="0 0.9 0" solverIterationCount="4" mrSetMass="2.48" />   <!-- mass including twine/net, excluding pickup -->
+        <component2 solverIterationCount="8" mrSetMass="0.2" />                         <!-- assuming pickup weight 200kg -->
         <joint component1="0" component2="1" index="0>18|3" rotLimit="0 0 0" transLimit="0 0 0" />
     </components>
 	
