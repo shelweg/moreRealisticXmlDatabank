@@ -2,6 +2,18 @@
 <vehicle type="baler">
 	<annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
     
+    <!--
+    http://www.ritchiespecs.com/specification?type=agriculture&category=Baler&make=Massey+Ferguson&model=MF+2190&modelid=99881
+    weight ~9800kg
+    bales 120x130x240 (~x1.44 vs BB1290)
+    
+    -->
+    
+	<moreRealistic>				
+		<baler pickingDependantPtoPower="70" maxLitersPerSecond="200" strokesByMinute="33" strokeDependantPtoPower="43" litersPerFlake="145" strokeSoundTimeOffset="105" /> 
+	</moreRealistic>
+    
+    
 	<storeData>
         <name>2190</name>
         <specs>
@@ -29,7 +41,7 @@
     
 	<size width="4" length="10" />
 	<speedLimit value="20" />
-    <powerConsumer ptoRpm="540" neededPtoPower="91"/>
+    <powerConsumer ptoRpm="540" neededPtoPower="30"/>
 	
     <wheelConfigurations>
         <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
@@ -73,7 +85,7 @@
     </inputAttacherJoints>
 
     <fillUnits>
-        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="windrow" capacity="6100" />
+        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="windrow" capacity="8650" /> <!-- using same compression as BB1290 -->
     </fillUnits>
 
     <workAreas>
@@ -93,7 +105,7 @@
         <baleTypes>
             <baleType isRoundBale="false" width="1.2" height="1.3" length="2.4" />
         </baleTypes>
-        <balerSound file="$data/sounds/baler1290Sound.wav"                pitchOffset="0.94" volume="1.00" indoorVolumeFactor="0.46" indoorLowpassGain="0.85" />
+        <balerSound file="$data/sounds/baler1290Sound.wav"                pitchOffset="0.6985" volume="1.00" indoorVolumeFactor="0.46" indoorLowpassGain="0.85" />
         <balerKnotCleaning file="$data/sounds/baler1290KnotCleaning.wav"  pitchOffset="1.00" volume="1.50" indoorVolumeFactor="0.30" indoorLowpassGain="0.75" />
         <baleUnloading time="4" allowed="true" foldThreshold="0.1" />
 		<fillParticleSystems>
@@ -189,7 +201,7 @@
     </tipOcclusionAreas>
 
     <components count="1">
-        <component1 centerOfMass="0 0.76 0" solverIterationCount="10" />
+        <component1 centerOfMass="0 0.76 0" solverIterationCount="10" mrSetMass="9.8" />
     </components>
 
     <schemaOverlay file="$dataS2/menu/schemas/implementSchema.png" fileSelected="$dataS2/menu/schemas/implementSchemaSelected.png" fileTurnedOn="$dataS2/menu/schemas/implementSchemaTurnedOn.png" fileSelectedTurnedOn="$dataS2/menu/schemas/implementSchemaSelectedTurnedOn.png" width="0.5" height="0.5" attacherJointPosition="0 0"/>
