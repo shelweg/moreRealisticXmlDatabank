@@ -2,6 +2,11 @@
 <vehicle type="tractor">
     <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
 
+    <moreRealistic isMrVehicle="true" useMrTransmission="true">
+        <dragArea value="3.7" />
+        <engine rotInertiaFx="1" transmissionEfficiency="0.869" minSpeed="3" fuelUsageFactor="1.1" engineBrakeForceFx="0.9" />
+    </moreRealistic>
+    
     <storeData>
         <name>Serie 600</name>
         <specs>
@@ -35,10 +40,10 @@
     <wheelConfigurations>
 	<wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
             <wheels>
-                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|0" driveNode="1>0|0|0" forcePointRatio="0.2" filename="wheels/TM600_340_85R24.xml" isLeft="true" initialCompression="20" suspTravel="0.16" spring="32" damper="20" hasTireTracks="true" hasParticles="true" fenderNode="1>0|0|3" fenderRotMax="28"/>
-                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|1" driveNode="1>0|1|0" forcePointRatio="0.2" filename="wheels/TM600_340_85R24.xml" isLeft="false" initialCompression="20" suspTravel="0.16" spring="32" damper="20" hasTireTracks="true" hasParticles="true" fenderNode="1>0|1|3" fenderRotMin="-28"/>
-                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|0"                     forcePointRatio="0.3" filename="wheels/TM700_520_70R38.xml" configIndex="r5n8v2" isLeft="true"  initialCompression="20" suspTravel="0.2" spring="32" damper="50" hasTireTracks="true" hasParticles="true" />
-                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|1"                     forcePointRatio="0.3" filename="wheels/TM700_520_70R38.xml" configIndex="r5n8v2" isLeft="false" initialCompression="20" suspTravel="0.2" spring="32" damper="50" hasTireTracks="true" hasParticles="true" />
+                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|0" driveNode="1>0|0|0" forcePointRatio="0.2" filename="wheels/TM600_340_85R24.xml" isLeft="true"  initialCompression="0" suspTravel="0.16" spring="32" damper="5" hasTireTracks="true" hasParticles="true" fenderNode="1>0|0|3" fenderRotMax="28" mrPressureFx="5" />
+                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|1" driveNode="1>0|1|0" forcePointRatio="0.2" filename="wheels/TM600_340_85R24.xml" isLeft="false" initialCompression="0" suspTravel="0.16" spring="32" damper="5" hasTireTracks="true" hasParticles="true" fenderNode="1>0|1|3" fenderRotMin="-28" mrPressureFx="5" />
+                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|0"                     forcePointRatio="0.3" filename="wheels/TM700_520_70R38.xml" configIndex="r5n8v2" isLeft="true"  initialCompression="10" suspTravel="0.2" spring="55" damper="8" hasTireTracks="true" hasParticles="true" />
+                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|1"                     forcePointRatio="0.3" filename="wheels/TM700_520_70R38.xml" configIndex="r5n8v2" isLeft="false" initialCompression="10" suspTravel="0.2" spring="55" damper="8" hasTireTracks="true" hasParticles="true" />
             </wheels>
             <objectChange node="1>4" visibilityActive="false"/>
             <objectChange node="1>2" visibilityActive="true"/>	
@@ -49,10 +54,10 @@
         </wheelConfiguration>
         <wheelConfiguration name="$l10n_configuration_valueWheelBroad" price="700" icon="$dataS2/menu/hud/configurations/config_wheel_broad.png" >
             <wheels>
-                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|0" driveNode="1>0|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/TM800_480_65R24.xml" isLeft="true" initialCompression="20" suspTravel="0.16" spring="32" damper="20" hasTireTracks="true" hasParticles="true" fenderNode="1>0|0|3" fenderRotMax="28"/>
-                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|1" driveNode="1>0|1|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/TM800_480_65R24.xml" isLeft="false" initialCompression="20" suspTravel="0.16" spring="32" damper="20" hasTireTracks="true" hasParticles="true" fenderNode="1>0|1|3" fenderRotMin="-28"/>
-                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|0"                     forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/TM800_600_65R38.xml" isLeft="true"  initialCompression="20" suspTravel="0.2" spring="32" damper="50" hasTireTracks="true" hasParticles="true" />
-                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|1"                     forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/TM800_600_65R38.xml" isLeft="false" initialCompression="20" suspTravel="0.2" spring="32" damper="50" hasTireTracks="true" hasParticles="true" />
+                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|0" driveNode="1>0|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/TM800_480_65R24.xml" isLeft="true"  initialCompression="15" suspTravel="0.16" spring="32" damper="5" hasTireTracks="true" hasParticles="true" fenderNode="1>0|0|3" fenderRotMax="28"/>
+                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|1" driveNode="1>0|1|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/TM800_480_65R24.xml" isLeft="false" initialCompression="15" suspTravel="0.16" spring="32" damper="5" hasTireTracks="true" hasParticles="true" fenderNode="1>0|1|3" fenderRotMin="-28"/>
+                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|0"                     forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/TM800_600_65R38.xml" isLeft="true"  initialCompression="10" suspTravel="0.2" spring="55" damper="8" hasTireTracks="true" hasParticles="true" />
+                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|1"                     forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/TM800_600_65R38.xml" isLeft="false" initialCompression="10" suspTravel="0.2" spring="55" damper="8" hasTireTracks="true" hasParticles="true" />
             </wheels>	
             <objectChange node="1>4" visibilityActive="false"/>
             <objectChange node="1>2" visibilityActive="true"/>	
@@ -63,10 +68,10 @@
         </wheelConfiguration>
         <wheelConfiguration name="$l10n_configuration_valueWheelNarrow" price="600" icon="$dataS2/menu/hud/configurations/config_wheel_thin.png" >
             <wheels>
-                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|0" driveNode="1>0|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/TM100_230_95R32.xml" configIndex="n8v10"isLeft="true" initialCompression="20" suspTravel="0.16" spring="32" damper="20" hasTireTracks="true" hasParticles="true" fenderNode="1>0|0|3" fenderRotMax="28"/>
-                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|1" driveNode="1>0|1|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/TM100_230_95R32.xml" configIndex="n8v10"isLeft="false" initialCompression="20" suspTravel="0.16" spring="32" damper="20" hasTireTracks="true" hasParticles="true" fenderNode="1>0|1|3" fenderRotMin="-28"/>
-                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|0"                     forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/TM100_270_95R48.xml" isLeft="true"  initialCompression="20" suspTravel="0.2" spring="32" damper="50" hasTireTracks="true" hasParticles="true" />
-                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|1"                     forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/TM100_270_95R48.xml" isLeft="false" initialCompression="20" suspTravel="0.2" spring="32" damper="50" hasTireTracks="true" hasParticles="true" />
+                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|0" driveNode="1>0|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/TM100_230_95R32.xml" configIndex="n8v10"isLeft="true"  initialCompression="15" suspTravel="0.16" spring="32" damper="5" hasTireTracks="true" hasParticles="true" fenderNode="1>0|0|3" fenderRotMax="28"/>
+                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|1" driveNode="1>0|1|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/TM100_230_95R32.xml" configIndex="n8v10"isLeft="false" initialCompression="15" suspTravel="0.16" spring="32" damper="5" hasTireTracks="true" hasParticles="true" fenderNode="1>0|1|3" fenderRotMin="-28"/>
+                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|0"                     forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/TM100_270_95R48.xml"                    isLeft="true"  initialCompression="10" suspTravel="0.2" spring="55" damper="8" hasTireTracks="true" hasParticles="true" />
+                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|1"                     forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/TM100_270_95R48.xml"                    isLeft="false" initialCompression="10" suspTravel="0.2" spring="55" damper="8" hasTireTracks="true" hasParticles="true" />
             </wheels>
             <objectChange node="1>4" visibilityActive="false"/>
             <objectChange node="1>2" visibilityActive="true"/>	
@@ -74,42 +79,6 @@
             <objectChange node="1>0|0" visibilityActive="true"/>
             <objectChange node="1>0|3" visibilityActive="false"/>
             <objectChange node="1>0|1" visibilityActive="true"/>			
-        </wheelConfiguration>
-        <wheelConfiguration name="$l10n_configuration_valueTwinWheelsBack" price="800" icon="$dataS2/menu/hud/configurations/config_wheel_twin.png" >
-            <wheels autoRotateBackSpeed="1.7">
-                <wheel rotSpeed="1" restLoad="1.5" repr="1>0|0" driveNode="1>0|0|0" forcePointRatio="0.2" filename="wheels/TM600_340_85R24.xml" isLeft="true"  initialCompression="20" suspTravel="0.25" spring="27" damper="50" hasTireTracks="true" hasParticles="true" fenderNode="1>0|0|3" fenderRotMax="28" />
-                <wheel rotSpeed="1" restLoad="1.5" repr="1>0|1" driveNode="1>0|1|0" forcePointRatio="0.2" filename="wheels/TM600_340_85R24.xml" isLeft="false" initialCompression="20" suspTravel="0.25" spring="27" damper="50" hasTireTracks="true" hasParticles="true" fenderNode="1>0|1|3" fenderRotMin="-28" />
-                <wheel rotSpeed="0" restLoad="1.5" repr="0>0|0"                         forcePointRatio="0.3" filename="wheels/TM700_520_70R38.xml" configIndex="r5n8v2" isLeft="true"  initialCompression="20" suspTravel="0.25" spring="19" damper="50" hasTireTracks="true" hasParticles="true" >
-                    <additionalWheel filename="wheels/TM700_520_70R38.xml" configIndex="dual" isLeft="true"  offset="0.2" addRaycast="true" hasTireTracks="true" >
-                        <connector filename="$data/vehicles/wheels/rims/dual001.i3d" index="1|0"/>
-                    </additionalWheel>
-                </wheel>
-                <wheel rotSpeed="0" restLoad="1.5" repr="0>0|1"                         forcePointRatio="0.3" filename="wheels/TM700_520_70R38.xml" configIndex="r5n8v2" isLeft="false" initialCompression="20" suspTravel="0.25" spring="19" damper="50" hasTireTracks="true" hasParticles="true" >
-                    <additionalWheel filename="wheels/TM700_520_70R38.xml" configIndex="dual" isLeft="false" offset="0.2" addRaycast="true" hasTireTracks="true" >
-                        <connector filename="$data/vehicles/wheels/rims/dual001.i3d" index="1|1"/>
-                    </additionalWheel>
-                </wheel>
-            </wheels>				
-            <objectChange node="1>4" visibilityActive="false"/>
-            <objectChange node="1>2" visibilityActive="true"/>	
-            <objectChange node="1>0|2" visibilityActive="false"/>
-            <objectChange node="1>0|0" visibilityActive="true"/>
-            <objectChange node="1>0|3" visibilityActive="false"/>
-            <objectChange node="1>0|1" visibilityActive="true"/>			
-        </wheelConfiguration>	
-	<wheelConfiguration name="2-WD" price="0">
-            <wheels>
-                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|2" driveNode="1>0|2|0" forcePointRatio="0.2" filename="wheels/2wd.xml" configIndex="2wd" isLeft="true" initialCompression="20" suspTravel="0.16" spring="32" damper="20" hasTireTracks="true" hasParticles="true" fenderNode="1>0|2|3" fenderRotMax="28"/>
-                <wheel rotSpeed="1" restLoad="1.2" repr="1>0|3" driveNode="1>0|3|0" forcePointRatio="0.2" filename="wheels/2wd.xml" configIndex="2wd" isLeft="false" initialCompression="20" suspTravel="0.16" spring="32" damper="20" hasTireTracks="true" hasParticles="true" fenderNode="1>0|3|3" fenderRotMin="-28"/>
-                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|0"                     forcePointRatio="0.3" filename="wheels/TM700_520_70R38.xml" configIndex="r5n8v2" isLeft="true"  initialCompression="20" suspTravel="0.2" spring="32" damper="50" hasTireTracks="true" hasParticles="true" />
-                <wheel rotSpeed="0" restLoad="1.4" repr="0>0|1"                     forcePointRatio="0.3" filename="wheels/TM700_520_70R38.xml" configIndex="r5n8v2" isLeft="false" initialCompression="20" suspTravel="0.2" spring="32" damper="50" hasTireTracks="true" hasParticles="true" />
-            </wheels>
-            <objectChange node="1>2" visibilityActive="false"/>
-            <objectChange node="1>4" visibilityActive="true"/>	
-            <objectChange node="1>0|0" visibilityActive="false"/>
-            <objectChange node="1>0|2" visibilityActive="true"/>
-            <objectChange node="1>0|1" visibilityActive="false"/>
-            <objectChange node="1>0|3" visibilityActive="true"/>			
         </wheelConfiguration>		
     </wheelConfigurations>
 
@@ -141,13 +110,14 @@
     </designConfigurations>		
     <motorConfigurations>
         <motorConfiguration name="675" hp="66" price="0">
-            <motor torqueScale="0.375" minRpm="1000" maxRpm="2200" maxForwardSpeed="43" maxBackwardSpeed="15" brakeForce="2" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="1" rotInertia="0.001" minForwardGearRatio="14.5" maxForwardGearRatio="300" minBackwardGearRatio="40" maxBackwardGearRatio="300">
+            <motor torqueScale="0.375" minRpm="1000" maxRpm="2200" maxForwardSpeed="30.1" maxBackwardSpeed="16.4" brakeForce="2" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="1" rotInertia="0.001" minForwardGearRatio="27.7" maxForwardGearRatio="150" minBackwardGearRatio="50.8" maxBackwardGearRatio="150">
                 <torque normRpm="0.45" torque="0.9"/>
                 <torque normRpm="0.5" torque="0.97"/>
                 <torque normRpm="0.59" torque="1"/>
                 <torque normRpm="0.72" torque="1"/>
                 <torque normRpm="0.86" torque="0.88"/>
-                <torque normRpm="1" torque="0.72"/>
+                <torque normRpm="0.9828" torque="0.72"/>
+                <torque normRpm="1" torque="0"/>
             </motor>
             <objectChange node="0>12|0|0" visibilityActive="true"/>
             <objectChange node="0>12|0|1" visibilityActive="false"/>
@@ -390,8 +360,8 @@
     <washable dirtDuration="50" washDuration="1" workMultiplier="4" />
 
     <components count="2">
-        <component1 centerOfMass="0 0.92 -0.2" solverIterationCount="10" />
-        <component2 centerOfMass="0 0 0" solverIterationCount="20" />
+        <component1 centerOfMass="0 1.22 -0.2" solverIterationCount="10" mrSetMass="3.6" />
+        <component2 centerOfMass="0 0 0" solverIterationCount="20" mrSetMass="0.4" />
         <joint component1="0" component2="1" index="0>0|2" rotLimit="0 0 5" transLimit="0 0 0" maxRotDriveForce="0 0 50" rotDriveRotation="- - 0" rotDriveSpring="0 0 5" rotDriveDamping="0 0 5" breakable="false"/>
     </components>
 
