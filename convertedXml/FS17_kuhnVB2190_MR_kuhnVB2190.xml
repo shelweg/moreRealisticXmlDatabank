@@ -1,16 +1,28 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <vehicle type="baler">
     <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+	
+	<!-- mr
+        MR data found at http://www.kuhn.com/internet/prospectus.nsf/0/4788D2219230DE7EC1257EEE004787CB/$File/Kuhn_VB-VBP%20GB.pdf
+        performance similar to NHrollBelt150 (MR v0.4.20)
+        
+        neededPower, price, wheels, capacity, power consumer, brakeforce, mass / center of mass  
+	-->
+
+	<moreRealistic>			
+		<baler baleMassDependantPtoPower="25" pickingDependantPtoPower="70" maxLitersPerSecond="120" />
+	</moreRealistic>
+
     <storeData>
         <name>VB 2190</name>
         <specs>
-            <neededPower>68</neededPower>
+            <neededPower>80</neededPower> <!-- kuhn recommends 80+hp tractor -->
         </specs>
         <functions>
             <function>$l10n_function_baler</function>
         </functions>
         <image>store_kuhnVB2190.png</image>
-        <price>56000</price>
+        <price>44000</price> <!-- copied NHrollBelt150 -->
         <dailyUpkeep>110</dailyUpkeep>
         <lifetime>600</lifetime>
         <rotation>0</rotation>
@@ -31,18 +43,18 @@
     <wheelConfigurations>
         <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
             <wheels>
-                <wheel tipOcclusionAreaGroupId="1" restLoad="1.4" repr="0>0" filename="$data/vehicles/wheels/trelleborg/AW309_500_50R17.xml" isLeft="true"  color="0.9157 0.9157 0.9157 1" initialCompression="50" suspTravel="0.15" spring="17" damper="20" hasTireTracks="true" hasParticles="true"/>
-                <wheel tipOcclusionAreaGroupId="2" restLoad="1.4" repr="0>1" filename="$data/vehicles/wheels/trelleborg/AW309_500_50R17.xml" isLeft="false" color="0.9157 0.9157 0.9157 1" initialCompression="50" suspTravel="0.15" spring="17" damper="20" hasTireTracks="true" hasParticles="true"/>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="1.7" repr="0>0" filename="$data/vehicles/wheels/trelleborg/AW309_500_50R17.xml" isLeft="true"  color="0.9157 0.9157 0.9157 1" initialCompression="0" suspTravel="0.2" spring="33" damper="7" hasTireTracks="true" hasParticles="true"/>
+                <wheel tipOcclusionAreaGroupId="2" restLoad="1.7" repr="0>1" filename="$data/vehicles/wheels/trelleborg/AW309_500_50R17.xml" isLeft="false" color="0.9157 0.9157 0.9157 1" initialCompression="0" suspTravel="0.2" spring="33" damper="7" hasTireTracks="true" hasParticles="true"/>
                 <wheel tipOcclusionAreaGroupId="1" brakeFactor="0" rotMin="-20" rotMax="30" restLoad="0.1" repr="1>1" filename="$data/vehicles/wheels/trelleborg/T510_15x6_00R6.xml" isLeft="true"  color="0.9157 0.9157 0.9157 1" initialCompression="50" suspTravel="0.08" spring="40" damper="5" maxLatStiffness="10" hasTireTracks="true" hasParticles="true"/>
                 <wheel tipOcclusionAreaGroupId="2" brakeFactor="0" rotMin="-20" rotMax="30" restLoad="0.1" repr="1>2" filename="$data/vehicles/wheels/trelleborg/T510_15x6_00R6.xml" isLeft="false" color="0.9157 0.9157 0.9157 1" initialCompression="50" suspTravel="0.08" spring="40" damper="5" maxLatStiffness="10" hasTireTracks="true" hasParticles="true"/>
             </wheels>
         </wheelConfiguration>
     </wheelConfigurations>
 
-    <brakeForce>0.5</brakeForce>
+    <brakeForce>0.7</brakeForce>
 
     <speedLimit value="20" />
-    <powerConsumer ptoRpm="540" neededPtoPower="35"/>
+    <powerConsumer ptoRpm="540" neededPtoPower="5"/>
 
     <lights>
         <low>
@@ -67,7 +79,7 @@
     </workAreas>
 
     <fillUnits>
-        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="windrow" capacity="4000" />
+        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="windrow" capacity="3000" />
     </fillUnits>
 
     <inputAttacherJoints>
@@ -211,8 +223,8 @@
     <washable dirtDuration="60" washDuration="1" workMultiplier="10" />
 
     <components count="2">
-        <component1 centerOfMass="0 0.6 -0.5" solverIterationCount="4" />
-        <component2 centerOfMass="0 0.3 0.8" solverIterationCount="10" />
+        <component1 centerOfMass="0 0.9 -0.5" solverIterationCount="4" mrSetMass="2.95" />
+        <component2 centerOfMass="0 0.3 0.8" solverIterationCount="10" mrSetMass="0.15" />
         <joint component1="0" component2="1" index="0>3|1" rotLimit="0 0 0" transLimit="0 0 0" />
     </components>
 
