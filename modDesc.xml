@@ -1,0 +1,15 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<modDesc descVersion="30">
+    <author>Dural</author>
+    <version>1.0.0.0</version>		
+	<title>
+        <en>MoreRealistic Xml Databank</en>		
+    </title>
+    <description>
+        <en>Store all your converted vehicles xml files.</en>		
+    </description>
+	<iconFilename>
+		<en>icon.dds</en>
+	</iconFilename>
+    <multiplayer supported="true"/>
+</modDesc>
