@@ -1,0 +1,175 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="manureSpreader">
+	<annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+	
+    <storeData>
+        <name>EBMX 155</name>
+        <specs>
+            <neededPower>130</neededPower>
+            <workingWidth>15.0</workingWidth>
+        </specs>
+        <functions>
+            <function>$l10n_function_manureSpreader</function>
+        </functions>
+        <image>store.png</image>
+        <price>25000</price>
+        <dailyUpkeep>35</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>GYRAX</brand>
+        <category>manureSpreaders</category>
+        <vertexBufferMemoryUsage>682560</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>101160</indexBufferMemoryUsage>
+        <textureMemoryUsage>17542432</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <typeDesc>$l10n_typeDesc_manureSpreader</typeDesc>
+    <filename>Gyrax.i3d</filename>
+
+    <size width="4" length="10" />
+	
+    <powerConsumer ptoRpm="450" neededPtoPower="45"/>
+    <speedLimit value="20" />
+	
+    <wheelConfigurations>
+        <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
+            <wheels>
+                <wheel restLoad="2.0" repr="0>0" forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/TM600_520_85R42.xml" isLeft="true"  color="0.294 0.294 0.294 1" initialCompression="30" suspTravel="0.2" spring="30" damper="30" hasTireTracks="true" hasParticles="true" />
+                <wheel restLoad="2.0" repr="0>1" forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/TM600_520_85R42.xml" isLeft="false" color="0.294 0.294 0.294 1" initialCompression="30" suspTravel="0.2" spring="30" damper="30" hasTireTracks="true" hasParticles="true" />
+            </wheels>
+        </wheelConfiguration>
+    </wheelConfigurations>
+
+    <steeringAxleAngleScale startSpeed="0" endSpeed="90" />
+    <brakeForce>1.5</brakeForce>
+    <maximalAirConsumptionPerFullStop value="0.3" />
+
+
+
+    <fillUnits>
+        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="manureSpreader" capacity="15000" />
+    </fillUnits>	
+    <workAreas>
+        <workArea startIndex="0>11|2|0" widthIndex="0>11|2|1" heightIndex="0>11|2|2" type="sprayer" disableBackwards="false" />
+    </workAreas>
+
+    <lights>
+        <low>
+            <light decoration="0>2|8|0|0" lightTypes="0 3"/>
+        </low>
+        <high>
+            <light realLight="0>2|8|0|1" decoration="0>2|8|0|0" lightTypes="0 3"/>
+        </high>
+    </lights>
+    <brakeLights>
+        <brakeLight realLight="0>2|8|2|1" decoration="0>2|8|2|0"/>
+    </brakeLights>
+    <turnLights>
+        <turnLightLeft realLight="0>2|8|1|0|1" decoration="0>2|8|1|0|0"/>
+        <turnLightRight realLight="0>2|8|1|1|1" decoration="0>2|8|1|1|0"/>
+    </turnLights>
+
+	    <beaconLights>
+        <beaconLight index="0>2|7" speed="0.012" filename="$data/shared/beaconLights/beaconLight03.i3d" />
+    </beaconLights>
+    <turnedOnRotationNodes>
+        <turnedOnRotationNode index="0>2|0|0" type="manureSpreader" rotSpeed="900" turnOnFadeTime="1" turnOffFadeTime="1"/>
+        <turnedOnRotationNode index="0>2|0|1" type="manureSpreader" rotSpeed="-900"  turnOnFadeTime="1" turnOffFadeTime="1"/>
+    </turnedOnRotationNodes>
+    <manureSpreaderScrollers>
+        <scrollerNode index="0>2|2" shaderParameterName="offsetUV" scrollSpeed="-0.8" shaderParameterComponent="1" turnOnFadeTime="1" turnOffFadeTime="1"/>
+    </manureSpreaderScrollers>
+
+    <inputAttacherJoints>
+        <inputAttacherJoint index="0>2|4" jointType="trailerLow" ptoInputNode="0>2|5" />
+    </inputAttacherJoints>
+    <fillVolumes>
+        <volumes>
+            <volume index="0>11|3|0" scrollSpeedDischarge="0 0 0.03" />
+        </volumes>
+
+        <dischargeInfos>
+            <dischargeInfo> <!-- back -->
+                <node index="0>11|3|1" width="1.4" length="1.0" alsoUseLoadInfoForDischarge="true" loadInfoFillFactor="0.98" loadInfoSizeScale="3 3.5" />
+            </dischargeInfo>
+        </dischargeInfos>
+
+        <unloadInfos>
+            <unloadInfo>
+                <node index="0>11|3|2" width="1.4" length="4.0" />
+            </unloadInfo>
+        </unloadInfos>
+    </fillVolumes>
+		
+
+    <sprayer fillUnitIndex="1" unloadInfoIndex="1" loadInfoIndex="1" />
+
+    <sprayUsages>
+        <sprayUsage fillType="manure" litersPerSecond="100" />		
+    </sprayUsages>
+
+    <sprayParticles>
+        <emitterShape node="0>11|0|0|1" particleType="SPREADER" worldSpace="false"/>
+        <emitterShape node="0>11|0|0|2" particleType="SPREADER_SMOKE" worldSpace="true"/>
+    </sprayParticles>
+
+    <sprayerEffects>
+        <sprayerEffect>
+            <effectNode effectNode="0>11|0|0|0" delay="0" foldMinLimit="0.3" foldMaxLimit="1.0" materialType="spreader" materialTypeId="1" />
+        </sprayerEffect>
+    </sprayerEffects>
+	
+    <fillSound file="$data/sounds//manureFillSound.wav"           pitchOffset="1.00" volume="1.50" indoorVolumeFactor="0.65" />
+    <spraySound file="$data/sounds/manureSpreader2.wav"           pitchOffset="0.90" volume="0.90" indoorVolumeFactor="0.70" />
+    <cylinderedHydraulicSound file="$data/sounds/hydraulicUp.wav" pitchOffset="1.00" volume="1.00" />
+
+	
+    <turnOnVehicle>
+        <turnedAnimation name="turnOnAnimation" turnOnSpeedScale="2" turnOffSpeedScale="-1" />
+    </turnOnVehicle>	
+    <sprayUsageScales workingWidth="15.0" scale="1" />
+    <animations>
+        <animation name="turnOnAnimation">
+            <part node="0>2|1" startTime="0" endTime="2" startTrans="0 -0.296 -2.887" endTrans="0 1.018 -2.54"/>
+        </animation>
+
+        <!-- move support wheel down/up -->
+        <animation name="moveSupport">
+            <part node="2|3" startTime="0" duration="0.5" startTrans="0.236 -1.455 2.597" endTrans="0.236 -1.702 2.597" />
+            <part node="0>9" startTime="0" duration="0.005" visibility="false" />
+            <part node="0>8" startTime="0" duration="0.005" visibility="true" />
+            <part node="0>9" startTime="0.005" duration="0.5" visibility="true" />
+            <part node="0>8" startTime="0.005" duration="0.5" visibility="false" />						
+        </animation>
+    </animations>
+    <movingTools>
+        <movingTool index="0>2|1" playSound="true" />
+    </movingTools>	
+    <support animationName="moveSupport" />
+    <fillRootNode index="0>" />
+    <exactFillRootNode index="0>11|3|3" />
+    <fillMassNode index="0>" />
+    <ai>
+        <needsLowering value="true" />
+        <areaMarkers leftIndex="0>11|1|0|0" rightIndex="0>11|1|0|1" backIndex="0>11|1|0|2" />
+        <sizeMarkers leftIndex="0>11|1|1|1" rightIndex="0>11|1|1|1" backIndex="0>11|1|1|2" />
+        <forceTurnNoBackward value="true" />
+        <toolReverserDirectionNode index="0>11|1|1|2" />
+    </ai>
+
+    <washable dirtDuration="30" washDuration="1" workMultiplier="4" />
+
+    <tipOcclusionAreas>
+        <tipOcclusionArea start="0>11|4|0" width="0>11|4|1" height="0>11|4|2" />
+    </tipOcclusionAreas>
+
+
+    <components count="1">
+        <component1 centerOfMass="0 -0.015 -1.2" solverIterationCount="10" />
+    </components>
+
+    <schemaOverlay file="$dataS2/menu/schemas/implementSchema.png" fileSelected="$dataS2/menu/schemas/implementSchemaSelected.png" fileTurnedOn="$dataS2/menu/schemas/implementSchemaTurnedOn.png" fileSelectedTurnedOn="$dataS2/menu/schemas/implementSchemaSelectedTurnedOn.png" width="0.5" height="0.5" attacherJointPosition="0 0" />
+
+</vehicle>
