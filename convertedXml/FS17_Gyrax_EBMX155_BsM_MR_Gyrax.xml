@@ -31,7 +31,7 @@
     <size width="4" length="10" />
 	
     <powerConsumer ptoRpm="450" neededPtoPower="45"/>
-    <speedLimit value="20" />
+    <speedLimit value="10" />
 	
     <wheelConfigurations>
         <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
@@ -46,11 +46,9 @@
     <brakeForce>1.5</brakeForce>
     <maximalAirConsumptionPerFullStop value="0.3" />
 
-
-
     <fillUnits>
         <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="manureSpreader" capacity="15000" />
-    </fillUnits>	
+    </fillUnits>
     <workAreas>
         <workArea startIndex="0>11|2|0" widthIndex="0>11|2|1" heightIndex="0>11|2|2" type="sprayer" disableBackwards="false" />
     </workAreas>
@@ -106,9 +104,9 @@
 
     <sprayer fillUnitIndex="1" unloadInfoIndex="1" loadInfoIndex="1" />
 
-    <sprayUsages>
+    <!--sprayUsages>
         <sprayUsage fillType="manure" litersPerSecond="100" />		
-    </sprayUsages>
+    </sprayUsages-->
 
     <sprayParticles>
         <emitterShape node="0>11|0|0|1" particleType="SPREADER" worldSpace="false"/>
@@ -150,7 +148,8 @@
     <support animationName="moveSupport" />
     <fillRootNode index="0>" />
     <exactFillRootNode index="0>11|3|3" />
-    <fillMassNode index="0>" />
+    <fillMassNode index="0>" mrCOMtransWithMass="0 0.03 0" />
+    
     <ai>
         <needsLowering value="true" />
         <areaMarkers leftIndex="0>11|1|0|0" rightIndex="0>11|1|0|1" backIndex="0>11|1|0|2" />
@@ -167,7 +166,7 @@
 
 
     <components count="1">
-        <component1 centerOfMass="0 -0.015 -1.2" solverIterationCount="10" />
+        <component1 centerOfMass="0 -0.015 -1.2" solverIterationCount="10" mrSetMass="6.15" />
     </components>
 
     <schemaOverlay file="$dataS2/menu/schemas/implementSchema.png" fileSelected="$dataS2/menu/schemas/implementSchemaSelected.png" fileTurnedOn="$dataS2/menu/schemas/implementSchemaTurnedOn.png" fileSelectedTurnedOn="$dataS2/menu/schemas/implementSchemaSelectedTurnedOn.png" width="0.5" height="0.5" attacherJointPosition="0 0" />

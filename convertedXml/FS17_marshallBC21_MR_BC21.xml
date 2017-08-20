@@ -2,6 +2,31 @@
 <vehicle type="transportTrailer">
     <annotation>Copyright (C), All Rights Reserved.</annotation>
 	
+    <!-- MR Modifications
+--------------------------------------------------------------
+Drag is .55, Dural says to use 0.68 for trailers, but this is a small one
+
+8T full trailer - 4 wheels, 8T => 2T per wheels
+
+Spring (Using spring frequency of 1.8):  0.1 * (sprung mass in T) * (2*Pi*frequency)^2  =>  0.1 * 2 * (2 * 1.8 * pi)^2  = 26 
+
+Damper (Using rate of 0.2):  2 * (Damping ratio) * squareroot(10*spring*sprung mass in T)  =>  0.2 * 2 * squareroot(26*2*10) = 9
+
+initialCompression = changed 0 upon recommendation from Dural.  
+
+brakeforce => Assuming commercial brakes air actuated, with target deceleration of 5.5m.s-2 => brakeforce = 8 * 5.5 / (6*10) = 0.73
+
+added "    <maximalAirConsumptionPerFullStop value="0.2" />  " since it didn't have any.
+
+Center of mass was not adjusted
+-->
+    
+    
+<moreRealistic isMrVehicle="true" >		
+	<dragArea value=".55" />
+</moreRealistic>
+    
+    
 	<storeData>
         <name>BC/21</name>
         <functions>
@@ -22,16 +47,17 @@
     <wheelConfigurations>
         <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
             <wheels>
-                <wheel tipOcclusionAreaGroupId="1" restLoad="0.7" repr="0>0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_400_55R17_5.xml" isLeft="true"  initialCompression="20" suspTravel="0.12" spring="35" damper="30" hasParticles="true" hasTireTracks="true" tireTrackAtlasIndex="2" />
-                <wheel tipOcclusionAreaGroupId="2" restLoad="0.7" repr="0>2" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_400_55R17_5.xml" isLeft="false"  initialCompression="20" suspTravel="0.12" spring="35" damper="30" hasParticles="true" hasTireTracks="true" tireTrackAtlasIndex="2" />
-                <wheel tipOcclusionAreaGroupId="1" restLoad="0.7" repr="0>1" forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/T404_400_55R17_5.xml" isLeft="true" initialCompression="20" suspTravel="0.12" spring="35" damper="30" hasParticles="true" />
-                <wheel tipOcclusionAreaGroupId="2" restLoad="0.7" repr="0>3" forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/T404_400_55R17_5.xml" isLeft="false" initialCompression="20" suspTravel="0.12" spring="35" damper="30" hasParticles="true" />
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.7" repr="0>0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_400_55R17_5.xml" isLeft="true"  initialCompression="0" suspTravel="0.12" spring="26" damper="9" hasParticles="true" hasTireTracks="true" tireTrackAtlasIndex="2" />
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.7" repr="0>2" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_400_55R17_5.xml" isLeft="false"  initialCompression="0" suspTravel="0.12" spring="26" damper="9" hasParticles="true" hasTireTracks="true" tireTrackAtlasIndex="2" />
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.7" repr="0>1" forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/T404_400_55R17_5.xml" isLeft="true" initialCompression="0" suspTravel="0.12" spring="26" damper="9" hasParticles="true" />
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.7" repr="0>3" forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/T404_400_55R17_5.xml" isLeft="false" initialCompression="0" suspTravel="0.12" spring="26" damper="9" hasParticles="true" />
             </wheels>
         </wheelConfiguration>
     </wheelConfigurations>
     <axisColor useBaseColor="true"/>
 
-    <brakeForce>0.5</brakeForce>
+    <brakeForce>0.73</brakeForce>
+    <maximalAirConsumptionPerFullStop value="0.2" />
 
      <rimColorConfigurations useDefaultColors="true" price="100" icon="$dataS2/menu/hud/configurations/config_rimColor.png">
         <rimColorConfiguration color="0.294 0.294 0.294 1" />
@@ -85,7 +111,7 @@
     </tensionBelts>
 	
     <components count="1">
-		<component1 centerOfMass="0 -0.4 0" solverIterationCount="20" />
+		<component1 centerOfMass="0 -0.4 0" solverIterationCount="20"  mrSetMass="1.8"/>
     </components>	
 
     <schemaOverlay file="$dataS2/menu/schemas/implementSchema.png" fileSelected="$dataS2/menu/schemas/implementSchemaSelected.png" width="0.5" height="0.5" attacherJointPosition="0 0" />	

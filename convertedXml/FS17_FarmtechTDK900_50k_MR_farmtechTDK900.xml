@@ -1,7 +1,11 @@
-<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <vehicle type="farmtechTDK900">
     <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
 	
+    <moreRealistic isMrVehicle="true" >		
+		<dragArea value="0.58" />
+	</moreRealistic>
+    
     <storeData>
         <name>Farmtech TDK 900</name>
 		<specs>
@@ -35,10 +39,10 @@
     <wheelConfigurations>
         <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
 			<wheels>
-				<wheel tipOcclusionAreaGroupId="1" restLoad="0.7" repr="0>0|0"                     forcePointRatio="0.2" filename="wheels/AW305_380_55R17.xml" isLeft="true"  initialCompression="8" suspTravel="0.2" spring="25" damper="50" />
-				<wheel tipOcclusionAreaGroupId="2" restLoad="0.7" repr="0>1|0" driveNode="0>1|0|0" forcePointRatio="0.2" filename="wheels/AW305_380_55R17.xml" isLeft="false"  initialCompression="8" suspTravel="0.2" spring="25" damper="50" hasTireTracks="true" hasParticles="true" />
-				<wheel tipOcclusionAreaGroupId="1" restLoad="0.7" repr="0>0|1"                     forcePointRatio="0.2" filename="wheels/AW305_380_55R17.xml" isLeft="true" initialCompression="8" suspTravel="0.2" spring="25" damper="50" />
-				<wheel tipOcclusionAreaGroupId="2" restLoad="0.7" repr="0>1|1" driveNode="0>1|1|0" forcePointRatio="0.2" filename="wheels/AW305_380_55R17.xml" isLeft="false" initialCompression="8" suspTravel="0.2" spring="25" damper="50" hasTireTracks="true" hasParticles="true" />
+				<wheel tipOcclusionAreaGroupId="1" restLoad="0.7" repr="0>0|0"                     forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="true"  initialCompression="8" suspTravel="0.2" spring="25" damper="15" frictionScale="2"/>
+				<wheel tipOcclusionAreaGroupId="2" restLoad="0.7" repr="0>1|0" driveNode="0>1|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="false"  initialCompression="8" suspTravel="0.2" spring="25" damper="15" frictionScale="2" hasTireTracks="true" hasParticles="true" />
+				<wheel tipOcclusionAreaGroupId="1" restLoad="0.7" repr="0>0|1"                     forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="true" initialCompression="8" suspTravel="0.2" spring="25" damper="15" frictionScale="2" />
+				<wheel tipOcclusionAreaGroupId="2" restLoad="0.7" repr="0>1|1" driveNode="0>1|1|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="false" initialCompression="8" suspTravel="0.2" spring="25" damper="15" frictionScale="2" hasTireTracks="true" hasParticles="true" />
 			</wheels>
         </wheelConfiguration>
     </wheelConfigurations>

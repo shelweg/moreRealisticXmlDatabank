@@ -1,18 +1,37 @@
 ﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
 <vehicle type="baler">
     <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
-	
+
+    <!--
+        Data for Big Pack 120-80 (120-70) with MultiCut cutting system
+        Operating Manual No. 382-7 GB
+        
+        neededPower 120 hp
+        mass 7980 kg
+        
+        changed wheels
+        fillLevel 5500 due to older baler than BB1290 and giving reason for upgrade as the 120-80 is priced low
+        
+        MR factors copied from the NH BB1290 convert, reduced power reqs
+        
+        brakepower unchanged
+    -->
+    
+    <moreRealistic>
+        <baler pickingDependantPtoPower="58" maxLitersPerSecond="150" strokesByMinute="47.244094" strokeDependantPtoPower="28" litersPerFlake="100" strokeSoundTimeOffset="150" /> 
+    </moreRealistic>
+    
 	<storeData>
         <name>BigPack 120-80</name>
         <specs>
-            <neededPower>115</neededPower>
+            <neededPower>120</neededPower>
         </specs>
         <functions>
             <function>$l10n_function_baler</function>
         </functions>
         <image>store.png</image>
         <price>12000</price>
-        <dailyUpkeep>100</dailyUpkeep>
+        <dailyUpkeep>200</dailyUpkeep>
         <lifetime>600</lifetime>
         <rotation>0</rotation>
         <brand>KRONE</brand>
@@ -29,15 +48,15 @@
 
     <size width="4" length="10" />
     <speedLimit value="20" />
-    <powerConsumer ptoRpm="540" neededPtoPower="55"/>
+    <powerConsumer ptoRpm="540" neededPtoPower="50"/>
 
     <wheelConfigurations>
         <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
 			<wheels autoRotateBackSpeed="2.0">
-				<wheel tipOcclusionAreaGroupId="1" restLoad="2.1" repr="0>0" filename="AW305_300_80R15_3.xml" isLeft="true" initialCompression="60" suspTravel="0.15" spring="25" damper="20" />
-                <wheel tipOcclusionAreaGroupId="2" restLoad="2.1" repr="0>1" filename="AW305_300_80R15_3.xml" isLeft="false" initialCompression="60" suspTravel="0.15" spring="25" damper="20" />
-                <wheel tipOcclusionAreaGroupId="1" restLoad="2.1" repr="0>2" filename="AW305_300_80R15_3.xml" isLeft="true" initialCompression="60" suspTravel="0.15" spring="25" damper="20" hasTireTracks="true" hasParticles="true" steeringAxleScale="-0.7" steeringAxleRotMax="20" steeringAxleRotMin="-20" />
-                <wheel tipOcclusionAreaGroupId="2" restLoad="2.1" repr="0>3" filename="AW305_300_80R15_3.xml" isLeft="false" initialCompression="60" suspTravel="0.15" spring="25" damper="20" hasTireTracks="true" hasParticles="true" steeringAxleScale="-0.7" steeringAxleRotMax="20" steeringAxleRotMin="-20" />
+				<wheel tipOcclusionAreaGroupId="1" restLoad="2.1" repr="0>0" filename="AW305_300_80R15_3.xml" isLeft="true" initialCompression="0" suspTravel="0.15" spring="18" damper="11" />
+                <wheel tipOcclusionAreaGroupId="2" restLoad="2.1" repr="0>1" filename="AW305_300_80R15_3.xml" isLeft="false" initialCompression="0" suspTravel="0.15" spring="18" damper="11" />
+                <wheel tipOcclusionAreaGroupId="1" restLoad="2.1" repr="0>2" filename="AW305_300_80R15_3.xml" isLeft="true" initialCompression="0" suspTravel="0.15" spring="18" damper="11" hasTireTracks="true" hasParticles="true" steeringAxleScale="-0.7" steeringAxleRotMax="20" steeringAxleRotMin="-20" />
+                <wheel tipOcclusionAreaGroupId="2" restLoad="2.1" repr="0>3" filename="AW305_300_80R15_3.xml" isLeft="false" initialCompression="0" suspTravel="0.15" spring="18" damper="11" hasTireTracks="true" hasParticles="true" steeringAxleScale="-0.7" steeringAxleRotMax="20" steeringAxleRotMin="-20" />
 		    </wheels>
 		</wheelConfiguration>
     </wheelConfigurations>
@@ -76,7 +95,7 @@
     </inputAttacherJoints>
 
     <fillUnits>
-        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="windrow" capacity="4000" />
+        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="windrow" capacity="5000" />
     </fillUnits>
 
     <workAreas>
@@ -202,7 +221,7 @@
     </tipOcclusionAreas>
     
     <components count="1">
-        <component1 centerOfMass="0 0.65 0" solverIterationCount="10" />
+        <component1 centerOfMass="0 0.65 0" solverIterationCount="10" mrSetMass="7.98" />
     </components>
 
     <schemaOverlay file="$dataS2/menu/schemas/implementSchema.png" fileSelected="$dataS2/menu/schemas/implementSchemaSelected.png" fileTurnedOn="$dataS2/menu/schemas/implementSchemaTurnedOn.png" fileSelectedTurnedOn="$dataS2/menu/schemas/implementSchemaSelectedTurnedOn.png" width="0.5" height="0.5" attacherJointPosition="0 0"/>
