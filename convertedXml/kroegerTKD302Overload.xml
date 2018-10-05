@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="TKD302">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+    <storeData>
+        <name>TKD302 Overload</name>
+        <functions>
+			<function>$l10n_function_augerTipper</function>
+		</functions>
+        <image>modell/store.png</image>
+        <price>27000</price>
+        <dailyUpkeep>10</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>KROEGER</brand>
+        <category>tippers</category>
+        <vertexBufferMemoryUsage>1396864</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>217800</indexBufferMemoryUsage>
+        <textureMemoryUsage>14855304</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <typeDesc>$l10n_typeDesc_tipper</typeDesc>
+    <filename>modell/kroegerTKD302Overload.i3d</filename>
+
+    <size width="3.5" length="8" lengthOffset="0.75" />
+
+    <wheelConfigurations>
+        <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
+            <wheels>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="1.5" repr="0>0|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/lizard/385_65R22_5.xml" isLeft="true"  initialCompression="10" suspTravel="0.15" spring="50" damper="50" hasTireTracks="true" />
+                <wheel tipOcclusionAreaGroupId="2" restLoad="1.5" repr="0>0|0|1" forcePointRatio="0.2" filename="$data/vehicles/wheels/lizard/385_65R22_5.xml" isLeft="false" initialCompression="10" suspTravel="0.15" spring="50" damper="50" hasTireTracks="true" />
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.8" repr="0>0|0|2" forcePointRatio="0.3" filename="$data/vehicles/wheels/lizard/385_65R22_5.xml" isLeft="true"  initialCompression="10" suspTravel="0.15" spring="50" damper="50" hasTireTracks="true" hasParticles="true" />
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.8" repr="0>0|0|3" forcePointRatio="0.3" filename="$data/vehicles/wheels/lizard/385_65R22_5.xml" isLeft="false" initialCompression="10" suspTravel="0.15" spring="50" damper="50" hasTireTracks="true" hasParticles="true" />
+            </wheels>
+        </wheelConfiguration>
+        <wheelConfiguration name="$l10n_configuration_valueWheelBroad" price="400" icon="$dataS2/menu/hud/configurations/config_wheel_broad.png" >
+            <wheels>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="1.5" repr="0>0|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/TwinRadial_560_60R22_5.xml" isLeft="true"  initialCompression="10" suspTravel="0.15" spring="50" damper="50" hasTireTracks="true" />
+                <wheel tipOcclusionAreaGroupId="2" restLoad="1.5" repr="0>0|0|1" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/TwinRadial_560_60R22_5.xml" isLeft="false" initialCompression="10" suspTravel="0.15" spring="50" damper="50" hasTireTracks="true" />
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.8" repr="0>0|0|2" forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/TwinRadial_560_60R22_5.xml" isLeft="true"  initialCompression="10" suspTravel="0.15" spring="50" damper="50" hasTireTracks="true" hasParticles="true" />
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.8" repr="0>0|0|3" forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/TwinRadial_560_60R22_5.xml" isLeft="false" initialCompression="10" suspTravel="0.15" spring="50" damper="50" hasTireTracks="true" hasParticles="true" />
+            </wheels>
+        </wheelConfiguration>
+    </wheelConfigurations>
+    <brakeForce>0.7</brakeForce>
+    <maximalAirConsumptionPerFullStop value="0.3" />
+
+    <lights>
+        <low>
+            <light                       decoration="0>0|3|0|0" lightTypes="0 3" />
+        </low>
+        <high>
+            <light realLight="0>0|3|0|1" decoration="0>0|3|0|0" lightTypes="0 3" />
+        </high>
+    </lights>
+
+    <brakeLights>
+        <brakeLight realLight="0>0|3|0|1" decoration="0>0|3|2|0" />
+    </brakeLights>
+
+    <turnLights>
+        <turnLightLeft realLight="0>0|3|1|0|1" decoration="0>0|3|1|0|0" />
+        <turnLightRight realLight="0>0|3|1|1|1" decoration="0>0|3|1|1|0" />
+    </turnLights>
+	<reverseLights>
+        <reverseLight realLight="0>0|10|0|1" decoration="0>0|10|0|0" />
+    </reverseLights>
+	
+    <cylinderedHydraulicSound file="$data/sounds/hydraulicUp.wav"  pitchOffset="0.8" volume="0.5" indoorVolumeFactor="0.75" />
+    <fillSound file="$data/maps/sounds/siloFillSound.wav"          pitchOffset="1.0" volume="1.5" indoorVolumeFactor="0.75" />
+    <attachSound file="$data/sounds/attach.wav"                    pitchOffset="1.0" volume="1.0" indoorVolumeFactor="0.35" indoorLowpassGain="0.75"/>
+
+    <inputAttacherJoints>
+        <inputAttacherJoint index="0>0|1" jointType="trailerLow" attacherHeight="0.655" />
+    </inputAttacherJoints>
+
+    <attacherJoints>
+        <attacherJoint index="0>0|2" jointType="trailer" lowerRotLimit="10 80 80" upperRotationOffset="0" allowsJointLimitMovement="false" canTurnOnImplement="false" >
+            <schema position="0.5 0" rotation="0" invertX="false" />
+        </attacherJoint>
+    </attacherJoints>
+	<!-- Edit Holger Sengstock - habe die passenden Filltypes ergänzt, wo man zumindest das Schüttgut laden kann, welches auch mit Überladeschnecke entladen
+		 werden kann, also keine Rüben, keine Kartoffeln und auch keinen Mist-->
+    <fillUnits>
+		<fillUnit unit="$l10n_unit_literShort" fillTypes="seeds fertilizer wheat barley rape maize sunflower soybean woodChips pigFood" capacity="21000" />
+    </fillUnits>
+	<!-- ENDE Edit Holger Sengstock -->
+    <fillVolumes>
+        <volumes>
+            <volume index="0>0|5|0|0|3|0" maxDelta="0.12" maxAllowedHeapAngle="15"/>
+        </volumes>
+
+        <unloadInfos>
+            <unloadInfo> <!-- back -->
+                <node index="0>0|5|0|0|3|1|0" width="1.0" length="1.7" />
+            </unloadInfo>
+            <unloadInfo> <!-- left -->
+                <node index="0>0|5|0|0|3|1|1" width="1.0" length="2.9" />
+            </unloadInfo>
+            <unloadInfo> <!-- right -->
+                <node index="0>0|5|0|0|3|1|2" width="1.0" length="2.9" />
+            </unloadInfo>
+        </unloadInfos>
+
+        <heights>
+            <height fillVolumeIndex="1" >
+                <refNode index="0>0|5|0|0|3|2|0|0" />
+                <refNode index="0>0|5|0|0|3|2|0|1" />
+                <node index="0>0|5|0|0|4|0|0" baseScale="1 1 1"    transAxis="0 1 0" transMax="0 0.1 0" />
+            </height>
+            <height fillVolumeIndex="1" >
+                <refNode index="0>0|5|0|0|3|2|1|0" />
+                <refNode index="0>0|5|0|0|3|2|1|1" />
+                <node index="0>0|5|0|0|4|1|0" baseScale="1 1 1"   transAxis="0 1 0" transMax="0 0.1 0" />
+            </height>
+            <height fillVolumeIndex="1" >
+                <refNode index="0>0|5|0|0|3|2|2|0" />
+                <refNode index="0>0|5|0|0|3|2|2|1" />
+                <node index="0>0|5|0|0|4|2|0" baseScale="1 1 1"   transAxis="0 1 0" transMax="0 0.1 0" />
+            </height>
+            <height fillVolumeIndex="1" >
+                <refNode index="0>0|5|0|0|3|2|0|0" />
+                <refNode index="0>0|5|0|0|3|2|0|1" />
+                <node index="0>0|5|0|0|4|1|0|2" orientateToWorldY="true" />
+            </height>
+        </heights>
+    </fillVolumes>
+	
+	
+	<!-- Edit Holger Sengstock - tipReferencePoints und tipAnimations für den normalen Anhänger wieder hinzugefügt -->
+	<tipReferencePoints>
+        <tipReferencePoint index="0>0|8|0" width="2.5" />
+        <tipReferencePoint index="0>0|8|0" width="0.5" />
+        <tipReferencePoint index="0>0|8|1" width="3" />
+        <tipReferencePoint index="0>0|8|2" width="3" />
+    </tipReferencePoints>
+
+    <tipAnimations>
+        <tipAnimation speedScale="1" animationName="tipAnimationBack" dischargeStartTime="1" dischargeEndTime="9" name="info_tipSideBack">
+            <tipEffect>
+                <effectNode effectNode="0>0|5|0|0|4|0|0|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+                <effectNode effectNode="0>0|5|0|0|4|0|0|1" materialType="smoke"     materialTypeId="1" fadeTime="0.5" />
+            </tipEffect>
+            <emitterShape node="0>0|5|0|0|4|0|1|0" />
+            <fillVolume>
+                <unloadInfo index="1"/>
+                <height index="1"/>
+            </fillVolume>
+        </tipAnimation>
+
+        <tipAnimation speedScale="1" animationName="tipAnimationBackGrainDoor" dischargeStartTime="1" dischargeEndTime="45" name="info_tipSideBackGrainDoor" >
+            <tipEffect>
+                <effectNode effectNode="0>0|5|0|0|4|1|0|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+                <effectNode effectNode="0>0|5|0|0|4|1|0|1" materialType="smoke"     materialTypeId="1" fadeTime="0.5" />
+            </tipEffect>
+            <emitterShape node="0>0|5|0|0|4|1|1|0" />
+            <fillVolume>
+                <unloadInfo index="1"/>
+                <height index="1"/>
+            </fillVolume>
+        </tipAnimation>
+
+        <tipAnimation speedScale="1" closeSpeedScale="-2" animationName="tipAnimationLeft" dischargeStartTime="1" dischargeEndTime="9" name="info_tipSideLeft">
+            <tipEffect>
+                <effectNode effectNode="0>0|5|0|0|4|2|0|0" materialType="unloading" materialTypeId="3" fadeTime="0.5"/>
+                <effectNode effectNode="0>0|5|0|0|4|2|0|1" materialType="smoke"     materialTypeId="1" fadeTime="0.5"/>
+            </tipEffect>
+            <emitterShape node="0>0|5|0|0|4|2|1|0" />
+            <fillVolume>
+                <unloadInfo index="2"/>
+                <height index="2"/>
+            </fillVolume>
+        </tipAnimation>
+
+        <tipAnimation speedScale="1" closeSpeedScale="-2" animationName="tipAnimationRight" dischargeStartTime="1" dischargeEndTime="9" name="info_tipSideRight" >
+            <tipEffect>
+                <effectNode effectNode="0>0|5|0|0|4|3|0|0" materialType="unloading" materialTypeId="3" fadeTime="0.5"/>
+                <effectNode effectNode="0>0|5|0|0|4|3|0|1" materialType="smoke"     materialTypeId="1" fadeTime="0.5"/>
+            </tipEffect>
+            <emitterShape node="0>0|5|0|0|4|3|1|0" />
+            <fillVolume>
+                <unloadInfo index="3"/>
+                <height index="3"/>
+            </fillVolume>
+        </tipAnimation>
+    </tipAnimations>
+	<!-- ENDE Edit Holger Sengstock - tipReferencePoints und tipAnimations für den normalen Anhänger wieder hinzugefügt -->
+    <fillRootNode index="0>" />
+    <exactFillRootNode index="0>0|5|0|0|5|0" />
+    <fillAutoAimTargetNode index="0>0|5|0|0|5|1" startZ="1.3" endZ="-2.2" invert="false" fillUnitIndex="1" startPercentage="25"/>
+    <fillMassNode index="0>" />
+
+    <movingTools>
+        <movingTool index="0>0|5">
+            <dependentPart index="0>0|6" />
+        </movingTool>
+        <movingTool index="0>0|5|0">
+            <dependentPart index="0>0|6" />
+        </movingTool>
+        <movingTool index="0>0|5|0|0">
+            <dependentPart index="0>0|6" />
+        </movingTool>
+        <movingTool index="0>0|5|0|0|0|0">
+            <dependentPart index="0>0|5|0|0|0|1" />
+        </movingTool>
+		<!-- pipe -->
+		<movingTool index="0>0|5|0|0|0|5|1" freezingPipeStates="0 1" playSound="true">
+            <controls axis="AXIS_PIPE2" invertAxis="false" mouseSpeedFactor="0.6" iconFilename="$dataS2/menu/moveControls/pipe_end.png" />
+            <animation animSpeed="0.4" animAcceleration="2" animName="pipeAnimation2" animMinTime="0.3" />
+            <dependentPart index="0>0|5|0|0|0|5|0|0" /> <!-- Halter -->
+			<dependentPart index="0>0|5|0|0|0|5|1|0|1" /><!-- Schlaeuche -->
+        </movingTool>
+        <!-- pipe end -->
+    </movingTools>
+
+    <movingParts>
+        <movingPart index="0>0|5|0|0|0|1" localReferencePoint="0>0|5|0|0|0|1|0" referencePoint="0>0|5|0|0|0|0|0" referenceFrame="0>0|5|0|0|0|0|0" >
+            <dependentPart index="0>0|5|0|0|0|1|0" />
+        </movingPart>
+        <movingPart index="0>0|5|0|0|0|1|0" referencePoint="0>0|5|0|0|0|0|0" referenceFrame="0>0|5|0|0|0|0|0" />
+        <movingPart index="0>0|6" referencePoint="0>0|5|0|0|6" referenceFrame="0>0|7" limitedAxis="3" playSound="true" >
+            <dependentPart index="0>0|6|0" />
+        </movingPart>
+        <movingPart index="0>0|6|0" referencePoint="0>0|5|0|0|6" referenceFrame="0>0|7" >
+            <translatingPart index="0>0|6|0|0" />
+            <translatingPart index="0>0|6|0|0|0" />
+            <translatingPart index="0>0|6|0|0|0|0" />
+        </movingPart>
+    </movingParts>
+
+    <animations>
+		<!-- Edit Holger Sengstock - tipAnimations für den normalen Anhänger wieder hinzugefügt -->
+		<!-- backtipping -->
+        <animation name="tipAnimationBack">
+            <part node="0>0|5|0|0|0"     startTime="0.3" endTime="2" startRot="0 0 0" endRot="17 0 0" /> <!-- door -->
+            <part node="0>0|5|0|0|0"     startTime="2.0" endTime="8" startRot="17 0 0" endRot="35 0 0" /> <!-- door -->
+            <part node="0>0|5|0|0"       startTime="0.3" endTime="8" startRot="0 0 0" endRot="-35 0 0" /> <!-- body -->
+            <part node="0>0|5|0|0|4|0|0" startTime="0.3" endTime="8" startRot="0 0 0" endRot="35 0 0" />
+        </animation>
+        <animation name="tipAnimationBackGrainDoor">
+            <part node="0>0|5|0|0|0|0"   startTime="0.3" endTime="1"  startTrans="0 -1.331 -0.046" endTrans="0 -1.108 -0.046" /> <!-- grain door -->
+            <part node="0>0|5|0|0"       startTime="5"   endTime="18" startRot="0 0 0" endRot="-35 0 0" /> <!-- body -->
+            <part node="0>0|5|0|0|4|1|0" startTime="0.3" endTime="8"  startRot="0 0 0" endRot="35 0 0" />
+        </animation>
+        <!-- tipping left -->
+        <animation name="tipAnimationLeft">
+            <part node="0>0|5|0|0|1"     startTime="0.3" endTime="8" startRot="0 0 0"   endRot="0 0 60" /> <!-- door -->
+            <part node="0>0|5"           startTime="0.3" endTime="8" startRot="0 0 0"   endRot="0 0 -60" /> <!-- body -->
+            <part node="0>0|5|0|0|4|2|0" startTime="0.3" endTime="8" startRot="0 -90 0" endRot="60 -90 0" />
+        </animation>
+        <!-- tipping right -->
+        <animation name="tipAnimationRight">
+            <part node="0>0|5|0|0|2"     startTime="0.3" endTime="8" startRot="0 0 0"   endRot="0 0 -60" /> <!-- door -->
+            <part node="0>0|5|0"         startTime="0.3" endTime="8" startRot="0 0 0"   endRot="0 0 60" /> <!-- body -->
+            <part node="0>0|5|0|0|4|3|0" startTime="0.3" endTime="8" startRot="0 -90 0" endRot="60 -90 0" />
+        </animation>
+		<!-- ENDE Edit Holger Sengstock - tipAnimations für den normalen Anhänger wieder hinzugefügt -->
+		<!--tipping-->
+		<animation name="pipeAnimation">
+			<part node="0>0|5|0|0|0|5|1|0" 		startTime="0" endTime="3"  		startRot="0 0 0" 				endRot="0 0 -20"/> <!-- Schnecke -->
+			<part node="0>0|5|0|0|0|5|1|0|0" 	startTime="0" endTime="3"  		startRot="0 -90 0" 				endRot="-21 -90 0"/> <!-- Halter1 -->
+			<part node="0>0|5|0|0|0|5|0|0" 		startTime="0" endTime="0.1"  	startRot="3 0 0" 				endRot="1.8 0 0"/> <!-- Halter -->
+			<part node="0>0|5|0|0|0|5|1|0|1" 	startTime="0" endTime="3"  		startRot="-82.292 -81.083 95" 	endRot="-71.503 -81.083 95"/> <!-- Schlaeuche -->
+			<part node="0>0|5|0|0" 				startTime="0" endTime="3"  		startRot="0 0 0" 				endRot="-15 0 0"/> <!-- mulde -->
+			<part node="0>0|6|0" 				startTime="0" endTime="3"  		startRot="0 0 0" 				endRot="-5 0 0"/> <!-- hydraulic -->
+			<part node="0>0|6|0|0" 				startTime="0" endTime="3"  		startTrans="0 0 0" 				endTrans="0 0 0.14"/> <!-- hydraulic0 -->
+			<part node="0>0|6|0|0|0" 			startTime="0" endTime="3"  		startTrans="0 0 0" 				endTrans="0 0 0.14"/> <!-- hydraulic1 -->
+			<part node="0>0|6|0|0|0|0" 			startTime="0" endTime="3"  		startTrans="0 0 0" 				endTrans="0 0 0.14"/> <!-- hydraulic2 -->
+			<part node="0>0|5|0|0|0|0"   		startTime="0" endTime="3"  		startTrans="0 -1.331 -0.046" 	endTrans="0 -1.108 -0.046" /> <!-- grain door -->
+		</animation>
+		<animation name="pipeAnimation2">
+			<part node="0>0|5|0|0|0|5|1|0" 		startTime="0" endTime="3"  		startRot="0 0 0" 				endRot="0 0 -20"/> <!-- Schnecke -->
+			<part node="0>0|5|0|0|0|5|1|0|0" 	startTime="0" endTime="3"  		startRot="0 -90 0" 				endRot="-21 -90 0"/> <!-- Halter1 -->
+			<part node="0>0|5|0|0|0|5|0|0" 		startTime="0" endTime="0.1"  	startRot="3 0 0" 				endRot="1.8 0 0"/> <!-- Halter -->
+			<part node="0>0|5|0|0|0|5|1|0|1" 	startTime="0" endTime="3"  		startRot="-82.292 -81.083 95" 	endRot="-71.503 -81.083 95"/> <!-- Schlaeuche -->
+		</animation>
+        <!-- cover -->
+        <animation name="toggleCover">
+            <part node="0>0|5|0|0|7|0" startTime="0"    endTime="0.05" visibility="false" />
+            <part node="0>0|5|0|0|7|1" startTime="0"    endTime="0.05" visibility="true" />
+            <part node="0>0|5|0|0|7|0" startTime="0.05" endTime="0.1"  visibility="true" />
+            <part node="0>0|5|0|0|7|1" startTime="0.05" endTime="0.1"  visibility="false" />
+        </animation>
+        <animation name="moveSupport">
+            <part node="0>0|4|0" startTime="0" endTime="0.3" startTrans="0 0.2 0" endTrans="0 -0.118 0" />
+            <part node="0>0|4|1" startTime="0" endTime="0.3" startRot="720 0 0"   endRot="0 0 0" />
+        </animation>
+    </animations>
+
+    <support animationName="moveSupport" />
+    <cover animationName="toggleCover" />
+	
+	<!-- Designkonfiguration Holger Sengstock -->
+
+    <baseColorConfigurations useDefaultColors="true" price="300" icon="$dataS2/menu/hud/configurations/config_color.png" >
+        <baseColorConfiguration color="0.0072 0.2758 0.0528 1" />
+        <baseColorConfiguration color="0.0018 0.0690 0.0132 1" />
+        <baseColorConfiguration color="0.135 0.055 0.034 1" />
+        <baseColorConfiguration color="0 0 0 1" />
+        <baseColorConfiguration color="1.0000 0.6187 0.0199 1" />
+		<baseColorConfiguration color="0.5356 0.4259 0.1390 1" />
+		<baseColorConfiguration color="0.2590 0.6320 0.0478 1" />
+		<colorNode node="0>0" />
+    </baseColorConfigurations>
+	<!-- Farbwahl Plane -->
+	<designColorConfigurations useDefaultColors="true" price="200" icon="$dataS2/menu/hud/configurations/config_edition.png">
+		<designColorConfiguration color="1.0000 0.6187 0.0199 1" />
+		<designColorConfiguration color="0.5356 0.4259 0.1390 1" />
+		<designColorConfiguration color="0.2590 0.6320 0.0478 1" />
+		<designColorConfiguration color="0 0 0 1" />
+		<colorNode node="0>0|5|0|0|7|0" />
+	</designColorConfigurations>
+	<!-- Ende Farbwahl Plane -->
+	
+	<rimColorConfigurations useDefaultColors="true" price="400" icon="$dataS2/menu/hud/configurations/config_rimColor.png">
+        <rimColorConfiguration color="0.1113 0.1304 0.1511 1"/>
+		<rimColorConfiguration color="1.0000 0.5295 0.0014 1"/>
+		<rimColorConfiguration color="0.294 0.294 0.294 1"/>
+        <rimColorConfiguration color="1.000 1.000 1.000 1"/>
+		<rimColorConfiguration color="0 0 0 1"/>
+		<rimColorConfiguration color="0.750 0.002 0.002 1"/>
+	    <colorNode node="0>0"/>
+    </rimColorConfigurations>
+	
+	<axisColor>0.0152 0.0152 0.0152 1</axisColor>
+	<!-- Ende Designkonfiguration Holger Sengstock -->
+
+    <designConfigurations>
+        <designConfiguration name="$l10n_configuration_valueWhite" price="0" icon="$dataS2/menu/hud/configurations/config_edition.png">
+            <objectChange node="0>0|5|0|0|0|4|0" visibilityActive="true" visibilityInactive="false"/>            
+            <objectChange node="0>0|5|0|0|1|2|0" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="0>0|5|0|0|2|2|0" visibilityActive="true" visibilityInactive="false"/>
+        </designConfiguration>
+        <designConfiguration name="$l10n_configuration_valueColor" price="0" icon="$dataS2/menu/hud/configurations/config_edition.png">
+            <objectChange node="0>0|5|0|0|0|4|1" visibilityActive="true" visibilityInactive="false"/>            
+            <objectChange node="0>0|5|0|0|1|2|1" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="0>0|5|0|0|2|2|1" visibilityActive="true" visibilityInactive="false"/>
+        </designConfiguration>
+    </designConfigurations>
+	
+	<!--Die entscheidende Konfiguration. Hier kannst du einerseits steuern (Objectchange), ob die Überladeschnecke eingeblendet werden soll, oder nicht!
+		1. Die erste Vehiclekonfiguration zeigt die Schnecke nicht an. Gleichzeitig verhält sich der Anhänger in dieser Konfiguration wie ein normaler
+		Anhänger. Denn der VehicleType heißt TKD302, in der Moddesc wird darüber die normale Funktion vom VehicleType Trailer konfiguriert.
+		2. Die zweite Vehiclekonfiguration ist für den Überladewagen. Der Vehicletype heißt TKD320OL, in der Moddesc ist dieser so definiert wie ein
+		Augerwagon, also Überladewagen, bis auf eine Ausnahme, die dir das Leben auch schwer gemacht hat. ich habe die Spezi trailer in der Moddesc
+		deaktiviert und plötzlich ließ er das abkippen und nun funktioniert das switchen in der Werkstatt ohne Probleme. Übrigens, er ändert auch nicht
+		den Füllstand wenn man zwischen den beiden VehicleTypes hin und her springt. Natürlich ist in der zweiten Konfiguration die Überladeschnecke
+		sichtbar.
+	-->
+	<vehicleTypeConfigurations>
+        <vehicleTypeConfiguration name="$l10n_configuration_valueDefault" price="0" vehicleType="TKD302">
+            <objectChange node="0>0|5|0|0|0|5" visibilityActive="false" visibilityInactive="true"/>
+        </vehicleTypeConfiguration>
+        <vehicleTypeConfiguration name="$l10n_configuration_overloadPipe" price="0" vehicleType="TKD302OL">
+            <objectChange node="0>0|5|0|0|0|5" visibilityActive="true" visibilityInactive="false"/>
+        </vehicleTypeConfiguration>
+    </vehicleTypeConfigurations>
+	<!-- Ende Vehicle Konfiguration von Holger Sengstock -->
+    <washable dirtDuration="90" washDuration="1" workMultiplier="4" />
+
+    <components count="1">
+        <component1 centerOfMass="0 0.6 -0.4" solverIterationCount="10" />
+    </components>
+
+    <schemaOverlay file="$dataS2/menu/schemas/implementSchema.png" fileSelected="$dataS2/menu/schemas/implementSchemaSelected.png" width="0.5" height="0.5" attacherJointPosition="0 0" />
+	
+	<overloading capacity="300">
+        <trailerTriggers>
+            <trailerTrigger index="0>0|5|0|0|0|5|1|0|4" />
+        </trailerTriggers>
+    </overloading>
+	
+    <pipeEffect>
+        <effectNode effectClass="PipeEffect" effectNode="0>0|5|0|0|0|5|1|0|3|2|0" delay="0" materialType="pipe" materialTypeId="1" maxBending="1" shapeScaleSpread="1.7 1.2 1 0"/>
+    </pipeEffect>
+	<pipe numStates="2" unloadingStates="2" raycastNodeIndex="0>0|5|0|0|0|5|1|0|3|2|1" raycastDistance="6" animName="pipeAnimation" animSpeedScale="1" delay="0.5"/>
+	
+	<fillLitersPerSecond>500</fillLitersPerSecond>
+    <supportsFillTriggers value="true"/>
+	<!-- Edit Holger Sengstock - Übersetzung schneckeanim in pipeanim, Funktion Schnecke entfernt, da Einblendung jetzt über die Vehiclekonfiguration läuft -->
+	<universalToggleParts>
+		<part node="0>0|5|0|0|0|5|1|0|3" 	name="pipeanim" showHelp="true" 	transMin="0.732 1.934 0.007" 	transMax="0.86 3.022 0.007" moveTime="1.5" save="true" /><!-- schnecke animieren -->
+		<part node="0>0|5|0|0|0|5|1|0|3|1" 	name="pipeanim" showHelp="false" 	scaleMin="1 0 1" 				scaleMax="1 0.26 1" 		moveTime="1.5" save="true" /><!-- hydraulik animieren -->
+		<part node="0>0|5|0|0|0|5|1|0|3|1" 	name="pipeanim" showHelp="false" 	rotMin="0 0 -1.378" 			rotMax="0.1 0 -0.85" 		moveTime="1.5" save="true" /><!-- hydraulik animieren -->
+		<part node="0>0|5|0|0|0|5|1|0|3|0" 	name="pipeanim" showHelp="false" 	rotMin="-0.05 0 0.1" 			rotMax="1 0.36 1" 			moveTime="1.5" save="true" /><!-- hydraulik animieren -->
+	</universalToggleParts>
+	<!-- ENDE Edit Holger Sengstock -->
+</vehicle>
