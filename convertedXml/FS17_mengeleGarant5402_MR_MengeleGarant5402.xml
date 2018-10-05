@@ -1,0 +1,512 @@
+<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle type="MengeleGarant5402">
+    <annotation>Copyright (C) Stefan Maurus, www.stefanmaurus.de</annotation>
+    <typeDesc>$l10n_typeDesc_forageWagon</typeDesc>
+    <filename>MengeleGarant5402.i3d</filename>
+	<!-- changes by passion78  6/10/2018 for V 	1.0.1.1
+	https://www.olx.pl/oferta/przyczepa-samozbierajaca-z-nozami-mengele-super-garant-540-2-CID757-IDtXJsH.html ( scroll down in the pics to see the specs tag)
+	
+	added mr tag dragArea
+	added storeData capacity
+	changed powerConsumer
+	added mrFillVolumeCapacity < no real load info to find, so measured inside GE. >
+	exactFillRootNode wrong index < this was pointing to the axles is stead of the actual wagon. >
+	fillMassNode wrong index < this was pointing to the axles is stead of the actual wagon. >
+	mrSetMass
+	mrCOMtransWithMass < i calculated this from value = 0.3 density : grass =0.22 silage/chaff= 0.4.. sins you cannot pickup silage/chaff, but you can load it from air, it took the middle of the value`s.>
+	speedLimit
+	wheels
+	brakeForce
+	changed animation tipAnimationBack endTime < to 4 , so the unload door  opens in 4 sec>
+	changed tipAnimation dischargeStartTime <to 2 so it starts unloading as soon as the door is half opened >
+	silageAdditives increase set from 12.5 to lesser 8 ( 12.5 would be a bit much, meaning ( if i`m right) 12.5 % more load with less grass picked up) 
+	component1 joint rotLimit from 7 to 3
+	added 4 different wheel types
+	added multiDischargeParticleSystem silage ( there was no unloading discharge  particleSystems, so i added chaff, to act as silage, it is a bit to light of color, but better than nothing )
+	added centerOfMass to component2 < to give the 2 axcles more stability during braking when empty >
+	-->
+	<moreRealistic> 
+		<dragArea value="5.95" />	
+		<forageWagon inputFlowDependantPtoPower="55" maxFillLiterPerSecond="400" />
+		<trailer unloadingPtoPower="15" />
+	</moreRealistic>
+
+
+    <storeData>
+        <name>Garant 540/2</name>
+        <functions>
+            <function>$l10n_function_forageWagon</function>
+        </functions>
+        <specs>
+            <neededPower>90</neededPower>
+			<capacity unit="$l10n_unit_liter">24660</capacity>
+        </specs>
+        <image>store_mengeleGarant5402.png</image>
+        <price>31000</price>
+        <dailyUpkeep>30</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>MENGELEAGRARTECHNIK</brand>
+        <category>loaderWagons</category>
+        <vertexBufferMemoryUsage>2438548</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>350556</indexBufferMemoryUsage>
+        <textureMemoryUsage>13577848</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <size width="3" length="10.5" lengthOffset="0.5"/>
+    <washable dirtDuration="90" washDuration="1" workMultiplier="8"/>
+    <powerConsumer ptoRpm="540" neededPtoPower="10"/>
+    <speedLimit value="27"/>
+
+    <wheelConfigurations>
+        <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
+            <wheels>
+                <wheel repr="1>0" deltaY="0.1" driveNode="1>0|0" forcePointRatio="0.2" filename="wheels/continental_190_45R17.xml" isLeft="false" restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="15" hasTireTracks="true" hasParticles="true" /> <!-- rear wheels -->
+                <wheel repr="1>1" deltaY="0.1" driveNode="1>1|0" forcePointRatio="0.2" filename="wheels/continental_190_45R17.xml" isLeft="false" restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="15" hasTireTracks="true" hasParticles="true" /> <!-- front wheels -->
+                <wheel repr="1>2" deltaY="0.1" driveNode="1>2|0" forcePointRatio="0.2" filename="wheels/continental_190_45R17.xml" isLeft="true"  restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="15" hasTireTracks="true" hasParticles="true" /> <!-- rear wheels -->
+                <wheel repr="1>3" deltaY="0.1" driveNode="1>3|0" forcePointRatio="0.2" filename="wheels/continental_190_45R17.xml" isLeft="true"  restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="15" hasTireTracks="true" hasParticles="true" /> <!-- front wheels -->
+                <wheel repr="3>4" deltaY="0" driveNode="3>0" radius="0.15" restLoad="0.2" initialCompression="0" suspTravel="0.06" spring="5" damper="0.5" hasTireTracks="true" tireTrackAtlasIndex="4" mass="0.1"/>
+                <wheel repr="3>5" deltaY="0" driveNode="3>1" radius="0.15" restLoad="0.2" initialCompression="0" suspTravel="0.06" spring="5" damper="0.5" hasTireTracks="true" tireTrackAtlasIndex="4" mass="0.1"/>
+            </wheels>
+        </wheelConfiguration>
+		<wheelConfiguration name="AW305_480_45R17" price="500">
+            <wheels>
+                <wheel repr="1>0" deltaY="0.1" driveNode="1>0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_480_45R17.xml" isLeft="false" restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="15" hasTireTracks="true" hasParticles="true" /> <!-- rear wheels -->
+                <wheel repr="1>1" deltaY="0.1" driveNode="1>1|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_480_45R17.xml" isLeft="false" restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="15" hasTireTracks="true" hasParticles="true" /> <!-- front wheels -->
+                <wheel repr="1>2" deltaY="0.1" driveNode="1>2|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_480_45R17.xml" isLeft="true"  restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="15" hasTireTracks="true" hasParticles="true" /> <!-- rear wheels -->
+                <wheel repr="1>3" deltaY="0.1" driveNode="1>3|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_480_45R17.xml" isLeft="true"  restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="15" hasTireTracks="true" hasParticles="true" /> <!-- front wheels -->
+                <wheel repr="3>4" deltaY="0" driveNode="3>0" radius="0.15" restLoad="0.2" initialCompression="0" suspTravel="0.06" spring="5" damper="0.5" hasTireTracks="true" tireTrackAtlasIndex="4" mass="0.1"/>
+                <wheel repr="3>5" deltaY="0" driveNode="3>1" radius="0.15" restLoad="0.2" initialCompression="0" suspTravel="0.06" spring="5" damper="0.5" hasTireTracks="true" tireTrackAtlasIndex="4" mass="0.1"/>
+            </wheels>
+        </wheelConfiguration>
+		<wheelConfiguration name="T404_400_55R17_5" price="750">
+            <wheels>
+                <wheel repr="1>0" deltaY="0.1" driveNode="1>0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_400_55R17_5.xml" isLeft="false" restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="20" hasTireTracks="true" hasParticles="true" /> <!-- rear wheels -->
+                <wheel repr="1>1" deltaY="0.1" driveNode="1>1|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_400_55R17_5.xml" isLeft="false" restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="20" hasTireTracks="true" hasParticles="true" /> <!-- front wheels -->
+                <wheel repr="1>2" deltaY="0.1" driveNode="1>2|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_400_55R17_5.xml" isLeft="true"  restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="20" hasTireTracks="true" hasParticles="true" /> <!-- rear wheels -->
+                <wheel repr="1>3" deltaY="0.1" driveNode="1>3|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_400_55R17_5.xml" isLeft="true"  restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="20" hasTireTracks="true" hasParticles="true" /> <!-- front wheels -->
+                <wheel repr="3>4" deltaY="0" driveNode="3>0" radius="0.15" restLoad="0.2" initialCompression="0" suspTravel="0.06" spring="5" damper="0.5" hasTireTracks="true" tireTrackAtlasIndex="4" mass="0.1"/>
+                <wheel repr="3>5" deltaY="0" driveNode="3>1" radius="0.15" restLoad="0.2" initialCompression="0" suspTravel="0.06" spring="5" damper="0.5" hasTireTracks="true" tireTrackAtlasIndex="4" mass="0.1"/>
+            </wheels>
+        </wheelConfiguration>
+		<wheelConfiguration name="T404_350_60R17_5" price="1000">
+            <wheels>
+                <wheel repr="1>0" deltaY="0.1" driveNode="1>0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_350_60R17_5.xml" isLeft="false" restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="20" hasTireTracks="true" hasParticles="true" /> <!-- rear wheels -->
+                <wheel repr="1>1" deltaY="0.1" driveNode="1>1|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_350_60R17_5.xml" isLeft="false" restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="20" hasTireTracks="true" hasParticles="true" /> <!-- front wheels -->
+                <wheel repr="1>2" deltaY="0.1" driveNode="1>2|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_350_60R17_5.xml" isLeft="true"  restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="20" hasTireTracks="true" hasParticles="true" /> <!-- rear wheels -->
+                <wheel repr="1>3" deltaY="0.1" driveNode="1>3|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_350_60R17_5.xml" isLeft="true"  restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="20" hasTireTracks="true" hasParticles="true" /> <!-- front wheels -->
+                <wheel repr="3>4" deltaY="0" driveNode="3>0" radius="0.15" restLoad="0.2" initialCompression="0" suspTravel="0.06" spring="5" damper="0.5" hasTireTracks="true" tireTrackAtlasIndex="4" mass="0.1"/>
+                <wheel repr="3>5" deltaY="0" driveNode="3>1" radius="0.15" restLoad="0.2" initialCompression="0" suspTravel="0.06" spring="5" damper="0.5" hasTireTracks="true" tireTrackAtlasIndex="4" mass="0.1"/>
+            </wheels>
+        </wheelConfiguration>
+		<wheelConfiguration name="T421_420_55R17" price="1250">
+            <wheels>
+                <wheel repr="1>0" deltaY="0.1" driveNode="1>0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T421_420_55R17.xml" isLeft="false" restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="20" hasTireTracks="true" hasParticles="true" /> <!-- rear wheels -->
+                <wheel repr="1>1" deltaY="0.1" driveNode="1>1|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T421_420_55R17.xml" isLeft="false" restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="20" hasTireTracks="true" hasParticles="true" /> <!-- front wheels -->
+                <wheel repr="1>2" deltaY="0.1" driveNode="1>2|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T421_420_55R17.xml" isLeft="true"  restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="20" hasTireTracks="true" hasParticles="true" /> <!-- rear wheels -->
+                <wheel repr="1>3" deltaY="0.1" driveNode="1>3|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T421_420_55R17.xml" isLeft="true"  restLoad="0.8" initialCompression="10" suspTravel="0.15" spring="57" damper="20" hasTireTracks="true" hasParticles="true" /> <!-- front wheels -->
+                <wheel repr="3>4" deltaY="0" driveNode="3>0" radius="0.15" restLoad="0.2" initialCompression="0" suspTravel="0.06" spring="5" damper="0.5" hasTireTracks="true" tireTrackAtlasIndex="4" mass="0.1"/>
+                <wheel repr="3>5" deltaY="0" driveNode="3>1" radius="0.15" restLoad="0.2" initialCompression="0" suspTravel="0.06" spring="5" damper="0.5" hasTireTracks="true" tireTrackAtlasIndex="4" mass="0.1"/>
+            </wheels>
+        </wheelConfiguration>
+    </wheelConfigurations>
+
+    <brakeForce>1.25</brakeForce>
+
+    <inputAttacherJoints>
+        <inputAttacherJoint index="0>1|0|0|0" jointType="trailer" attacherHeight="0.813" ptoInputNode="0>4|0" ptoAboveAttacher="false"/>
+    </inputAttacherJoints>
+
+    <workAreas>
+        <workArea startIndex="0>2|0|4|0" widthIndex="0>2|0|4|1" heightIndex="0>2|0|4|2" type="forageWagon"/>
+    </workAreas>
+
+    <lights>
+        <low>
+            <light                         decoration="0>3|0|1|5|3" lightTypes="0 3" />
+        </low>
+        <high>
+            <light realLight="0>3|0|1|5|4" decoration="0>3|0|1|5|3" lightTypes="0 3" />
+        </high>
+    </lights>
+
+    <turnLights>
+        <turnLightLeft  realLight="0>3|0|1|5|0|1" decoration="0>3|0|1|5|0|0"/>
+        <turnLightRight realLight="0>3|0|1|5|1|1" decoration="0>3|0|1|5|1|0"/>
+    </turnLights>
+
+    <brakeLights>
+        <brakeLight realLight="0>3|0|1|5|4" decoration="0>3|0|1|5|2"/>
+    </brakeLights>
+
+    <movingParts>
+        <movingPart index="1>1|1|0|0" referencePoint="1>1|1|3|0" referenceFrame="1>1|1|0" scaleZ="true" playSound="false" isActiveDirty="true"/>
+        <movingPart index="1>0|1|0|0" referencePoint="1>1|1|3|1" referenceFrame="1>0|1|0" scaleZ="true" playSound="false" isActiveDirty="true"/>
+        <movingPart index="1>1|1|0|1" referencePoint="1>1|1|2" referenceFrame="1>1|1|0" scaleZ="true" playSound="false"/>
+        <movingPart index="1>1|1|0|2" referencePoint="1>1|1|1" referenceFrame="1>1|1|0" scaleZ="true" playSound="false"/>
+        <movingPart index="1>0|1|0|1" referencePoint="1>0|1|2" referenceFrame="1>0|1|0" scaleZ="true" playSound="false"/>
+        <movingPart index="1>0|1|0|2" referencePoint="1>0|1|1" referenceFrame="1>0|1|0" scaleZ="true" playSound="false"/>
+        <movingPart index="0>1|0|2|0" referencePoint="0>1|0|1|1" referenceFrame="0>1|0|2" scaleZ="true" playSound="false"/>
+        <movingPart index="0>2|0" referencePoint="3>2" localReferencePoint="0>2|0|5" referenceFrame="3>2" isActiveDirty="true" playSound="false">
+            <dependentPart index="0>2|0|5"/>
+        </movingPart>
+        <movingPart index="0>2|0|5" referencePoint="3>2" referenceFrame="3>2" isActiveDirty="true" playSound="false"/>
+        <movingPart index="0>1|3" referencePoint="0>2|0|0|0" referenceFrame="0>2|0" scaleZ="false" isActiveDirty="true" playSound="false"/>
+        <movingPart index="0>1|3|0|0|0|0|0" referencePoint="0>2|0|0|0" referenceFrame="0>2|0|0|0" scaleZ="true" isActiveDirty="true" playSound="false"/>
+        <movingPart index="0>1|0|1|0" referencePoint="0>1|0|4" referenceFrame="0>1|0|1" playSound="false">
+            <translatingPart index="0>1|0|1|0|0"/>
+        </movingPart>
+        <movingPart index="0>1|0|3" referencePoint="0>1|0|2|1" referenceFrame="0>1|0|2" scaleZ="true" playSound="false"/>
+        <movingPart index="0>1|4" referencePoint="0>10" referenceFrame="0>1">
+            <translatingPart index="0>1|4|0"/>
+        </movingPart>
+        <movingPart index="0>2|2" referencePoint="0>2|0|3" referenceFrame="0>2|0" isActiveDirty="true">
+            <translatingPart index="0>2|2|0"/>
+        </movingPart>
+        <movingPart index="0>3|0|2" referencePoint="0>3|0|1|0" referenceFrame="0>3|0|1" scaleZ="true" playSound="false"/>
+        <movingPart index="0>3|0|3" referencePoint="0>3|0|1|1" referenceFrame="0>3|0|1">
+            <translatingPart index="0>3|0|3|0"/>
+        </movingPart>
+        <movingPart index="0>3|0|3" referencePoint="0>3|0|1|1" referenceFrame="0>3|0|1">
+            <translatingPart index="0>3|0|3|0"/>
+        </movingPart>
+        <movingPart index="1>0|1" referencePoint="1>2|2" referenceFrame="1>" scaleZ="false" isActiveDirty="true" playSound="false"/>
+        <movingPart index="1>1|1" referencePoint="1>3|1" referenceFrame="1>" scaleZ="false" isActiveDirty="true" playSound="false"/>
+    </movingParts>
+
+    <movingTools>
+        <movingTool index="1>1|1|0">
+            <dependentPart index="1>1|1|0|0"/>
+            <dependentPart index="1>1|1|0|1"/>
+            <dependentPart index="1>1|1|0|2"/>
+        </movingTool>
+        <movingTool index="1>0|1|0">
+            <dependentPart index="1>0|1|0|0"/>
+            <dependentPart index="1>0|1|0|1"/>
+            <dependentPart index="1>0|1|0|2"/>
+        </movingTool>
+        <movingTool index="0>1|0|2">
+            <dependentPart index="0>1|0|3"/>
+            <dependentPart index="0>1|0|2|0"/>
+        </movingTool>
+        <movingTool index="0>1|0|1">
+            <dependentPart index="0>1|0|1|0"/>
+        </movingTool>
+        <movingTool index="0>1|0|0">
+            <inputAttacherJoint value="true" />
+        </movingTool>
+        <movingTool index="0>1|7">
+            <componentJoint index="1" anchorActor="0"/>
+        </movingTool>
+        <movingTool index="0>3|0|1" playSound="true">
+            <dependentPart index="0>3|0|2"/>
+            <dependentPart index="0>3|0|3"/>
+        </movingTool>
+        <movingTool index="0>1" playSound="true">
+            <controls axis="AXIS_FRONTLOADER_ARM" icon="$dataS2/menu/moveControls/drawbar.png" invertAxis="false" invertMouseAxis="false" speedFactor="0.3"/>
+            <rotation rotSpeed="5" rotAcceleration="200" rotMax="13" rotMin="-7" startRot="-7" rotationAxis="1"/>
+            <inputAttacherJoint value="true" />
+            <componentJoint index="1" anchorActor="0"/>
+            <dependentPart index="0>1|4"/>
+            <dependentPart index="0>1|3"/>
+        </movingTool>
+        <movingTool index="0>2|1">
+            <componentJoint index="2" anchorActor=""/>
+        </movingTool>
+    </movingTools>
+
+    <cylinderedHydraulicSound file="$data/sounds/cultivatorHydraulic.wav" pitchOffset="1.0" volume="1.0"/>
+
+    <animations>
+        <animation name="pickup">
+            <part node="0>2|1" startTime="0" endTime="1" startRot="-26.8 0 0" endRot="-11.4 0 0"/>
+            <part componentJointIndex="2" startTime="0" endTime="1" startRotLimit="0 0 0" endRotLimit="15.4 0 0"/>
+        </animation>
+        <animation name="moveSupport">
+            <part node="0>1|1" startTime="0" endTime="0.5" startRot="21.1 -1.9 92.7" endRot="20.5 -5 101"/>
+            <part node="0>1|1" startTime="0.5" endTime="1" startRot="20.5 -5 101" endRot="7.6 0 105"/>
+            <part node="0>1|1" startTime="1" endTime="3" startRot="7.6 0 105" endRot="0 -20.255 0"/>
+            <part node="0>1|1" startTime="3" endTime="5" startRot="0 -20.255 0" endRot="0 -20.255 0"/>
+            <part node="0>1|1|0" startTime="0" endTime="3" startTrans="0.05931 -0.35 0" endTrans="0.05931 -0.35 0"/>
+            <part node="0>1|1|0" startTime="3" endTime="5" startTrans="0.05931 -0.35 0" endTrans="0.05931 -0.4856 0"/>
+            <part node="0>1|1|1" startTime="0" endTime="3" startRot="0 -900 0" endRot="0 -900 0"/>
+            <part node="0>1|1|1" startTime="3" endTime="5" startRot="0 -900 0" endRot="0 0 0"/>
+            <part node="0>1|0|1" startTime="0" endTime="3" startRot="0 0 0" endRot="30 0 0"/>
+            <part node="0>1|0|1" startTime="3" endTime="5" startRot="30 0 0" endRot="30 0 0"/>
+            <part node="0>1|0|2" startTime="0" endTime="3" startRot="0 0 0" endRot="30 0 0"/>
+            <part node="0>1|0|2" startTime="3" endTime="5" startRot="30 0 0" endRot="30 0 0"/>
+            <part node="1>1|1|3" startTime="0" endTime="3" startScale="1 1 1" endScale="1 1 0.8"/>
+            <part node="1>1|1|0" startTime="0" endTime="3" startRot="0 -90 0" endRot="0 -120 0"/>
+            <part node="1>0|1|0" startTime="0" endTime="3" startRot="0 -90 0" endRot="0 -120 0"/>
+            <part node="0>8|0" startTime="0" endTime="0.05" visibility="true"/>
+            <part node="0>8|0" startTime="0.05" endTime="0.1" visibility="false"/>
+            <part node="0>8|1" startTime="0" endTime="0.05" visibility="true"/>
+            <part node="0>8|1" startTime="0.05" endTime="0.1" visibility="false"/>
+            <part node="1>0|2" startTime="0" endTime="0.05" visibility="false"/>
+            <part node="1>0|2" startTime="0.05" endTime="0.1" visibility="true"/>
+            <part node="1>2|1" startTime="0" endTime="0.05" visibility="false"/>
+            <part node="1>2|1" startTime="0.05" endTime="0.1" visibility="true"/>
+            <part node="0>1|7" direction="-1" startTime="4" endTime="5" startTrans="0.331 -0.3 0.388" endTrans="0.331 -0.734 0.388"/>
+            <part node="0>1|7" direction="1" startTime="0" endTime="1" startTrans="0.331 -0.3 0.388" endTrans="0.331 -0.734 0.388"/>
+        </animation>
+        <animation name="tipAnimationBack">
+            <part node="0>3|0|1" startTime="0" endTime="4" startRot="0 0 0" endRot="45 0 0"/>
+        </animation>
+    </animations>
+
+    <support animationName="moveSupport" speed="1"/>
+
+    <tipReferencePoints>
+        <tipReferencePoint index="0>9" width="2.5"/>
+    </tipReferencePoints>
+
+    <tipAnimations>
+        <tipAnimation speedScale="1" animationName="tipAnimationBack" dischargeStartTime="2.0" dischargeEndTime="40" realMaxDischargeSpeed="40">
+            <fillVolume>
+                <unloadInfo index="1"/>
+                <height index="1"/>
+            </fillVolume>
+        </tipAnimation>
+    </tipAnimations>
+
+    <tipRotationNodes>
+        <tipRotationNode index="0>3|0|4|0"  rotSpeed="1080" type="trailer" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="3"/>
+        <tipRotationNode index="0>3|0|4|1"  rotSpeed="1080" type="trailer" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="3"/>
+        <tipRotationNode index="0>5|0"      rotSpeed="-250" type="trailer" rotAxis="1" turnOnFadeTime="1" turnOffFadeTime="1"/>
+        <tipRotationNode index="0>5|1"      rotSpeed="-250" type="trailer" rotAxis="1" turnOnFadeTime="1" turnOffFadeTime="1"/>
+    </tipRotationNodes>
+
+    <tipScrollerNodes>
+        <tipScrollerNode index="0>5|3" shaderParameterName="scrollPosition" scrollSpeed="0.0275" scrollLength="5.36" shaderParameterComponent="1" turnOnFadeTime="1" turnOffFadeTime="1"/>
+        <tipScrollerNode index="0>5|2" shaderParameterName="offsetUV" scrollSpeed="0.3" shaderParameterComponent="1" turnOnFadeTime="1" turnOffFadeTime="1"/>
+    </tipScrollerNodes>
+
+    <forageWagon turnedOnTipScrollerSpeedFactor="0.1">
+        <fillEffect>
+            <effectNode effectClass="MorphPositionEffect" effectNode="0>24|0" materialType="pickup" materialTypeId="1" delay="0" fadeTime="0.5" speed="0.9" scrollLength="1.5" scrollSpeed="2"/>
+        </fillEffect>
+        <fillParticleSystems>
+            <emitterShape node="0>2|0|8|0" particleType="PICKUP"         emitCountScale="6" worldSpace="false" />
+            <emitterShape node="0>2|0|8|1" particleType="SMOKE"          emitCountScale="1"/>
+        </fillParticleSystems>
+    </forageWagon>
+
+    <fillVolumes>
+        <volumes>
+            <volume index="0>12|0" scrollSpeedDischarge="0 0 0.15" scrollSpeedLoad="0 0 0.025" maxAllowedHeapAngle="90" />
+        </volumes>
+
+        <unloadInfos>
+            <unloadInfo>
+                <node index="0>19" width="1.4" length="1.0" />
+            </unloadInfo>
+        </unloadInfos>
+
+        <loadInfos fillVolumeIndex="1" >
+            <loadInfo>
+                <node index="0>20" width="1.9" length="1.0" />
+            </loadInfo>
+        </loadInfos>
+
+        <heights>
+            <height fillVolumeIndex="1" >
+                <refNode index="0>21|0"/>
+                <refNode index="0>21|1"/>
+                <node index="0>13|7" baseScale="1 0 1" transAxis="0 0 0" scaleAxis="0 1 0"/>
+            </height>
+        </heights>
+    </fillVolumes>
+
+    <dynamicLoadInfo index="0>20" startZ="2.35" endZ="-2.557" step="0.5" height="1.5"/>
+
+    <fillUnits>
+        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="forageWagon" capacity="25195" mrFillVolumeCapacity="24660"/>
+    </fillUnits>
+
+    <exactFillRootNode index="0>17"/>
+    <fillAutoAimTargetNode index="0>18"/>
+    <fillRootNode index="0>"/>
+    <fillMassNode index="0>" mrCOMtransWithMass="0 0.12 -0.062"/>
+
+    <scraperFloorSound linkNode="0>3|1" file="sounds/scraperFloor.wav" pitchOffset="1.0" volume="1" volumeLoading="1" volumeUnloading="2" innerRadius="3" radius="20"/>
+
+    <turnedOnRotationNodes>
+        <turnedOnRotationNode index="0>2|0|2" rotSpeed="-500" type="forageWagon" rotAxis="1" turnOnFadeTime="1" turnOffFadeTime="1"/>
+        <turnedOnRotationNode index="0>5|0" rotSpeed="-10" type="forageWagon" rotAxis="1" turnOnFadeTime="1" turnOffFadeTime="1"/>
+        <turnedOnRotationNode index="0>5|1" rotSpeed="-10" type="forageWagon" rotAxis="1" turnOnFadeTime="1" turnOffFadeTime="1"/>
+    </turnedOnRotationNodes>
+
+    <pickupAnimation name="pickup" lowerSpeed="2" liftSpeed="-2"/>
+
+    <schemaOverlay file="$dataS2/menu/schemas/implementSchema.png" fileSelected="$dataS2/menu/schemas/implementSchemaSelected.png" fileTurnedOn="$dataS2/menu/schemas/implementSchemaTurnedOn.png" fileSelectedTurnedOn="$dataS2/menu/schemas/implementSchemaSelectedTurnedOn.png" width="0.5" height="0.5" attacherJointPosition="0 0"/>
+
+    <components count="4">
+        <component1 mrSetMass="0.8" centerOfMass="0 0.85 0.8" solverIterationCount="10"/>
+        <component2 mrSetMass="2" centerOfMass="0 -0.1 0" solverIterationCount="10"/>
+        <component3 mrSetMass="0.01" solverIterationCount="10"/>
+        <component4 mrSetMass="0.3" solverIterationCount="10"/>
+        <joint component1="0" component2="1" index="0>0" rotLimit="3 0 0" transLimit="0 0 0"/>
+        <joint component1="0" component2="2" index="0>1|7" rotLimit="0 0 0" transLimit="0 0 0"/>
+        <joint component1="0" component2="3" index="0>2|1" rotLimit="0 0 0" transLimit="0 0 0"/>
+    </components>
+
+    <pickup maxload="400">
+        <pressurePad index="0>2|0|0" minRot="-46.4" maxRot="-62.69"/>
+        <dirt wheat="0>2|0|7|1" grass="0>2|0|7|0" cleanNode="0>2|0|7|0"/>
+        <blockSound file="sounds/pickupBlock.wav" volume="3"/>
+        <lowerSound file="sounds/pickupLower.wav" volume="3"/>
+        <grassCleaningParticle node="0>2|0|7" position="0 0 0" rotation="0 0 0" file="particleSystems/cleaningPS_grass_windrow.i3d"/>
+        <wheatCleaningParticle node="0>2|0|7" position="0 0 0" rotation="0 0 0" file="particleSystems/cleaningPS_wheat_windrow.i3d"/>
+    </pickup>
+
+    <silageAdditives capacity="50" litersPerSecond="0.05" increase="9.5" usedForFillType="grass_windrow">
+        <particleSystem node="0>13|6" position="0 0 0" rotation="0 0 0" file="particleSystems/silageAdditives.i3d"/>
+    </silageAdditives>
+
+    <changeableBlades blades="35" demolitionFactor="0.00007" strength="1" updateInterval="1000"/>
+
+    <topRopes index="0>14|0" skinned="0>14|1" fillPlaneYOffset="1.081">
+        <joint index="0>14|2"/>
+        <joint index="0>14|3"/>
+        <joint index="0>14|4"/>
+        <joint index="0>14|5"/>
+        <joint index="0>14|6"/>
+        <joint index="0>14|7"/>
+        <joint index="0>14|8"/>
+        <joint index="0>14|9"/>
+        <joint index="0>14|10"/>
+        <joint index="0>14|11"/>
+        <joint index="0>14|12"/>
+        <joint index="0>14|13"/>
+        <joint index="0>14|14"/>
+        <joint index="0>14|15"/>
+        <joint index="0>14|16"/>
+        <joint index="0>14|17"/>
+        <joint index="0>14|18"/>
+        <joint index="0>14|19"/>
+        <joint index="0>14|20"/>
+        <joint index="0>14|21"/>
+        <joint index="0>14|22"/>
+        <joint index="0>14|23"/>
+        <joint index="0>14|24"/>
+        <joint index="0>14|25"/>
+        <joint index="0>14|26"/>
+        <joint index="0>14|27"/>
+        <joint index="0>14|28"/>
+        <joint index="0>14|29"/>
+        <joint index="0>14|30"/>
+        <joint index="0>14|31"/>
+        <joint index="0>14|32"/>
+        <joint index="0>14|33"/>
+        <joint index="0>14|34"/>
+        <joint index="0>14|35"/>
+        <joint index="0>14|36"/>
+        <joint index="0>14|37"/>
+        <joint index="0>14|38"/>
+        <joint index="0>14|39"/>
+        <joint index="0>14|40"/>
+        <joint index="0>14|41"/>
+        <joint index="0>14|42"/>
+        <joint index="0>14|43"/>
+        <joint index="0>14|44"/>
+        <joint index="0>14|45"/>
+        <joint index="0>14|46"/>
+        <joint index="0>14|47"/>
+        <joint index="0>14|48"/>
+        <joint index="0>14|49"/>
+        <joint index="0>14|50"/>
+        <joint index="0>14|51"/>
+        <joint index="0>14|52"/>
+        <joint index="0>14|53"/>
+    </topRopes>
+
+    <scrapFloorActivation index="0>5|5" min="0" max="40">
+        <joint index="0>5|5|0"/>
+        <joint index="0>5|5|1"/>
+        <joint index="0>5|5|2"/>
+    </scrapFloorActivation>
+
+    <overrunbreak speed="0.001" index="0>1|0|0">
+        <part index="1>1|1|3" startScale="1 1 1" endScale="1 1 0.8"/>
+        <part index="1>1|1|0" startRot="0 -90 0" endRot="0 -120 0"/>
+        <part index="1>0|1|0" startRot="0 -90 0" endRot="0 -120 0"/>
+        <part index="0>1|0|2" startRot="0 0 0" endRot="30 0 0"/>
+        <part index="0>1|0|0" startTrans="0 0.04996 1.1368" endTrans="0 0.04996 1.05"/>
+    </overrunbreak>
+
+    <turnedOnAnimations>
+        <animation rootNode="0>6|0" clip="wingsClipSource" speed="2" unloadingSpeed="0">
+            <sound index="0>6|4" path="sounds/work.wav" volume="3" innerRadius="3" radius="25"/>
+        </animation>
+    </turnedOnAnimations>
+
+    <pickupChainAnimation index1="0>1|3" index2="0>2|0|0|0" maxDistance="0.65">
+        <part index="0>1|3|0">
+            <key time="0" rotX="-42.188"/>
+            <key time="0.2" rotX="-55.853"/>
+            <key time="0.4" rotX="-46.748"/>
+            <key time="0.6" rotX="-40.066"/>
+            <key time="0.8" rotX="-21.64"/>
+            <key time="1" rotX="0"/>
+        </part>
+        <part index="0>1|3|0|0">
+            <key time="0" rotX="18.545"/>
+            <key time="0.2" rotX="9.498"/>
+            <key time="0.4" rotX="5.908"/>
+            <key time="0.6" rotX="5.908"/>
+            <key time="0.8" rotX="5.037"/>
+            <key time="1" rotX="0"/>
+        </part>
+        <part index="0>1|3|0|0|0">
+            <key time="0" rotX="26.242"/>
+            <key time="0.2" rotX="21.77"/>
+            <key time="0.4" rotX="12.358"/>
+            <key time="0.6" rotX="12.358"/>
+            <key time="0.8" rotX="12.358"/>
+            <key time="1" rotX="0"/>
+        </part>
+        <part index="0>1|3|0|0|0|0">
+            <key time="0" rotX="119.982"/>
+            <key time="0.2" rotX="91.816"/>
+            <key time="0.4" rotX="64.32"/>
+            <key time="0.6" rotX="42.09"/>
+            <key time="0.8" rotX="14.282"/>
+            <key time="1" rotX="0"/>
+        </part>
+    </pickupChainAnimation>
+
+    <multiDischargeParticleSystems reference="0>13|7" cut="0.755">
+        <multiDischargeParticleSystem worldSpace="false" type="straw" level="1" index="0>13|5" file="particleSystems/discharge_level1_wheat_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="straw" level="2" index="0>13|5" file="particleSystems/discharge_level2_wheat_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="straw" level="2" index="0>3|0|4|0|0" file="particleSystems/dosing_wheat_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="straw" level="1" index="0>3|0|4|1|0" file="particleSystems/dosing_wheat_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="grass_windrow" level="1" index="0>13|5" file="particleSystems/discharge_level1_grass_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="grass_windrow" level="2" index="0>13|5" file="particleSystems/discharge_level2_grass_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="grass_windrow" level="2" index="0>3|0|4|0|0" file="particleSystems/dosing_grass_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="grass_windrow" level="1" index="0>3|0|4|1|0" file="particleSystems/dosing_grass_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="dryGrass_windrow" level="1" index="0>13|5" file="particleSystems/discharge_level1_grass_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="dryGrass_windrow" level="2" index="0>13|5" file="particleSystems/discharge_level2_grass_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="dryGrass_windrow" level="2" index="0>3|0|4|0|0" file="particleSystems/dosing_grass_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="dryGrass_windrow" level="1" index="0>3|0|4|1|0" file="particleSystems/dosing_grass_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="chaff" level="1" index="0>13|5" file="particleSystems/discharge_level1_chaff_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="chaff" level="2" index="0>13|5" file="particleSystems/discharge_level2_chaff_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="chaff" level="2" index="0>3|0|4|0|0" file="particleSystems/dosing_chaff_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="chaff" level="1" index="0>3|0|4|1|0" file="particleSystems/dosing_chaff_windrow.i3d"/>
+		<multiDischargeParticleSystem worldSpace="false" type="silage" level="1" index="0>13|5" file="particleSystems/discharge_level1_chaff_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="silage" level="2" index="0>13|5" file="particleSystems/discharge_level2_chaff_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="silage" level="2" index="0>3|0|4|0|0" file="particleSystems/dosing_chaff_windrow.i3d"/>
+        <multiDischargeParticleSystem worldSpace="false" type="silage" level="1" index="0>3|0|4|1|0" file="particleSystems/dosing_chaff_windrow.i3d"/>
+    </multiDischargeParticleSystems>
+
+    <hydraulicPipes>
+        <pipe index="0>3|0|5|0"/>
+        <pipe index="0>11|0" isAttached="true"/>
+        <pipe index="0>11|1" isDetached="true"/>
+        <pipe index="0>11|2"/>
+        <pipe index="0>11|3"/>
+    </hydraulicPipes>
+
+    <controlPanel detachPosition="0>15" index="0>15|0"/>
+</vehicle>

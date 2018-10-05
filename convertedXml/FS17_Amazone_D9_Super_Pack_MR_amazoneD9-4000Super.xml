@@ -1,0 +1,339 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="sowingMachine">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+	
+	<!--
+	mass, CoM - mass (including wheels) 1010 kg per Amazone specs.
+	wheels	
+	brakeforce
+	inputattacherjoint - upperDistanceToGround and rotLimitSpring	
+	powerConsumer maxForce
+	groundReferenceNode chargeValue = 0 for ridge markers
+	-->
+	
+	<moreRealistic>		
+		<dragArea value="4" />
+	</moreRealistic>
+
+    <storeData>
+        <name>D9 4000 Super</name>
+        <specs>
+            <neededPower>95</neededPower>
+            <workingWidth>4.0</workingWidth>
+        </specs>
+        <functions>
+            <function>$l10n_function_sowingMachine</function>
+        </functions>
+        <image>storeD9_4000.png</image>
+        <price>11000</price>
+        <dailyUpkeep>25</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>AMAZONE</brand>
+        <category>sowingMachines</category>
+        <fieldJob sizeCategory="1" typeCategory="sowingMachine" />
+        <vertexBufferMemoryUsage>1547436</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>234516</indexBufferMemoryUsage>
+        <textureMemoryUsage>10660680</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <typeDesc>$l10n_typeDesc_sowingMachine</typeDesc>
+    <filename>amazoneD9-4000Super.i3d</filename>
+
+    <size width="4.5" length="3"/>
+	<powerConsumer forceNode="0>" maxForce="9" />
+    <speedLimit value="15" />
+	
+	<lights>
+        <low>
+            <light decoration="0>11|0|0" lightTypes="0 3" />
+        </low>
+        <high>
+            <light realLight="0>11|0|1" decoration="0>11|0|0" lightTypes="0 3" />
+        </high>
+    </lights>
+
+    <brakeLights>
+        <brakeLight realLight="0>11|0|2" decoration="0>11|1|0" />
+    </brakeLights>
+
+    <turnLights>
+        <turnLightLeft  realLight="0>11|2|0|1" decoration="0>11|2|0|0" />
+        <turnLightRight realLight="0>11|2|1|1" decoration="0>11|2|1|0" />
+    </turnLights>
+
+    <wheelConfigurations>
+        <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
+            <wheels>
+			    <wheel restLoad="0.1" repr="0>0|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="true" initialCompression="12" suspTravel="0.05" spring="19" damper="2.5" hasTireTracks="true" tireTrackAtlasIndex="1" hasParticles="true" />
+			    <wheel restLoad="0.1" repr="0>0|1|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="false" initialCompression="12" suspTravel="0.05" spring="19" damper="2.5" hasTireTracks="true" tireTrackAtlasIndex="1" hasParticles="true" />
+                <wheel restLoad="0.1" repr="0>0|2" forcePointRatio="0.2" mass="0.07" radius="0.09" initialCompression="10" suspTravel="0.05" spring="8" damper="1" maxLongStiffness="0.01" maxLatStiffness="0.01" isSynchronized="false" />
+            </wheels>
+        </wheelConfiguration>
+    </wheelConfigurations>
+	
+	<axisColor>0.0000 0.1573 0.0265 1</axisColor>
+	
+	<designConfigurations>
+		<designConfiguration name="$l10n_nomarkers" price="0" icon="$dataS2/menu/hud/configurations/config_edition.png">
+			<objectChange node="0>3|1" scaleActive="0 0 0" scaleInactive="1 1 1"/>
+			<objectChange node="0>3|2" scaleActive="0 0 0" scaleInactive="1 1 1"/>
+            <objectChange node="0>3|3" scaleActive="0 0 0" scaleInactive="1 1 1"/>
+			<objectChange node="0>3|4" scaleActive="0 0 0" scaleInactive="1 1 1"/>
+			<objectChange node="0>3|5" scaleActive="0 0 0" scaleInactive="1 1 1"/>
+			<objectChange node="0>3|6" scaleActive="0 0 0" scaleInactive="1 1 1"/>
+        </designConfiguration>
+		<designConfiguration name="$l10n_markers" price="400" icon="$dataS2/menu/hud/configurations/config_edition.png">
+			<objectChange node="0>3|1" scaleActive="1 1 1" scaleInactive="0 0 0"/>
+			<objectChange node="0>3|2" scaleActive="1 1 1" scaleInactive="0 0 0"/>
+            <objectChange node="0>3|3" scaleActive="1 1 1" scaleInactive="0 0 0"/>
+			<objectChange node="0>3|4" scaleActive="1 1 1" scaleInactive="0 0 0"/>
+			<objectChange node="0>3|5" scaleActive="1 1 1" scaleInactive="0 0 0"/>
+			<objectChange node="0>3|6" scaleActive="1 1 1" scaleInactive="0 0 0"/>
+        </designConfiguration>
+    </designConfigurations>
+	
+	<vehicleTypeConfigurations>
+        <vehicleTypeConfiguration name="$l10n_configuration_valueDefault" price="0" vehicleType="sowingMachine">
+        </vehicleTypeConfiguration>
+        <vehicleTypeConfiguration name="$l10n_barrier" price="600" vehicleType="sowingMachine">
+            <objectChange node="0>8|8" visibilityActive="true" visibilityInactive="false"/>
+        </vehicleTypeConfiguration>
+    </vehicleTypeConfigurations>
+	
+	<brakeForce>0</brakeForce>
+	
+	<inputAttacherJoints>
+        <inputAttacherJoint index="0>2|0" jointType="implement" lowerDistanceToGround="0" upperDistanceToGround="1" topReferenceNode="0>2|1" upperRotationOffset="8" lowerRotationOffset="8" lowerRotLimitScale="0.2 0 0.4" rotLimitSpring="200 0 300" />
+    </inputAttacherJoints>
+
+    <workAreas>
+	    <workArea startIndex="0>1|0" widthIndex="0>1|1" heightIndex="0>1|2" refNodeIndex="0" type="sowingMachine" />
+	    <workArea startIndex="0>3|4|0|2" widthIndex="0>3|4|0|3" heightIndex="0>3|4|0|4" startIndexTest="0>3|4|0|5" widthIndexTest="0>3|4|0|6" heightIndexTest="0>3|4|0|7" animName="left" type="ridgemarker" needsSetIsTurnedOn="false" />
+        <workArea startIndex="0>3|1|0|2" widthIndex="0>3|1|0|3" heightIndex="0>3|1|0|4" startIndexTest="0>3|1|0|5" widthIndexTest="0>3|1|0|6" heightIndexTest="0>3|1|0|7" animName="right" type="ridgemarker" needsSetIsTurnedOn="false" />
+    </workAreas>
+
+	<groundReferenceNodes>
+        <groundReferenceNode index="0>"       threshold="0.1"  depthNode="0>1|3"/>     
+	    <groundReferenceNode index="0>3|4|0|9" threshold="0" depthNode="0>3|4|0|10" chargeValue="0"/>
+	    <groundReferenceNode index="0>3|1|0|9" threshold="0" depthNode="0>3|1|0|10" chargeValue="0"/>
+    </groundReferenceNodes>
+	
+	<groundParticleAnimations>
+        <groundParticleAnimation>
+            <node index="0>6|0|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|1|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|2|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|3|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|4|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|5|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|6|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|7|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|8|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|9|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|10|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|11|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|12|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|13|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|14|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|15|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|16|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|17|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|18|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|19|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|20|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|21|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|22|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|23|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|24|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|25|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|26|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|27|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|28|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|29|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|30|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|31|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+			<node index="0>6|32|0|0" refNodeIndex="0" maxDepth="-0.05" materialType="SOIL" />
+        </groundParticleAnimation>
+
+        <groundParticle>
+            <node index="0>7|0|1" refNodeIndex="0" particleType="SOIL"  />
+            <node index="0>7|0|2|0" refNodeIndex="0" particleType="SOIL_SMOKE"  />
+            <node index="0>7|0|0" refNodeIndex="0" particleType="SOIL_CHUNKS" worldSpace="false"/>
+        </groundParticle>
+    </groundParticleAnimations>
+
+	<fillUnits>
+        <fillUnit unit="$l10n_unit_literShort" fillTypes="seeds" capacity="830" />
+    </fillUnits>
+
+    <needsActivation value="true" />
+    <fillLitersPerSecond>50</fillLitersPerSecond>
+    <seedFruitTypeCategories>sowingMachine</seedFruitTypeCategories>
+
+    <fillVolumes>
+        <volumes>
+            <volume index="0>10|3" maxDelta="0.2" />
+        </volumes>
+        <unloadInfos>
+            <unloadInfo>
+                <node index="0>10|1" width="1.4" length="0.1" />
+            </unloadInfo>
+        </unloadInfos>
+        <loadInfos>
+            <loadInfo>
+                <node index="0>10|2" width="1.4" length="0.1" />
+            </loadInfo>
+        </loadInfos>
+    </fillVolumes>
+
+    <fillRootNode index="0>" />
+    <exactFillRootNode index="0>10|0" />
+    <fillMassNode index="0>" />
+
+    <sowingSound file="$data/sounds/sowingSound.wav"      pitchOffset="1.0" volume="1.0" indoorVolumeFactor="0.55" />
+    <fillSound file="$data/maps/sounds/siloFillSound.wav" pitchOffset="1.0" volume="1.0" indoorVolumeFactor="0.55" volume3D="1.0" innerRadius="10" radius="40" linkNode="0>0"/>
+    <cylinderedHydraulicSound file="$data/sounds/cultivatorHydraulic.wav" pitchOffset="1.00" volume="1.00" indoorVolumeFactor="0.75" />
+
+	<speedRotatingParts>
+        <speedRotatingPart index="0>5|0|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|0|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|1|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|1|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|2|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|2|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|3|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|3|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|4|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|4|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|5|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|5|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|6|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|6|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|7|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|7|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|8|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|8|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|9|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|9|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|10|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|10|1|0" radius="0.20" refNodeIndex="0"/>
+	    <speedRotatingPart index="0>5|11|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|11|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|12|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|12|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|13|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|13|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|14|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|14|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|15|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|15|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|16|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|16|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|17|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|17|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|18|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|18|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|19|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|19|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|20|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|20|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|21|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|21|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|22|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|22|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|23|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|23|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|24|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|24|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|25|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|25|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|26|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|26|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|27|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|27|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|28|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|28|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|29|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|29|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|30|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|30|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|31|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|31|1|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|32|0|0" radius="0.20" refNodeIndex="0"/>
+		<speedRotatingPart index="0>5|32|1|0" radius="0.20" refNodeIndex="0"/>
+    </speedRotatingParts>
+
+	<ridgeMarkers>
+        <ridgeMarker animName="left" />
+        <ridgeMarker animName="right" />
+    </ridgeMarkers>
+	
+	<movingTools>
+		<!-- right arm -->
+        <movingTool index="0>3|1|0">
+            <!-- hydraulic -->
+            <dependentPart index="0>3|2" />
+			<dependentPart index="0>3|3" />
+        </movingTool>
+
+		<!-- left arm -->
+        <movingTool index="0>3|4|0">
+            <!-- hydraulic -->
+            <dependentPart index="0>3|5" />
+			<dependentPart index="0>3|6" />
+        </movingTool>
+    </movingTools>
+
+    <movingParts>
+		<!-- right hydraulic -->
+        <movingPart index="0>3|2" referencePoint="0>3|1|0|1" referenceFrame="0>" invertZ="false">
+            <translatingPart index="0>3|2|0" />
+        </movingPart>
+		<movingPart index="0>3|3" referencePoint="0>3|1|0|0" referenceFrame="0>" scaleZ="true"/>
+
+		<!-- left hydraulic -->
+        <movingPart index="0>3|5" referencePoint="0>3|4|0|1" referenceFrame="0>" invertZ="false">
+            <translatingPart index="0>3|5|0" />
+        </movingPart>
+		<movingPart index="0>3|6" referencePoint="0>3|4|0|0" referenceFrame="0>" scaleZ="true"/>
+    </movingParts>
+
+    <animations>
+        <!-- move right arm-->
+        <animation name="right">
+            <part node="0>3|1|0" startTime="0" duration="1.5" startRot="0 0 0" endRot="0 0 110" />
+        </animation>
+		<!-- move left arm-->
+        <animation name="left">
+            <part node="0>3|4|0" startTime="0" duration="1.5" startRot="0 0 0" endRot="0 0 -110" />
+        </animation>
+		<animation name="toggleCover">
+		    <part node="0>3|7" startTime="0" endTime="1.0" startRot="102 0 0" endRot="0 0 0" />
+			<part node="0>3|0" startTime="1.1" endTime="2.0" startRot="0 0 -125" endRot="0 0 0" />
+        </animation>
+		<animation name="lowerAnimation">
+            <part node="0>5" startTime="0.0" endTime="0.5" startTrans="0 0 0" endTrans="0 0 0" />
+            <part node="0>5" startTime="0.5" endTime="2.0" startTrans="0 0 0"  endTrans="0 -0.06 0" />
+        </animation>
+    </animations>
+	
+	<lowerAnimation name="lowerAnimation" />
+	
+	<cover animationName="toggleCover" openOnBuy="false"/>
+
+    <ai>
+        <areaMarkers leftIndex="0>4|0" rightIndex="0>4|1" backIndex="0>4|2" />
+    </ai>
+
+    <washable dirtDuration="90" washDuration="1" workMultiplier="20" />
+
+    <components count="1">
+        <component1 centerOfMass="0 0.5 0" solverIterationCount="10" mrSetMass="0.798" />
+    </components>
+
+    <schemaOverlay file="$dataS2/menu/schemas/implementSchema.png" fileSelected="$dataS2/menu/schemas/implementSchemaSelected.png" fileTurnedOn="$dataS2/menu/schemas/implementSchemaTurnedOn.png" fileSelectedTurnedOn="$dataS2/menu/schemas/implementSchemaSelectedTurnedOn.png" width="0.5" height="0.5" attacherJointPosition="0 0"/>
+
+</vehicle>

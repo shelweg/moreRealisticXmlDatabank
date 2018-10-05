@@ -1,0 +1,113 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="sprayer_animated">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+
+	<moreRealistic isMrVehicle="true" useMrTransmission="true">		
+		<dragArea value="0.5" />
+	</moreRealistic>
+	
+	<!-- MR upate to V1.1
+	mr tag and dragArea
+	powerConsumer
+	fillLitersPerSecond
+	
+	weight=290kg / mrSetMass=0.29
+	centerOfMass
+	
+	price
+	dailyUpkeep
+	
+	-->	
+
+
+    <storeData>
+        <name>ZA-U 1001</name>
+        <specs>
+            <workingWidth>18.0</workingWidth>
+        </specs>
+        <functions>
+            <function>$l10n_function_fertilizer</function>
+        </functions>
+        <rotation>0</rotation>
+        <image>store/store_amazoneZAU1001.dds</image>
+        <price>9500</price>
+        <dailyUpkeep>25</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <brand>AMAZONE</brand>
+        <category>fertilizerSpreaders</category>
+        <fieldJob sizeCategory="2" typeCategory="sprayer" />
+    </storeData>
+
+    <typeDesc>$l10n_typeDesc_fertilizerSpreader</typeDesc>
+    <filename>amazoneZAU1001.i3d</filename>
+
+    <size width="2.3" length="1.3" />
+
+    <powerConsumer ptoRpm="450" neededPtoPower="10"/>
+    <speedLimit value="20" />		
+
+    <workAreas>
+        <workArea startIndex="0>8|0" widthIndex="0>8|1" heightIndex="0>8|2" type="sprayer" disableBackwards="false" />
+    </workAreas>
+
+    <inputAttacherJoints>
+        <inputAttacherJoint index="0>1" jointType="implement" topReferenceNode="0>2" ptoInputNode="0>4" lowerRotLimitScale="0 0 0" lowerTransLimitScale="0 0 0" lowerDistanceToGround="0.6" upperDistanceToGround="0.9" upperRotationOffset="2" needsLowering="false"/>
+    </inputAttacherJoints>
+
+    <fillLitersPerSecond>80</fillLitersPerSecond>
+
+    <fillUnits>
+        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="spreader" capacity="1000" />
+    </fillUnits>
+
+    <fillVolumes>
+        <volumes>
+            <volume index="0>6" maxDelta="0.0" />
+        </volumes>
+    </fillVolumes>
+
+    <fillRootNode index="0>" />
+    <exactFillRootNode index="0>10" />
+    <fillMassNode index="0>" />
+
+    <sprayUsageScales workingWidth="18.0" scale="1" />
+
+    <turnedOnRotationNodes>
+        <turnedOnRotationNode index="0>11|0" type="sprayer" rotSpeed="900"  turnOnFadeTime="1" turnOffFadeTime="2" />
+        <turnedOnRotationNode index="0>11|1" type="sprayer" rotSpeed="-900" turnOnFadeTime="1" turnOffFadeTime="2" />
+    </turnedOnRotationNodes>
+	
+	<spraySound file="$data/sounds/spreader.wav"          pitchOffset="1.00" volume="1.00" indoorVolumeFactor="0.45" />
+    <fillSound file="$data/maps/sounds/siloFillSound.wav" pitchOffset="1.00" volume="1.00" indoorVolumeFactor="0.45" volume3D="1.0" innerRadius="10" radius="40" linkNode="0>"/>
+
+    <sprayerEffects>
+        <sprayerEffect>
+            <effectNode effectNode="0>9|0" delay="0" materialType="spreader" materialTypeId="1" />
+        </sprayerEffect>
+    </sprayerEffects>
+
+    <attacherJoints>
+        <attacherJoint index="0>3" jointType="trailer" lowerRotLimit="10 80 80" upperRotRotationOffset="0" allowsJointLimitMovement="false" >
+            <schema position="0.5 0" rotation="0" invertX="false" />
+        </attacherJoint>
+    </attacherJoints>
+
+    <attachSound file="$data/sounds/header_attach.wav" pitchOffset="1.50" volume="1.00" indoorVolumeFactor="0.35" indoorLowpassGain="0.75" />
+	
+	<animations>
+		<animation name="moveSupport">
+            <part node="0>5" startTime="0" duration="0.8" startTrans="0 0.4 0.2" endTrans="0 0.15 0.2" />
+        </animation>
+    </animations>  
+
+    <support animationName="moveSupport"/>
+
+    <washable dirtDuration="50" washDuration="1" workMultiplier="4" />
+
+    <components count="1">
+        <component1 centerOfMass="0 0.3 0" solverIterationCount="10" mrSetMass="0.29" />
+    </components>
+
+    <schemaOverlay file="$dataS2/menu/schemas/implementSchema.png" fileSelected="$dataS2/menu/schemas/implementSchemaSelected.png" width="0.5" height="0.5" attacherJointPosition="0 0" />
+
+</vehicle>

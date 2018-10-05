@@ -1,0 +1,489 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle type="KroneUltimaCF155XC">
+    
+    <!--
+        Min power req:  ~100kW
+        Weight:         9.7t - 11.4t
+        Pre-chamber:    1.1m3
+        
+        Bale capacity:
+        RollBelt: 1.3x1.12 @ 3000l
+        Ultima: 1.3x1.2 = +~7%, 1.4x1.2 = +~ 24%, 1.5x1.2 = +~42% @ 3000l, 3500l, 4000l (rounding to practical numbers)
+        
+        Wrapper speed:
+        +25% = -80% time (about 18s), to out-perform KUHN FBP
+		
+		shelweg
+		added mrNoLoadPtoPower="5"
+		<specs>
+            <neededPower>140</neededPower>  Krone states min requirement 143 hp
+        </specs
+		a little less drag area = 6.4
+		adjusted wrappingPtoPower = 10 the ingame ursus wrapper just needs 8 as comparision
+		maxLitersPerSecond = 210 otherwise you're crawling with 1 to 2 kp/h
+		
+    -->
+   
+	<moreRealistic>
+        <dragArea value="6.4" />
+		<baler baleMassDependantPtoPower="35" pickingDependantPtoPower="100" maxLitersPerSecond="350" /> <!-- 750mm intake rotor: 160 l/sec  shelweg: don't know why but if set to 160 were -->
+        <baleWrapper ptoRpm="540" wrappingPtoPower="10" />
+    </moreRealistic>
+    
+    <typeDesc>$l10n_typeDesc_baler</typeDesc>
+    <filename>kroneUltimaCF155XC/KroneUltimaCF155XC.i3d</filename>
+    <size width="4" length="9"/>
+	
+    <wheels autoRotateBackSpeed="2.0">
+        <wheel repr="0>1"                       radius="0.57" restLoad="1.5" initialCompression="60" suspTravel="0.15" spring="50" damper="20" frictionScale="2" mass="0.175" width="0.50" hasParticles="true" />
+        <wheel repr="0>2"                       radius="0.57" restLoad="1.5" initialCompression="60" suspTravel="0.15" spring="50" damper="20" frictionScale="2" mass="0.175" width="0.50" hasParticles="true" />
+        <wheel repr="0>3|0" driveNode="0>3|0|0" radius="0.57" restLoad="1.5" initialCompression="60" suspTravel="0.15" spring="50" damper="20" hasTireTracks="true" tireTrackAtlasIndex="2" frictionScale="2" mass="0.175" width="0.50" hasParticles="true" steeringAxleScale="-0.7" steeringAxleRotMax="20" steeringAxleRotMin="-20" />
+        <wheel repr="0>3|1" driveNode="0>3|1|0" radius="0.57" restLoad="1.5" initialCompression="60" suspTravel="0.15" spring="50" damper="20" hasTireTracks="true" tireTrackAtlasIndex="2" frictionScale="2" mass="0.175" width="0.50" hasParticles="true" steeringAxleScale="-0.7" steeringAxleRotMax="20" steeringAxleRotMin="-20" />
+    </wheels>
+	
+    <dynamicallyLoadedParts>
+        <dynamicallyLoadedPart node="0|0" linkNode="0>1" filename="kroneUltimaCF155XC/dynamic/FlotationPro.i3d"/>
+        <dynamicallyLoadedPart node="0|1" linkNode="0>2" filename="kroneUltimaCF155XC/dynamic/FlotationPro.i3d"/>
+        <dynamicallyLoadedPart node="0|0" linkNode="0>3|0|0" filename="kroneUltimaCF155XC/dynamic/FlotationPro.i3d"/>
+        <dynamicallyLoadedPart node="0|1" linkNode="0>3|1|0" filename="kroneUltimaCF155XC/dynamic/FlotationPro.i3d"/>
+    </dynamicallyLoadedParts>
+	
+    <steeringAxleAngleScale startSpeed="80" endSpeed="100"/>
+	
+    <fillUnits> 
+        <fillUnit showOnHud="false" fillTypeCategories="windrow" capacity="1100"/> <!-- pre press chamber -->
+        <fillUnit showOnHud="true" fillTypeCategories="windrow" capacity="4000"/> <!-- main chamber -->
+    </fillUnits>
+	
+    <fillScale value="1"/>
+    <brakeForce>1</brakeForce>
+    <speedLimit value="20"/>
+    <powerConsumer ptoRpm="540" neededPtoPower="10" mrNoLoadPtoPower="5"/> <!-- KW -->
+    <allowFillFromAir value="false"/>
+    <allowTipDischarge value="false"/>
+    <washable dirtDuration="50" washDuration="1" workMultiplier="3"/>
+	
+    <groundReferenceNodes>
+        <groundReferenceNode index="0>0|8|0|5" threshold="0.7"/>
+    </groundReferenceNodes>
+	
+    <inputAttacherJoints>
+        <inputAttacherJoint index="0>0|0|2" jointType="trailerLow" rootNode="0>" attacherHeight="0.62" movingPtoInputNode="0>0|2|0" movingPtoVibrationOffset="2" movingPtoParkPosition="0 -0.15 0.05" movingPtoParkRotation="50 0 0" />
+    </inputAttacherJoints>
+	
+	<dynamicHose>
+		<set toolIndices="0">
+			<hose type="hydraulic" attached="0>0|16|0" detached="0>0|0|7|0" lastHoseIKNode="0>0|0|6|0|0" /> 
+			<hose type="hydraulic" attached="0>0|16|1" detached="0>0|0|7|1" lastHoseIKNode="0>0|0|6|1|0" />
+			<hose type="hydraulic" attached="0>0|16|2" detached="0>0|0|7|2" lastHoseIKNode="0>0|0|6|2|0" />
+			<hose type="hydraulic" attached="0>0|16|3" detached="0>0|0|7|3" lastHoseIKNode="0>0|0|6|3|0" />
+			<hose type="air" attached="0>0|16|4" detached="0>0|0|7|4" lastHoseIKNode="0>0|0|6|4|0" />
+			<hose type="air"  attached="0>0|16|5" detached="0>0|0|7|5" lastHoseIKNode="0>0|0|6|5|0" />
+			<hose type="electric" attached="0>0|16|6" detached="0>0|0|7|6" lastHoseIKNode="0>0|0|6|6|0" />
+		</set>
+	</dynamicHose>
+	
+    <support animationName="moveSupport"/>
+    <pickupAnimation name="liftPickup" lowerSpeed="2" liftSpeed="-1"/>
+	
+    <lights>
+		<low>	
+			<!-- front -->
+            <light decoration="0>0|2|2|8" lightTypes="0 1"/> 
+			<!-- wrapper -->
+			<light decoration="0>0|2|2|4" lightTypes="1"/> 
+			<!-- back lights -->
+			<light decoration="0>0|2|2|6" lightTypes="0 1"/> 
+			<light decoration="0>0|2|2|13" lightTypes="0 1"/> 
+			<!-- back side lights -->
+			<light decoration="0>0|2|2|7" lightTypes="0 1"/> 
+			<light decoration="0>0|2|2|12" lightTypes="0 1"/> 
+        </low>
+		<high>
+			<!-- front -->
+            <light decoration="0>0|2|2|8" realLight="0>0|2|2|13" lightTypes="0 1"/> 
+            <light realLight="0>0|2|2|14" lightTypes="0 1"/> 
+			<!-- wrapper -->
+			<light decoration="0>0|2|2|4" realLight="0>0|2|2|6" lightTypes="1"/> 
+			<light realLight="0>0|2|2|7" lightTypes="0 1"/> 
+			<!-- back lights -->
+			<light decoration="0>0|2|2|6" realLight="0>0|2|2|10" lightTypes="0 1"/> 
+			<light decoration="0>0|2|2|13" realLight="0>0|2|2|9" lightTypes="0 1"/> 
+			<!-- back side lights -->
+			<light decoration="0>0|2|2|7" lightTypes="0 1"/> 
+			<light decoration="0>0|2|2|2|5" lightTypes="0 1"/> 
+			<light decoration="0>0|2|2|11" lightTypes="0 1"/> 
+			<!-- back lights -->
+			<light decoration="0>0|2|2|12" lightTypes="0 1"/> 
+        </high>
+        <states>0 1</states>
+    </lights>
+	
+	<brakeLights>
+        <brakeLight decoration="0>0|2|2|2|0" realLight="0>0|2|2|2|2"/>
+        <brakeLight decoration="0>0|2|2|2|1" realLight="0>0|2|2|2|3"/>
+        <brakeLight decoration="0>0|2|2|2|4"/>
+    </brakeLights>
+	
+    <reverseLights>
+        <reverseLight decoration="0>0|2|2|1|0"/>
+        <reverseLight decoration="0>0|2|2|1|1" realLight="0>0|2|2|1|3"/>
+        <reverseLight decoration="0>0|2|2|1|2" realLight="0>0|2|2|1|4"/>
+    </reverseLights>
+	
+    <turnLights>
+        <turnLightLeft decoration="0>0|2|2|3|0|0" realLight="0>0|2|2|3|0|2"/>
+        <turnLightLeft decoration="0>0|2|2|3|0|1"/>
+        <turnLightLeft decoration="0>0|2|2|3|0|3"/>
+        <turnLightRight decoration="0>0|2|2|3|1|0" realLight="0>0|2|2|3|1|2"/>
+        <turnLightRight decoration="0>0|2|2|3|1|1" />
+        <turnLightRight decoration="0>0|2|2|3|1|3" />
+    </turnLights>
+	
+	<refillNetRolesConfigurations>
+        <refillNetRolesConfiguration manualRefill="true" name="$l10n_config_manually" price="0"/>
+        <refillNetRolesConfiguration manualRefill="false" name="$l10n_config_auto" price="15000"/>
+    </refillNetRolesConfigurations>
+	
+	<refillFoilRolesConfigurations>
+        <refillFoilRolesConfiguration manualRefill="true" name="$l10n_config_manually" price="0"/>
+        <refillFoilRolesConfiguration manualRefill="false" name="$l10n_config_auto" price="15000"/>
+    </refillFoilRolesConfigurations>
+	
+    <Ultima>
+        <sounds>
+            <wrappingStart file="kroneUltimaCF155XC/sounds/bale_wrapping_start_new.wav" pitchOffset="1.25"/>
+            <wrappingStop file="kroneUltimaCF155XC/sounds/bale_wrapping_end_new.wav" pitchOffset="1.25"/>
+            <wrapping nodeIndex="0>0|14" file="kroneUltimaCF155XC/sounds/bale_wrapping_new.wav" pitchOffset="1.25" pitchScale="0" pitchMax="0" volume="1" radius="50" innerRadius="20"/>
+            <baleDoorOpen file="$data/sounds/rollBelt150Eject.wav" pitchOffset="1"/>
+            <baleDoorClose file="kroneUltimaCF155XC/sounds/Ballenklappe_01.wav" pitchOffset="1"/>
+            <novoGrip nodeIndex="0>0|15" file="kroneUltimaCF155XC/sounds/BandLauf.wav" pitchOffset="1" pitchScale="0" pitchMax="0" volume="0.85" radius="50" innerRadius="20"/>
+            <novoGripStart file="kroneUltimaCF155XC/sounds/BandAnlauf_01.wav" pitchOffset="1"/>
+            <novoGripStop file="kroneUltimaCF155XC/sounds/BandAuslauf_01.wav" pitchOffset="1"/>
+            <sideDoorOpen file="kroneUltimaCF155XC/sounds/KlappeAuf_01_01.wav" pitchOffset="1"/>
+            <sideDoorClose file="kroneUltimaCF155XC/sounds/KlappeZu_01_01.wav" pitchOffset="1"/>
+            <netBindingStart file="kroneUltimaCF155XC/sounds/NetzbindungStart01.wav" pitchOffset="1"/>
+            <netBindingStop file="kroneUltimaCF155XC/sounds/NetzbindungEnde01.wav" pitchOffset="1"/>
+            <pickupUp file="kroneUltimaCF155XC/sounds/PickUpHeben_01_01.wav" pitchOffset="1"/>
+            <pickupDown file="kroneUltimaCF155XC/sounds/PickUpSenken_01_01.wav" pitchOffset="1"/>
+            <wrapperTiltTable file="kroneUltimaCF155XC/sounds/Wickeltisch_nachVorne_01_01.wav" pitchOffset="1"/>
+            <wrapperDropBale file="kroneUltimaCF155XC/sounds/Wickeltisch_Ballenablage_01_01.wav" pitchOffset="1"/>
+            <balerAlarm file="$data/sounds/rollBelt150Alarm.wav" pitchOffset="1" volume="1"/>
+        </sounds>
+		<pickupEffect>
+			<effectNode effectClass="MorphPositionEffect" effectNode="0>0|8|4" materialType="pickup" materialTypeId="1" delay="0" fadeTime="0.5" speed="-0.9" scrollLength="1.5" scrollSpeed="-2"/>
+		</pickupEffect>
+        <uvScrollShader>
+            <UVScrollPart index="0>0|11|0" shaderParameterName="offsetUV" scrollSpeed="0.6 0" shaderParameterComponent="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <UVScrollPart index="0>0|7|1|7" shaderParameterName="offsetUV" scrollSpeed="0.6 0" shaderParameterComponent="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <UVScrollPart index="0>0|7|1|6" shaderParameterName="offsetUV" scrollSpeed="0.6 0" shaderParameterComponent="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <UVScrollPart index="0>0|7|1|5" shaderParameterName="offsetUV" scrollSpeed="0.6 0" shaderParameterComponent="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <UVScrollPart index="0>0|7|1|4" shaderParameterName="offsetUV" scrollSpeed="0.6 0" shaderParameterComponent="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <UVScrollPart index="0>0|7|1|3" shaderParameterName="offsetUV" scrollSpeed="0.6 0" shaderParameterComponent="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <UVScrollPart index="0>0|7|1|2" shaderParameterName="offsetUV" scrollSpeed="0.6 0" shaderParameterComponent="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+            <UVScrollPart index="0>0|7|1|1" shaderParameterName="offsetUV" scrollSpeed="0.6 0" shaderParameterComponent="2" turnOnFadeTime="2" turnOffFadeTime="5"/>
+        </uvScrollShader>
+        <sideDoors>
+            <sideDoor animName="sideDoorFrontLeft" triggerIndex="0>0|5|7"/>
+            <sideDoor animName="sideDoorBackLeft" triggerIndex="0>0|5|8"/>
+            <sideDoor animName="sideDoorFrontRight" triggerIndex="0>0|5|9"/>
+            <sideDoor animName="sideDoorBackRight" triggerIndex="0>0|5|10"/>
+        </sideDoors>
+        <netRoleStorages defaultLenght="2500">
+            <leftRole nodeIndex="0>0|4|2|0"/>
+            <middleRole nodeIndex="0>0|4|0|0" refillAnimationName="netRoleRefill"/>
+            <rightRole nodeIndex="0>0|4|2|1"/>
+            <topRole netRoleIndex="0>0|4|1|0" roleIndex="0>0|4|1" netRoleRotSpeed="0.4 0 0" fillAnim="netRoleEmptyAnim"/>
+        </netRoleStorages>
+        <foilRoleStorages playerRolePos="-0.2 -0.25 0.7" playerRoleRot="60 90 0" cloneNodeIndex="0>5">
+            <storage animName="sideDoorBackLeft">
+                <roleHolder index="0>0|4|3|0"/>
+                <roleHolder index="0>0|4|3|1"/>
+                <roleHolder index="0>0|4|3|2"/>
+                <roleHolder index="0>0|4|3|3"/>
+                <roleHolder index="0>0|4|3|4"/>
+            </storage>
+            <storage animName="sideDoorBackRight">
+                <roleHolder index="0>0|4|3|5"/>
+                <roleHolder index="0>0|4|3|6"/>
+                <roleHolder index="0>0|4|3|7"/>
+                <roleHolder index="0>0|4|3|8"/>
+                <roleHolder index="0>0|4|3|9"/>
+                <roleHolder index="0>0|4|3|10"/>
+            </storage>
+            <storage animName="sideDoorFrontRight">
+                <roleHolder index="0>0|4|3|11"/>
+                <roleHolder index="0>0|4|3|12"/>
+                <roleHolder index="0>0|4|3|13"/>
+                <roleHolder index="0>0|4|3|14"/>
+                <roleHolder index="0>0|4|3|15"/>
+                <roleHolder index="0>0|4|3|16"/>
+            </storage>
+        </foilRoleStorages>
+        <wrapperFoilHolders foilLength="1500" baseFoilUsePerBale="60">
+            <foilHolder index="0>0|3|0|0" playerTriggerIndex="0>0|3|0|21" emptyAnimName="foilRole1EmptyAnim"/>
+            <foilHolder index="0>0|3|0|9" playerTriggerIndex="0>0|3|0|22" emptyAnimName="foilRole2EmptyAnim"/>
+        </wrapperFoilHolders>
+        <foilWrapMesh index1="0>0|11|4" index2="0>0|11|5"/>
+        <foilWrapCutMesh index1="0>0|3|0|5" index2="0>0|3|0|14"/>
+        <dropmat playerTriggerIndex="0>0|12" foldAnimName="foldDropmat" raycastNodeIndex="0>0|13" jointIndex="0>0|6" topJoint="0.3" bottomJoint="-0.2"/>
+        <wrapperRollsAnim duration="25000" nodeIndex="0>0|3|6|3|0" animName="wraperRolesSource" speedScale="1.4" trackIndex="0"/>
+        <balerBaleConductNode index="0>0|7|0" rotSpeed="0 0 -0.1" wrapperBaleConductNodeIndex="0>0|3|6|8|3"/>
+        <fillUnits mainChamberFillUnitIndex="2" prePressChamberFillUnitIndex="1" />
+		<prePressChamber literPerSecond="480" />
+        <baleSizes animName="fillChamberSource" nodeIndex="0>0|1|2" duration="10000" speedScale="0" trackIndex="3">
+            <baleSize size="130" fillLevel="3000" chamberAnimTime="7500">
+                <dropBaleAnimation duration="2500" receiveBaleAnimTime="2000" nodeIndex="0>0|1|2" animName="out130Source" speedScale="1.4" trackIndex="0"/>
+                <wrapperReceiveBaleAnimation xmlAnimName="wrapperReceiveBale130"/>
+                <wrapAnimation duration="24200" wrapFoilCutIndex1="0>0|3|0|6" wrapFoilCutIndex2="0>0|3|0|15" createPhysicalBaleTime="9790" nodeIndex="0>0|3|0" animName="wrap130Source" speedScale="1.4" trackIndex="2"/>
+                <wrapperDropAnimation xmlAnimName="wrapperDrop130"/>
+                <fillTypes>
+                    <fillType Ftype="dryGrass_windrow" fileName="bales/Bale130Hay.i3d" fileNameForWrapping="bales/Bale130HayWrap.i3d" wrappedFileName="bales/Bale130Silage.i3d"/>
+					<fillType Ftype="straw" fileName="bales/Bale130Straw.i3d"/>
+					<fillType Ftype="grass_windrow" fileName="bales/Bale130Grass.i3d" fileNameForWrapping="bales/Bale130GrassWrap.i3d" wrappedFileName="bales/Bale130Silage.i3d"/>
+                </fillTypes>
+            </baleSize>
+            <baleSize size="140" fillLevel="3500" chamberAnimTime="8500">
+                <dropBaleAnimation duration="3000" receiveBaleAnimTime="2450" nodeIndex="0>0|1|2" animName="out140Source" speedScale="1.4" trackIndex="2"/>
+                <wrapperReceiveBaleAnimation xmlAnimName="wrapperReceiveBale140"/>
+                <wrapAnimation duration="24200" wrapFoilCutIndex1="0>0|3|0|7" wrapFoilCutIndex2="0>0|3|0|16" createPhysicalBaleTime="9790" nodeIndex="0>0|3|0" animName="wrap140Source" speedScale="1.4" trackIndex="1"/>
+                <wrapperDropAnimation xmlAnimName="wrapperDrop140"/>
+                <fillTypes>
+                    <fillType Ftype="dryGrass_windrow" fileName="bales/Bale140Hay.i3d" fileNameForWrapping="bales/Bale140HayWrap.i3d" wrappedFileName="bales/Bale140Silage.i3d"/>
+                    <fillType Ftype="straw" fileName="bales/Bale140Straw.i3d"/>                   
+					<fillType Ftype="grass_windrow" fileName="bales/Bale140Grass.i3d" fileNameForWrapping="bales/Bale140GrassWrap.i3d" wrappedFileName="bales/Bale140Silage.i3d"/>
+                </fillTypes>
+            </baleSize>
+            <baleSize size="150" fillLevel="4000" chamberAnimTime="10000">
+                <dropBaleAnimation duration="3000" receiveBaleAnimTime="2500" nodeIndex="0>0|1|2" animName="out150Source" speedScale="1.4" trackIndex="1"/>
+                <wrapperReceiveBaleAnimation xmlAnimName="wrapperReceiveBale150"/>
+                <wrapAnimation duration="24200" wrapFoilCutIndex1="0>0|3|0|8" wrapFoilCutIndex2="0>0|3|0|17" createPhysicalBaleTime="9790" nodeIndex="0>0|3|0" animName="wrap150Source" speedScale="1.4" trackIndex="0"/>
+                <wrapperDropAnimation xmlAnimName="wrapperDrop150"/>
+                <fillTypes>
+                    <fillType Ftype="dryGrass_windrow" fileName="bales/Bale150Hay.i3d" fileNameForWrapping="bales/Bale150HayWrap.i3d" wrappedFileName="bales/Bale150Silage.i3d"/>
+                    <fillType Ftype="straw" fileName="bales/Bale150Straw.i3d"/>
+					<fillType Ftype="grass_windrow" fileName="bales/Bale150Grass.i3d" fileNameForWrapping="bales/Bale150GrassWrap.i3d" wrappedFileName="bales/Bale150Silage.i3d"/>
+                </fillTypes>
+            </baleSize>
+        </baleSizes>
+    </Ultima>
+	
+    <workAreas>
+        <workArea startIndex="0>0|2|1|0" widthIndex="0>0|2|1|1" heightIndex="0>0|2|1|2" type="baler"/>
+    </workAreas>
+	
+	<tipOcclusionAreas>
+        <tipOcclusionArea start="0>0|2|5|0" width="0>0|2|5|1" height="0>0|2|5|2" />
+    </tipOcclusionAreas>
+	
+	<groundReferenceNodes>
+        <groundReferenceNode index="0>0|8|0|5" threshold="0.5" />
+    </groundReferenceNodes>
+	
+    <turnedOnRotationNodes>
+        <turnedOnRotationNode index="0>0|8|1" type="baler" rotSpeed="800" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5"/>
+        <turnedOnRotationNode index="0>0|8|0|4" type="baler" rotSpeed="1250" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5"/>
+        <turnedOnRotationNode index="0>0|8|0|5" type="baler" rotSpeed="-750" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5"/>
+        <turnedOnRotationNode index="0>0|1|2|0|0" type="baler" rotSpeed="600" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5"/>
+        <turnedOnRotationNode index="0>0|1|2|0|1" type="baler" rotSpeed="600" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5"/>
+        <turnedOnRotationNode index="0>0|1|2|0|2" type="baler" rotSpeed="600" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5"/>
+        <turnedOnRotationNode index="0>0|1|3|1" type="baler" rotSpeed="600" rotAxis="1" turnOnFadeTime="2" turnOffFadeTime="5"/>
+    </turnedOnRotationNodes>
+	
+    <speedRotatingParts>
+        <speedRotatingPart index="0>0|8|0|2" driveNode="0>0|8|0|2|0" radius="0.17" versatileYRot="true" minYRot="-40" maxYRot="40" animName="liftPickup" animMinLimit="0.7" animMaxLimit="1.2" foldMinLimit="0" foldMaxLimit="0.01" onlyActiveWhenLowered="true"/>
+        <speedRotatingPart index="0>0|8|0|3" driveNode="0>0|8|0|3|0" radius="0.17" versatileYRot="true" minYRot="-40" maxYRot="40" animName="liftPickup" animMinLimit="0.7" animMaxLimit="1.2" foldMinLimit="0" foldMaxLimit="0.01" onlyActiveWhenLowered="true"/>
+        <speedRotatingPart index="0>0|8|0|7|0" refNodeIndex="0" radius="0.2" onlyActiveWhenLowered="true" rotateOnlyIfFillLevelIncreased="true"/>
+    </speedRotatingParts>
+	
+    <movingTools>
+        <movingTool index="0>0|0">
+            <controls axis="AXIS_Krone_Attacher" icon="$dataS2/menu/moveControls/drawbar_rotX.dds" invertAxis="true" invertMouseAxis="true" speedFactor="1"/>
+            <rotation rotSpeed="30" rotAcceleration="125" rotMax="6" rotMin="-6"/>
+            <inputAttacherJoint value="true" />
+        </movingTool>
+        <movingTool index="1>1">
+            <componentJoint index="0" anchorActor="1"/>
+        </movingTool>
+    </movingTools>
+	
+    <movingParts>
+        <!-- Lenkachse -->
+        <movingPart index="0>3|1|1" referencePoint="0>3|0|1" referenceFrame="0>" isActiveDirty="true" playSound="false" scaleZ="true"/>
+        <movingPart index="0>3|2|0" referencePoint="0>3|0|2" localReferencePoint="0>3|0|2" referenceFrame="0>" isActiveDirty="true" playSound="false">
+            <translatingPart index="0>3|2|0|0"/>
+        </movingPart>
+        <movingPart index="0>3|2|1" referencePoint="0>3|1|2" localReferencePoint="0>3|1|2" referenceFrame="0>" isActiveDirty="true" playSound="false">
+            <translatingPart index="0>3|2|1|0"/>
+        </movingPart>
+        <!--PickUp -->
+        <movingPart index="0>0|8|0" referencePoint="1>0" referenceFrame="1>0" isActiveDirty="true" limitedAxis="1"/>
+        <!-- PickUp Kette + Feder -->
+        <movingPart index="0>0|8|2" referencePoint="0>0|8|0|7|4|0" referenceFrame="0>0|2|3|0" scaleZ="false" playSound="false" isActiveDirty="true"/>
+        <movingPart index="0>0|8|0|7|2" referencePoint="0>0|8|2|0" referenceFrame="0>0|2|3|1|0" scaleZ="true" playSound="false" isActiveDirty="true"/>
+        <movingPart index="0>0|8|3" referencePoint="0>0|8|0|7|5|0" referenceFrame="0>0|2|3|0" scaleZ="false" playSound="false" isActiveDirty="true"/>
+        <movingPart index="0>0|8|0|7|3" referencePoint="0>0|8|3|0" referenceFrame="0>0|2|3|1|0" scaleZ="true" playSound="false" isActiveDirty="true"/>
+        <!-- Wickeltisch Zylinder-->
+        <movingPart index="0>0|3|5" referencePoint="0>0|3|6|9" localReferencePoint="0>0|3|6|9" referenceFrame="0>" isActiveDirty="true" playSound="false">
+            <translatingPart index="0>0|3|5|0"/>
+        </movingPart>
+    </movingParts>
+    <animations>
+        <!-- move support wheel down/up -->
+        <animation name="moveSupport">
+            <part node="0>0|0|0" startTime="0.2" endTime="0.3" startRot="134.8 0 0" endRot="0 0 0"/>
+            <part node="0>0|0|0|0" startTime="0.4" endTime="0.5" startTrans="0 0.235 0" endTrans="0 0 0"/>
+            <part node="0>0|0|1" startTime="0.3" endTime="0.4" startTrans="-0.22 0 0" endTrans="0 0 0"/>
+            <part node="0>0|0|1|0" startTime="0.0" endTime="0.1" startTrans="0.22 0 0" endTrans="0 0 0"/>
+            <part node="0>0|0|1|0|0" startTime="0.1" endTime="0.2" startTrans="0 -0.069 -0.18" endTrans="0 0 0"/>
+            <!-- Unterlegkeile -->
+            <part node="0>0|9|1" startTime="0" endTime="0.1" visibility="false"/>
+            <part node="0>0|9|1" startTime="0.1" endTime="0.2" visibility="true"/>
+            <part node="0>0|9|0" startTime="0" endTime="0.1" visibility="true"/>
+            <part node="0>0|9|0" startTime="0.1" endTime="0.2" visibility="false"/>
+        </animation>
+        <!-- PickUp auf/ab -->
+        <animation name="liftPickup">
+            <part node="1>1" startTime="0" endTime="1.2" startRot="20 0 0" endRot="-5 0 0"/>
+            <part startTime="1.1" endTime="1.5" componentJointIndex="1" startRotLimit="0 0 0" endRotLimit="5 0 0"/>
+            <!-- Kette + Feder PickUp -->
+            <part node="0>0|8|0|7|4" startTime="0.8" endTime="1.2" startTrans="1.1 -0.046 0.25" endTrans="1.053 -0.046 0.35"/>
+            <part node="0>0|8|0|7|5" startTime="0.8" endTime="1.2" startTrans="-1.1 -0.046 0.25" endTrans="-1.053 -0.046 0.35"/>
+            <part node="0>0|2|3|1" startTime="0.0" endTime="1.2" startRot="125 0 0" endRot="270 0 0"/>
+        </animation>
+        <animation name="sideDoorFrontLeft">
+            <part node="0>0|5|0" startTime="0.1" endTime="1.0" startRot="0 0 0" endRot="0 90 0"/>
+            <part node="0>0|5|0|0" startTime="0.0" endTime="0.1" startRot="0 0 0" endRot="0 0 -20"/>
+            <part node="0>0|5|0|0" startTime="0.1" endTime="0.10001" startRot="0 0 -20" endRot="0 0 0"/>
+            <part node="0>0|5|0|3" visibility="false" startTime="0.0" endTime="0.9"/>
+            <part node="0>0|5|0|3" visibility="true" startTime="0.9" endTime="1.0"/>
+        </animation>
+        <animation name="sideDoorBackLeft">
+            <part node="0>0|5|1" startTime="0.1" endTime="1.0" startRot="0 0 0" endRot="0 0 90"/>
+            <part node="0>0|5|2" startTime="0.0" endTime="0.1" startRot="0 0 0" endRot="0 0 25"/>
+            <part node="0>0|5|2" startTime="0.1" endTime="0.10001" startRot="0 0 25" endRot="0 0 0"/>
+            <part node="0>0|5|1|2" visibility="false" startTime="0.0" endTime="0.9"/>
+            <part node="0>0|5|1|2" visibility="true" startTime="0.9" endTime="1.0"/>
+        </animation>
+        <animation name="sideDoorFrontRight">
+            <part node="0>0|5|5" startTime="0.1" endTime="1.0" startRot="0 0 0" endRot="0 90 0"/>
+            <part node="0>0|5|6" startTime="0.0" endTime="0.1" startRot="0 0 0" endRot="0 0 -20"/>
+            <part node="0>0|5|6" startTime="0.1" endTime="0.10001" startRot="0 0 -20" endRot="0 0 0"/>
+            <part node="0>0|5|5|2" visibility="false" startTime="0.0" endTime="0.9"/>
+            <part node="0>0|5|5|2" visibility="true" startTime="0.9" endTime="1.0"/>
+        </animation>
+        <animation name="sideDoorBackRight">
+            <part node="0>0|5|3" startTime="0.1" endTime="1.0" startRot="0 0 0" endRot="0 0 -90"/>
+            <part node="0>0|5|4" startTime="0.0" endTime="0.1" startRot="0 0 0" endRot="0 0 -25"/>
+            <part node="0>0|5|4" startTime="0.1" endTime="0.10001" startRot="0 0 -25" endRot="0 0 0"/>
+            <part node="0>0|5|3|2" visibility="false" startTime="0.0" endTime="0.9"/>
+            <part node="0>0|5|3|2" visibility="true" startTime="0.9" endTime="1.0"/>
+        </animation>
+        <animation name="foldDropmat">
+            <part node="0>0|6" startTime="0" endTime="1" startRot="0 0 0" startTrans="0 0.025 -4.744" endRot="120 0 0" endTrans="0 0.934 -4.198"/>
+        </animation>
+        <animation name="netRoleRefill">
+            <part node="0>0|4|0" startTime="0" endTime="1" startRot="0 0 0" endRot="0 0 90"/>
+            <part node="0>0|4|0|0" startTime="1" endTime="2" startTrans="0.23 -0.645 0" endTrans="0.23 0.879 0"/>
+            <part node="0>0|4|0|0" startTime="2" endTime="3" startTrans="0.23 0.879 0" endTrans="0.169 0.879 -0.299"/>
+        </animation>
+        <animation name="netRoleEmptyAnim">
+            <part node="0>0|4|1|0" startTime="0" endTime="0.99999999" startScale="1 1 1" endScale="1 0.35 0.35"/>
+            <part node="0>0|4|1" visibility="true" startTime="0" endTime="0.99999999"/>
+            <part node="0>0|4|1" visibility="false" startTime="0.99999999" endTime="1"/>
+        </animation>
+        <animation name="foilRole1EmptyAnim">
+            <part node="0>0|3|0|0" startTime="0" endTime="0.99999999" startScale="1 1 1" endScale="0.3 1 0.3"/>
+            <part node="0>0|3|0|0" visibility="true" startTime="0" endTime="0.99999999"/>
+            <part node="0>0|3|0|0" visibility="false" startTime="0.99999999" startScale="0.3 1 0.3" endScale="0.3 1 0.3" endTime="1"/>
+            <part node="0>0|3|0|3" startTime="0" endTime="1" startRot="0 0 0" endRot="0 -36 0" startScale="1 1 1" endScale="1 1 1.2"/>
+        </animation>
+        <animation name="foilRole2EmptyAnim">
+            <part node="0>0|3|0|9" startTime="0" endTime="0.99999999" startScale="1 1 1" endScale="0.3 1 0.3"/>
+            <part node="0>0|3|0|9" visibility="true" startTime="0" endTime="0.99999999"/>
+            <part node="0>0|3|0|9" visibility="false" startTime="0.99999999" endTime="1" startScale="0.3 1 0.3" endScale="0.3 1 0.3"/>
+            <part node="0>0|3|0|12" startTime="0" endTime="1" startRot="0 0 0" endRot="0 -36 0" startScale="1 1 1" endScale="1 1 1.2"/>
+        </animation>
+        <animation name="wrapperReceiveBale130">
+            <part node="0>0|3|6" startTime="0" endTime="1" startRot="0 0 0" endRot="25 0 0"/>
+            <part node="0>0|3|6|8" startTime="0" endTime="1" startTrans="0 0.823 0" endTrans="0 0.823 0"/>
+        </animation>
+        <animation name="wrapperReceiveBale140">
+            <part node="0>0|3|6" startTime="0" endTime="1" startRot="0 0 0" endRot="25 0 0"/>
+            <part node="0>0|3|6|8" startTime="0" endTime="1" startTrans="0 0.873 0" endTrans="0 0.873 0"/>
+        </animation>
+        <animation name="wrapperReceiveBale150">
+            <part node="0>0|3|6" startTime="0" endTime="1" startRot="0 0 0" endRot="25 0 0"/>
+            <part node="0>0|3|6|8" startTime="0" endTime="1" startTrans="0 0.923 0" endTrans="0 0.923 0"/>
+        </animation>
+        <animation name="wrapperDrop130">
+            <part node="0>0|3|6" startTime="0.00" endTime="0.75" startRot="0 0 0" endRot="-35 0 0"/>
+            <part node="0>0|3|6|8" startTime="0.60" endTime="0.70" startTrans="0 0.923 0" endTrans="0 0.969 -0.1" startRot="0 0 0" endRot="-8 0 0"/>
+            <part node="0>0|3|6|8" startTime="0.70" endTime="0.80" startTrans="0 0.969 -0.1" endTrans="0 1.054 -0.2" startRot="-8 0 0" endRot="-16 0 0"/>
+            <part node="0>0|3|6|8" startTime="0.80" endTime="0.90" startTrans="0 1.054 -0.2" endTrans="0 1.126 -0.3" startRot="-16 0 0" endRot="-24 0 0"/>
+            <part node="0>0|3|6|8" startTime="0.90" endTime="1.00" startTrans="0 1.126 -0.3" endTrans="0 1.178 -0.4" startRot="-24 0 0" endRot="-32 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.00" endTime="1.10" startTrans="0 1.178 -0.4" endTrans="0 1.217 -0.5" startRot="-32 0 0" endRot="-40 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.10" endTime="1.20" startTrans="0 1.217 -0.5" endTrans="0 1.239 -0.6" startRot="-40 0 0" endRot="-48 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.20" endTime="1.30" startTrans="0 1.239 -0.6" endTrans="0 1.239 -0.7" startRot="-48 0 0" endRot="-56 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.30" endTime="1.40" startTrans="0 1.239 -0.7" endTrans="0 1.226 -0.8" startRot="-56 0 0" endRot="-64 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.40" endTime="1.50" startTrans="0 1.239 -0.8" endTrans="0 1.203 -0.9" startRot="-64 0 0" endRot="-72 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.50" endTime="1.60" startTrans="0 1.203 -0.9" endTrans="0 1.170 -1.0" startRot="-72 0 0" endRot="-80 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.60" endTime="1.70" startTrans="0 1.170 -1.0" endTrans="0 1.112 -1.1" startRot="-80 0 0" endRot="-90 0 0"/>
+        </animation>
+        <animation name="wrapperDrop140">
+            <part node="0>0|3|6" startTime="0.00" endTime="0.75" startRot="0 0 0" endRot="-35 0 0"/>
+            <part node="0>0|3|6|8" startTime="0.60" endTime="0.70" startTrans="0 0.923 0" endTrans="0 0.969 -0.1" startRot="0 0 0" endRot="-8 0 0"/>
+            <part node="0>0|3|6|8" startTime="0.70" endTime="0.80" startTrans="0 0.969 -0.1" endTrans="0 1.054 -0.2" startRot="-8 0 0" endRot="-16 0 0"/>
+            <part node="0>0|3|6|8" startTime="0.80" endTime="0.90" startTrans="0 1.054 -0.2" endTrans="0 1.126 -0.3" startRot="-16 0 0" endRot="-24 0 0"/>
+            <part node="0>0|3|6|8" startTime="0.90" endTime="1.00" startTrans="0 1.126 -0.3" endTrans="0 1.178 -0.4" startRot="-24 0 0" endRot="-32 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.00" endTime="1.10" startTrans="0 1.178 -0.4" endTrans="0 1.217 -0.5" startRot="-32 0 0" endRot="-40 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.10" endTime="1.20" startTrans="0 1.217 -0.5" endTrans="0 1.239 -0.6" startRot="-40 0 0" endRot="-48 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.20" endTime="1.30" startTrans="0 1.239 -0.6" endTrans="0 1.239 -0.7" startRot="-48 0 0" endRot="-56 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.30" endTime="1.40" startTrans="0 1.239 -0.7" endTrans="0 1.226 -0.8" startRot="-56 0 0" endRot="-64 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.40" endTime="1.50" startTrans="0 1.239 -0.8" endTrans="0 1.203 -0.9" startRot="-64 0 0" endRot="-72 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.50" endTime="1.60" startTrans="0 1.203 -0.9" endTrans="0 1.170 -1.0" startRot="-72 0 0" endRot="-80 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.60" endTime="1.70" startTrans="0 1.170 -1.0" endTrans="0 1.112 -1.1" startRot="-80 0 0" endRot="-90 0 0"/>
+        </animation>
+        <animation name="wrapperDrop150">
+            <part node="0>0|3|6" startTime="0.00" endTime="0.75" startRot="0 0 0" endRot="-35 0 0"/>
+            <part node="0>0|3|6|8" startTime="0.60" endTime="0.70" startTrans="0 0.923 0" endTrans="0 0.969 -0.1" startRot="0 0 0" endRot="-8 0 0"/>
+            <part node="0>0|3|6|8" startTime="0.70" endTime="0.80" startTrans="0 0.969 -0.1" endTrans="0 1.054 -0.2" startRot="-8 0 0" endRot="-16 0 0"/>
+            <part node="0>0|3|6|8" startTime="0.80" endTime="0.90" startTrans="0 1.054 -0.2" endTrans="0 1.126 -0.3" startRot="-16 0 0" endRot="-24 0 0"/>
+            <part node="0>0|3|6|8" startTime="0.90" endTime="1.00" startTrans="0 1.126 -0.3" endTrans="0 1.178 -0.4" startRot="-24 0 0" endRot="-32 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.00" endTime="1.10" startTrans="0 1.178 -0.4" endTrans="0 1.217 -0.5" startRot="-32 0 0" endRot="-40 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.10" endTime="1.20" startTrans="0 1.217 -0.5" endTrans="0 1.239 -0.6" startRot="-40 0 0" endRot="-48 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.20" endTime="1.30" startTrans="0 1.239 -0.6" endTrans="0 1.239 -0.7" startRot="-48 0 0" endRot="-56 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.30" endTime="1.40" startTrans="0 1.239 -0.7" endTrans="0 1.226 -0.8" startRot="-56 0 0" endRot="-64 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.40" endTime="1.50" startTrans="0 1.239 -0.8" endTrans="0 1.203 -0.9" startRot="-64 0 0" endRot="-72 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.50" endTime="1.60" startTrans="0 1.203 -0.9" endTrans="0 1.170 -1.0" startRot="-72 0 0" endRot="-80 0 0"/>
+            <part node="0>0|3|6|8" startTime="1.60" endTime="1.70" startTrans="0 1.170 -1.0" endTrans="0 1.112 -1.1" startRot="-80 0 0" endRot="-90 0 0"/>
+        </animation>
+    </animations>
+	
+    <components count="2">
+        <component1 centerOfMass="0.0 1.3 -0.3" solverIterationCount="10" mrSetMass="9.3"/> <!-- profi: 9.7t operating weight -->
+        <component2 centerOfMass="0.0 0.0 0.0" solverIterationCount="10" mrSetMass="0.4"/>
+        <joint component1="0" component2="1" index="1>1" rotLimit="0 0 0" transLimit="0 0 0"/>
+    </components>
+	
+    <schemaOverlay file="$dataS2/menu/schemas/implementSchema.png" fileSelected="$dataS2/menu/schemas/implementSchemaSelected.png" fileTurnedOn="$dataS2/menu/schemas/implementSchemaTurnedOn.png" fileSelectedTurnedOn="$dataS2/menu/schemas/implementSchemaSelectedTurnedOn.png" width="0.5" height="0.5" attacherJointPosition="0 0"/>
+    <storeData>
+        <name>
+            <de>Ultima CF 155 XC</de>
+            <en>Ultima CF 155 XC</en>
+		</name>
+        <functions>
+            <function>$l10n_function_Ultima</function>
+        </functions>
+        <specs>
+            <neededPower>140</neededPower>
+        </specs>
+        <image>store.dds</image>
+        <price>127300</price>
+        <dailyUpkeep>250</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>KRONE</brand>
+        <category>baling</category>
+    </storeData>
+</vehicle>

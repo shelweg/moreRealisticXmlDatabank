@@ -1,0 +1,147 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="AmazoneZAM">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+	
+	
+<moreRealistic isMrVehicle="true" useMrTransmission="true">		
+	<dragArea value="0.5" />
+</moreRealistic> 
+	<!-- MR upate to V1.1
+	mr tag and dragArea
+	
+	powerConsumer
+	mrFillVolumeCapacity
+	
+	weight=406kg / mrSetMass=0.41
+	centerOfMass
+	
+	price
+	dailyUpkeep
+	
+	-->
+	
+
+	<storeData>
+        <name>AmazoneZAM</name>
+        <specs>
+            <workingWidth>24.0</workingWidth>
+        </specs>
+        <functions>
+            <function>$l10n_function_fertilizer</function>
+        </functions>
+        <image>store_AmazoneZAM3001.png</image>
+        <price>18000</price>
+        <dailyUpkeep>65</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>AMAZONE</brand>
+        <category>fertilizerSpreaders</category>
+    </storeData>
+	
+    <typeDesc>$l10n_typeDesc_fertilizerSpreader</typeDesc>
+    <filename>AmazoneZA_M.i3d</filename>
+
+    <size width="4" length="3" />
+
+    <powerConsumer ptoRpm="480" neededPtoPower="10"/>
+    <speedLimit value="20" />
+
+    <lights>
+        <low>
+            <light                          decoration="0>0|2|0|0"   lightTypes="0 3"/> <!--BackLights-->
+        </low>
+        <high>
+            <light realLight="0>0|2|0|1"   decoration="0>0|2|0|0"   lightTypes="0 3" /> <!--BackLights-->
+        </high>
+    </lights>
+
+    <brakeLights>
+        <brakeLight realLight="0>0|2|0|1" decoration="0>0|2|2|0" />
+    </brakeLights>
+
+    <turnLights>
+        <turnLightLeft  realLight="0>0|2|1|0|1" decoration="0>0|2|1|0|0" />
+        <turnLightRight realLight="0>0|2|1|1|1" decoration="0>0|2|1|1|0" />
+    </turnLights>
+	
+	<dynamicHose>
+		<set toolIndices="0>1">
+			<hose type="hydraulic" 	attached="0>1|0|0" detached="0>1|0|4" 	lastHoseIKNode="0>1|1|0|0"/> 
+			<hose type="hydraulic" 	attached="0>1|0|1" detached="0>1|0|5" 	lastHoseIKNode="0>1|1|1|0"/>
+			<hose type="hydraulic" 	attached="0>1|0|2" detached="0>1|0|6" 	lastHoseIKNode="0>1|1|2|0"/> 
+			<hose type="hydraulic" 	attached="0>1|0|3" detached="0>1|0|7" 	lastHoseIKNode="0>1|1|3|0"/>
+		</set>
+	</dynamicHose>
+
+    <workAreas>
+        <workArea startIndex="0>0|7" widthIndex="0>0|8" heightIndex="0>0|9" type="sprayer" disableBackwards="false" />
+    </workAreas>
+
+	<objectChanges>
+        <objectChange node="0>0|15" visibilityActive="false"/>
+        <objectChange node="0>0|17" visibilityActive="false"/>
+        <objectChange node="0>0|5|2" visibilityActive="false"/>
+        <objectChange node="0>0|5|1" visibilityActive="false"/>
+    </objectChanges>
+	
+    <inputAttacherJoints>
+        <inputAttacherJoint index="0>0|0" jointType="implement" topReferenceNode="0>0|1" lowerRotLimitScale="0 0 0" lowerTransLimitScale="0 0.1 0" lowerDistanceToGround="0.4" upperDistanceToGround="0.8" upperRotationOffset="2" ptoInputNode="0>0|10" needsLowering="false" />
+    </inputAttacherJoints>
+   
+	<fillLitersPerSecond>100</fillLitersPerSecond>
+   
+    <fillUnits>
+        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="spreader" capacity="3000" mrFillVolumeCapacity="2000" />
+    </fillUnits>
+		
+	<fillVolumes>
+        <volumes>
+            <volume index="0>0|5|0" maxDelta="0.0" />
+        </volumes>
+    </fillVolumes>
+	
+	<fillRootNode index="0>" />
+    <exactFillRootNode index="0>0|13|0" />
+    <fillMassNode index="0>" />
+	
+    <sprayUsageScales workingWidth="24.0" scale="1" />
+	
+    <turnedOnRotationNodes>
+        <turnedOnRotationNode index="0>0|4|0" type="sprayer" rotSpeed="-2000" turnOnFadeTime="1" turnOffFadeTime="2" />
+        <turnedOnRotationNode index="0>0|4|1" type="sprayer" rotSpeed="2000" turnOnFadeTime="1" turnOffFadeTime="2" />
+    </turnedOnRotationNodes>
+	
+    <spraySound file="$data/sounds/spreader.wav" 		  pitchOffset="1.0" volume="1.00" indoorVolumeFactor="0.45"/>
+    <fillSound file="$data/maps/sounds/siloFillSound.wav" pitchOffset="1.0" volume="1.00" indoorVolumeFactor="0.45" volume3D="1.0" innerRadius="10" radius="40" linkNode="0>0"/>
+	
+	<animations>
+        <animation name="toggleCover">
+            <part node="0>0|6" startTime="0"    endTime="0.02" visibility="false" />
+			<part node="0>0|17" startTime="0"    endTime="0.02" visibility="false" />
+            <part node="0>0|17" startTime="0.02" endTime="0.04" visibility="true" />
+        </animation>
+    </animations>
+	
+	<cover animationName="toggleCover" openOnBuy="false"/>
+	
+	<ai>
+        <needsLowering value="false" />
+        <areaMarkers leftIndex="0>0|12|0" rightIndex="0>0|12|1" backIndex="0>0|12|2" />
+        <sizeMarkers leftIndex="0>0|12|3" rightIndex="0>0|12|4" backIndex="0>0|12|5" />
+    </ai>
+	
+    <sprayerEffects>
+        <sprayerEffect>
+            <effectNode effectNode="0>0|11|0" delay="0" materialType="spreader" materialTypeId="1" />
+        </sprayerEffect>
+    </sprayerEffects>
+
+    <washable dirtDuration="180" washDuration="1" workMultiplier="4" />
+
+    <components count="1">
+        <component1 centerOfMass="0 0.3 0" solverIterationCount="10" mrSetMass="0.41" />
+    </components>
+
+    <schemaOverlay file="$dataS2/menu/schemas/implementSchema.png" fileSelected="$dataS2/menu/schemas/implementSchemaSelected.png" fileTurnedOn="$dataS2/menu/schemas/implementSchemaTurnedOn.png" fileSelectedTurnedOn="$dataS2/menu/schemas/implementSchemaSelectedTurnedOn.png" width="0.5" height="0.5" attacherJointPosition="0 0"/>
+
+</vehicle>

@@ -1,0 +1,587 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no"?>
+<vehicle type="DeutzAgrostar631MrFox">
+
+	<!--
+	MR tag, dragArea
+	spring, damper, suspTravel, initialCompression
+	ackermannSteering
+	differentials
+	motorConfigurations
+	gearbox from Mogli
+	fuelCapacity
+	Oil
+	attacherJoints
+	centerOfMass, mrSetMass
+	
+	
+	
+	                changes by Passion78 for V 1.2.0.0 7/31/2018
+					mod website: https://www.farming-simulator.com/mod.php?lang=en&country=us&mod_id=84798&title=fs2017
+	reference websites 6.31: http://www.tractordata.com/farm-tractors/002/1/1/2115-deutz-fahr-621.html
+							https://www.werktuigen.nl/machine-specificaties/deutz-fahr/tractor-4wd/agrostar-dx-6-31.html
+							https://konedata.net/traktorit/deutz/deutz-fahr-agrostar-6-11-6-61/
+				oil data: https://www.kroon-oil.com/en/product-recommendation/agricultural-equipment/deutz-fahr/agrostar/agrostar-631/53338/2428/#!/component:2428/
+				
+	Changed most German naming to International language : English
+	changed camera position so you actualy can see the dashbord.
+	changed attacherJoint back lowerRotation2 lowerRotation upperRotation
+	added objectChange to trailerLow
+	changed motorSoundLoad and motorSoundRun
+	changed oilChange data
+	removed fuelUsage
+	new motordata and complete torque curve added
+	new engine data for each engine type added
+	gearbox set to transmission
+	corrected centerOfMass
+	corrected mrSetMass
+	prevented sprayerWheels from crop destruction
+	horn sound changed 
+	-->
+	
+	<moreRealistic useMrTransmission="true">
+		<dragArea value="4.97" />
+		<engine rotInertiaFx="1" transmissionEfficiency="0.89" minSpeed="1" fuelUsageFactor="1.12" engineBrakeRpm="2700" engineBrakeForceFx="1"/>
+	</moreRealistic>
+	
+    <storeData>
+        <name>
+            <de>Deutz Agrostar 6.31</de>
+            <en>Deutz Agrostar 6.31</en>
+		</name>
+        <functions>
+            <function>Ackerschlepper</function>
+        </functions>
+        <specs>
+            <power>120</power>
+        </specs>
+        <image>IngameData/store_631.dds</image>
+        <price>78250</price>
+        <dailyUpkeep>80</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>DEUTZFAHR</brand>
+        <category>tractors</category>
+    </storeData>
+
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+    <filename>DeutzAgrostar631.i3d</filename>
+	
+    <size width="3.5" length="7"/>
+
+    <wheelConfigurations>
+        <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
+            <wheels autoRotateBackSpeed="1.7">
+                <wheel filename="TM700_420_70R28.xml" configIndex="r5n8v1" isLeft="false" rotSpeed="1" repr="1>2|0" driveNode="1>2|0|0" restLoad="1.6" forcePointRatio="0.2" initialCompression="0" suspTravel="0.2" spring="40" damper="9.5" hasTireTracks="true" fenderNode="1>2|0|2" fenderRotMax="33" fenderRotMin="-33" steeringNode="1>4" steeringNodeMinTransX="-0.094" steeringNodeMaxTransX="0.091" hasParticles="true"/>
+				<wheel filename="TM700_420_70R28.xml" configIndex="r5n8v1" isLeft="true"  rotSpeed="1" repr="1>1|0" driveNode="1>1|0|0" restLoad="1.6" forcePointRatio="0.2" initialCompression="0" suspTravel="0.2" spring="40" damper="9.5" hasTireTracks="true" fenderNode="1>1|0|2" fenderRotMax="33" hasParticles="true"/>
+				<wheel filename="TM700_520_70R38.xml" configIndex="r5n8v2" isLeft="true"  rotSpeed="0" repr="0>2" 						restLoad="1.6" forcePointRatio="0.3" initialCompression="0" suspTravel="0.2" spring="95" damper="16" hasTireTracks="true" hasParticles="true"/>
+				<wheel filename="TM700_520_70R38.xml" configIndex="r5n8v2" isLeft="false" rotSpeed="0" repr="0>3" 						restLoad="1.6" forcePointRatio="0.3" initialCompression="0" suspTravel="0.2" spring="95" damper="16" hasTireTracks="true" hasParticles="true"/>
+			</wheels>
+  			<objectChange node="1>1|0|0" translationActive="0.22 0 0"/>
+			<objectChange node="1>2|0|0" translationActive="-0.22 0 0"/>   
+			<objectChange node="0>2" translationActive="0.87 0.94 -1.11600006"/>
+			<objectChange node="0>3" translationActive="-0.87 0.94 -1.11600006"/>					
+		</wheelConfiguration>
+        <wheelConfiguration name="$l10n_configuration_valueWheelBroad" price="1800" icon="$dataS2/menu/hud/configurations/config_wheel_broad.png">
+            <wheels autoRotateBackSpeed="1.7">
+                <wheel filename="TM800_480_65R28.xml" isLeft="false" rotSpeed="1" repr="1>2|0" driveNode="1>2|0|0"	restLoad="1.6" forcePointRatio="0.2" initialCompression="0" suspTravel="0.2" spring="40" damper="9.5" hasTireTracks="true" fenderNode="1>2|0|2" fenderRotMax="33" fenderRotMin="-33" steeringNode="1>4" steeringNodeMinTransX="-0.094" steeringNodeMaxTransX="0.091" hasParticles="true"/>
+				<wheel filename="TM800_480_65R28.xml" isLeft="true"  rotSpeed="1" repr="1>1|0" driveNode="1>1|0|0"	restLoad="1.6" forcePointRatio="0.2" initialCompression="0" suspTravel="0.2" spring="40" damper="9.5" hasTireTracks="true" fenderNode="1>1|0|2" fenderRotMax="33" hasParticles="true"/>
+				<wheel filename="TM800_600_65R38.xml" isLeft="true"  rotSpeed="0" repr="0>2" 						restLoad="1.6" forcePointRatio="0.3" initialCompression="0" suspTravel="0.2" spring="95" damper="16" hasTireTracks="true" hasParticles="true"/>
+				<wheel filename="TM800_600_65R38.xml" isLeft="false" rotSpeed="0" repr="0>3"						restLoad="1.6" forcePointRatio="0.3" initialCompression="0" suspTravel="0.2" spring="95" damper="16" hasTireTracks="true" hasParticles="true"/>         
+			</wheels>
+		 	<objectChange node="1>1|0|0" translationActive="0.251 0 0"/>
+			<objectChange node="1>2|0|0" translationActive="-0.251 0 0"/>  
+			<objectChange node="0>2" translationActive="0.912 0.94 -1.11600006"/>
+			<objectChange node="0>3" translationActive="-0.912 0.94 -1.11600006"/>					
+        </wheelConfiguration>
+        <wheelConfiguration name="sprayerWheels" price="2200" icon="$dataS2/menu/hud/configurations/config_wheel_broad.png">
+            <wheels autoRotateBackSpeed="1.7">
+                <wheel filename="TM100_230_95R32.xml" isLeft="false" rotSpeed="1" repr="1>2|0" driveNode="1>2|0|0"	useCropDestruction="false" restLoad="1.6" forcePointRatio="0.2" initialCompression="0" suspTravel="0.2" spring="40" damper="9.5" hasTireTracks="true" fenderNode="1>2|0|2" fenderRotMax="33" fenderRotMin="-33" steeringNode="1>4" steeringNodeMinTransX="-0.094" steeringNodeMaxTransX="0.091" hasParticles="true"/>
+				<wheel filename="TM100_230_95R32.xml" isLeft="true"  rotSpeed="1" repr="1>1|0" driveNode="1>1|0|0"	useCropDestruction="false" restLoad="1.6" forcePointRatio="0.2" initialCompression="0" suspTravel="0.2" spring="40" damper="9.5" hasTireTracks="true" fenderNode="1>1|0|2" fenderRotMax="33" hasParticles="true"/>
+				<wheel filename="TM100_270_95R44.xml" isLeft="false" rotSpeed="0" repr="0>2" 						useCropDestruction="false" restLoad="1.6" forcePointRatio="0.3" initialCompression="0" suspTravel="0.2" spring="95" damper="16" hasTireTracks="true" hasParticles="true"/>
+				<wheel filename="TM100_270_95R44.xml" isLeft="true"  rotSpeed="0" repr="0>3"						useCropDestruction="false" restLoad="1.6" forcePointRatio="0.3" initialCompression="0" suspTravel="0.2" spring="95" damper="16" hasTireTracks="true" hasParticles="true"/>
+			</wheels>
+			<objectChange node="1>1|0|0" translationActive="0.15 0 0"/>
+			<objectChange node="1>2|0|0" translationActive="-0.15 0 0"/>	
+			<objectChange node="0>2" translationActive="-0.83 0.94 -1.11600006"/>
+			<objectChange node="0>3" translationActive="0.83 0.94 -1.11600006"/>				
+        </wheelConfiguration>		
+    </wheelConfigurations>	
+	
+	<axisColor>0.014 0.02 0.035 1</axisColor>
+	<rimColor>0.26 0.27 0.28 1</rimColor>
+    
+	<ackermannSteering rotSpeed="60" rotMax="45" rotCenterWheel1="2" rotCenterWheel2="3"/>
+    
+	<differentials>
+        <differential torqueRatio="0.5" maxSpeedRatio="1" wheelIndex1="0" wheelIndex2="1"/>
+        <!-- front left-right -->
+        <differential torqueRatio="0.5" maxSpeedRatio="1" wheelIndex1="2" wheelIndex2="3"/>
+        <!-- back left-right -->
+        <differential torqueRatio="0.5" maxSpeedRatio="1" differentialIndex1="0" differentialIndex2="1"/>
+        <!-- front-back -->
+    </differentials>
+	
+	<motorConfigurations>
+        <motorConfiguration name="6.21/BF6L 913" hp="113" price="0">
+            <motor torqueScale="0.387" minRpm="900" maxRpm="2450" maxForwardSpeed="40" maxBackwardSpeed="15" brakeForce="8" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="1" rotInertia="0.001" minForwardGearRatio="21.667" maxForwardGearRatio="150" minBackwardGearRatio="57.805" maxBackwardGearRatio="150" ptoMotorRpmRatio="3.889">
+                        <!-- 2300: 113(113) | 2300: 113(113) | 1450..1600: 387(387) | 85 | 0.5 | 149 | 2 | 2400 | 1460: 210 -->
+				<torque normRpm="0.146" torque="0.481"/>
+				<torque normRpm="0.292" torque="0.74"/>
+				<torque normRpm="0.375" torque="0.85"/>
+				<torque normRpm="0.417" torque="0.9"/>
+				<torque normRpm="0.458" torque="0.939"/>
+				<torque normRpm="0.5" torque="0.969"/>
+				<torque normRpm="0.542" torque="0.989"/>
+				<torque normRpm="0.583" torque="0.999"/>
+				<torque normRpm="0.625" torque="1"/>
+				<torque normRpm="0.667" torque="1"/>
+				<torque normRpm="0.708" torque="0.991"/>
+				<torque normRpm="0.75" torque="0.98"/>
+				<torque normRpm="0.771" torque="0.974"/>
+				<torque normRpm="0.792" torque="0.967"/>
+				<torque normRpm="0.813" torque="0.959"/>
+				<torque normRpm="0.833" torque="0.951"/>
+				<torque normRpm="0.854" torque="0.943"/>
+				<torque normRpm="0.875" torque="0.934"/>
+				<torque normRpm="0.896" torque="0.924"/>
+				<torque normRpm="0.917" torque="0.914"/>
+				<torque normRpm="0.938" torque="0.903"/>
+				<torque normRpm="0.958" torque="0.891"/>
+				<torque normRpm="0.979" torque="0.791"/>
+				<torque normRpm="1" torque="0"/>
+            </motor>
+            <objectChange node="0>35|4|9" visibilityActive="false" />
+            <objectChange node="0>35|4|19" visibilityActive="true" />
+        </motorConfiguration>	
+        <motorConfiguration name="6.31/BF6L 913T" hp="120" price="3540">
+            <motor torqueScale="0.411" minRpm="900" maxRpm="2550" maxForwardSpeed="40" maxBackwardSpeed="15" brakeForce="8" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="1" rotInertia="0.001" minForwardGearRatio="21.667" maxForwardGearRatio="150" minBackwardGearRatio="57.805" maxBackwardGearRatio="150" ptoMotorRpmRatio="3.889">
+                        <!-- 2400: 120(120) | 2400: 120(120) | 1450..1600: 411(411) | 85 | 0.5 | 149 | 2 | 2500 | 1500: 210 -->
+				<torque normRpm="0.14" torque="0.481"/>
+				<torque normRpm="0.28" torque="0.74"/>
+				<torque normRpm="0.36" torque="0.85"/>
+				<torque normRpm="0.4" torque="0.9"/>
+				<torque normRpm="0.44" torque="0.939"/>
+				<torque normRpm="0.48" torque="0.969"/>
+				<torque normRpm="0.52" torque="0.989"/>
+				<torque normRpm="0.56" torque="0.999"/>
+				<torque normRpm="0.6" torque="1"/>
+				<torque normRpm="0.64" torque="1"/>
+				<torque normRpm="0.68" torque="0.99"/>
+				<torque normRpm="0.72" torque="0.977"/>
+				<torque normRpm="0.74" torque="0.97"/>
+				<torque normRpm="0.76" torque="0.962"/>
+				<torque normRpm="0.78" torque="0.954"/>
+				<torque normRpm="0.8" torque="0.945"/>
+				<torque normRpm="0.82" torque="0.936"/>
+				<torque normRpm="0.84" torque="0.926"/>
+				<torque normRpm="0.86" torque="0.915"/>
+				<torque normRpm="0.88" torque="0.904"/>
+				<torque normRpm="0.9" torque="0.893"/>
+				<torque normRpm="0.92" torque="0.88"/>
+				<torque normRpm="0.94" torque="0.868"/>
+				<torque normRpm="0.96" torque="0.854"/>
+				<torque normRpm="0.98" torque="0.758"/>
+				<torque normRpm="1" torque="0"/>
+            </motor>
+	        <objectChange node="0>35|4|9" visibilityActive="true" />
+            <objectChange node="0>35|4|19" visibilityActive="false" />		
+        </motorConfiguration>
+    </motorConfigurations>
+	
+	<engines>
+		<engine name="6.21/BF6L 913" idleRpm="900" ratedRpm="2300">
+			        <!-- 2300: 113(113) | 2300: 113(113) | 1450..1600: 387(387) | 85 | 0.5 | 149 | 2 | 2400 | 1460: 210 -->
+			<torque rpm="350" motorTorque="186" fuelUsageRatio="246.7"/>
+			<torque rpm="700" motorTorque="287" fuelUsageRatio="227.2"/>
+			<torque rpm="900" motorTorque="329" fuelUsageRatio="219.3"/>
+			<torque rpm="1000" motorTorque="348" fuelUsageRatio="216.3"/>
+			<torque rpm="1100" motorTorque="363" fuelUsageRatio="213.9"/>
+			<torque rpm="1200" motorTorque="375" fuelUsageRatio="212"/>
+			<torque rpm="1300" motorTorque="383" fuelUsageRatio="210.8"/>
+			<torque rpm="1400" motorTorque="387" fuelUsageRatio="210.1"/>
+			<torque rpm="1500" motorTorque="387" fuelUsageRatio="210.1"/>
+			<torque rpm="1600" motorTorque="387" fuelUsageRatio="210.6"/>
+			<torque rpm="1700" motorTorque="384" fuelUsageRatio="211.9"/>
+			<torque rpm="1800" motorTorque="379" fuelUsageRatio="213.8"/>
+			<torque rpm="1850" motorTorque="377" fuelUsageRatio="215"/>
+			<torque rpm="1900" motorTorque="374" fuelUsageRatio="216.4"/>
+			<torque rpm="1950" motorTorque="371" fuelUsageRatio="217.9"/>
+			<torque rpm="2000" motorTorque="368" fuelUsageRatio="219.6"/>
+			<torque rpm="2050" motorTorque="365" fuelUsageRatio="221.5"/>
+			<torque rpm="2100" motorTorque="361" fuelUsageRatio="223.5"/>
+			<torque rpm="2150" motorTorque="358" fuelUsageRatio="225.7"/>
+			<torque rpm="2200" motorTorque="354" fuelUsageRatio="228.1"/>
+			<torque rpm="2250" motorTorque="349" fuelUsageRatio="230.6"/>
+			<torque rpm="2300" motorTorque="345" fuelUsageRatio="233.3"/>
+			<torque rpm="2350" motorTorque="306" fuelUsageRatio="248.6"/>
+			<torque rpm="2400" motorTorque="190" fuelUsageRatio="319.4"/>
+			<torque rpm="2450" motorTorque="0" fuelUsageRatio="466.7"/>
+		</engine>
+		<engine name="6.31/BF6L 913T" idleRpm="900" ratedRpm="2400">
+			        <!-- 2400: 120(120) | 2400: 120(120) | 1450..1600: 411(411) | 85 | 0.5 | 149 | 2 | 2500 | 1500: 210 -->
+			<torque rpm="350" motorTorque="198" fuelUsageRatio="244.3"/>
+			<torque rpm="700" motorTorque="304" fuelUsageRatio="226.6"/>
+			<torque rpm="900" motorTorque="349" fuelUsageRatio="219.3"/>
+			<torque rpm="1000" motorTorque="370" fuelUsageRatio="216.5"/>
+			<torque rpm="1100" motorTorque="386" fuelUsageRatio="214.1"/>
+			<torque rpm="1200" motorTorque="398" fuelUsageRatio="212.3"/>
+			<torque rpm="1300" motorTorque="406" fuelUsageRatio="211"/>
+			<torque rpm="1400" motorTorque="410" fuelUsageRatio="210.3"/>
+			<torque rpm="1500" motorTorque="411" fuelUsageRatio="210"/>
+			<torque rpm="1600" motorTorque="411" fuelUsageRatio="210.3"/>
+			<torque rpm="1700" motorTorque="407" fuelUsageRatio="211.2"/>
+			<torque rpm="1800" motorTorque="402" fuelUsageRatio="212.6"/>
+			<torque rpm="1850" motorTorque="399" fuelUsageRatio="213.5"/>
+			<torque rpm="1900" motorTorque="396" fuelUsageRatio="214.6"/>
+			<torque rpm="1950" motorTorque="392" fuelUsageRatio="215.8"/>
+			<torque rpm="2000" motorTorque="389" fuelUsageRatio="217.2"/>
+			<torque rpm="2050" motorTorque="385" fuelUsageRatio="218.7"/>
+			<torque rpm="2100" motorTorque="381" fuelUsageRatio="220.4"/>
+			<torque rpm="2150" motorTorque="376" fuelUsageRatio="222.2"/>
+			<torque rpm="2200" motorTorque="372" fuelUsageRatio="224.1"/>
+			<torque rpm="2250" motorTorque="367" fuelUsageRatio="226.2"/>
+			<torque rpm="2300" motorTorque="362" fuelUsageRatio="228.4"/>
+			<torque rpm="2350" motorTorque="357" fuelUsageRatio="230.8"/>
+			<torque rpm="2400" motorTorque="351" fuelUsageRatio="233.3"/>
+			<torque rpm="2450" motorTorque="312" fuelUsageRatio="248.6"/>
+			<torque rpm="2500" motorTorque="193" fuelUsageRatio="319.4"/>
+			<torque rpm="2550" motorTorque="0" fuelUsageRatio="466.7"/>
+		</engine>
+	</engines>
+		<transmissions>
+			<transmission name="48 + 12" autoStartStop="false" rpmInSpeedHud="true" maxBackwardSpeed="15" maxAIRange2="3" maxForwardSpeed="40" ptoRpm="2100" revUpMs="1100" revDownMs="800">
+			<blowOffVentilSound volume="0.5"/>
+			<gears defaultGear="2" shiftTimeMs="800" speedMatching="false">
+				<gear speed="10.0"/>
+				<gear speed="13.5"/>
+				<gear speed="17.0"/>
+				<gear speed="25.0"/>
+				<gear speed="30.0"/>
+				<gear speed="40.0"/>
+			</gears>
+
+			<ranges defaultRange="1" shiftTimeMs="0" clutchRatio="1" speedMatching="false">
+				<range ratio="0.8" name="I" />
+				<range ratio="1.0" name="II" />
+			</ranges>
+
+			<ranges defaultRange="4" reverseReset="true" doubleClutch="true">
+				<range ratio="0.0425" name="LL" forwardOnly="true"/>
+				<range ratio="0.2275" name="L" forwardOnly="true"/>
+				<range ratio="0.47"   name="M" forwardOnly="true"/>
+				<range ratio="1"      name="H" forwardOnly="true"/>
+				<range ratio="0.44"   name="R" reverseOnly="true"/>
+			</ranges>
+		</transmission>
+	</transmissions>
+	
+    <fuelCapacity>170</fuelCapacity>
+	<oilChange oilChangeCheckString="changeOil" firstOilChange="21" interval="40" neededOilPerChange="16" />
+    
+	<cameras count="2">
+        <camera1 index="4|0" rotatable="true" rotateNode="4" limit="true" useWorldXZRotation="true" rotMinX="-1.4" rotMaxX="1" transMin="4" transMax="35">
+            <raycastNode index="0>6"/>
+            <raycastNode index="0>7"/>
+        </camera1>
+        <camera2 index="0>43|0|0|0|0|0|0" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true"/>
+    </cameras>
+	 <mrManageNodes> 
+		 <manageNode node="0>43|0|0|0|0|0|0" setTranslation="0 0.15 -0.18" />		 
+	 </mrManageNodes>
+    
+	<lights>
+        <!--to be adjusted manually-->
+        <low>
+            <light realLight="0>24|3|1|0|0|0" decoration="0>24|0|0" lightTypes="0"/>
+            <light realLight="0>24|3|1|1|0|0" decoration="0>24|1|0" lightTypes="1"/>
+			<light realLight="0>24|3|1|2|0|0" decoration="0>24|1|1" lightTypes="2"/>
+        </low>
+        <!--to be adjusted manually-->
+        <high>
+		
+            <light realLight="0>24|3|0|0|1|0" decoration="0>24|0|0" lightTypes="0"/>
+            <light realLight="0>24|3|0|0|1|1" lightTypes="0"/>
+            <light realLight="0>24|3|0|0|1|2" lightTypes="0"/>
+            <light realLight="0>24|3|0|0|1|3" lightTypes="0"/>
+            <light realLight="0>24|3|0|0|1|4" lightTypes="0"/>
+            <light realLight="0>24|3|0|0|1|5" lightTypes="0"/>
+			
+            <light realLight="0>24|3|0|0|1|6" lightTypes="0"/>
+            <light realLight="0>24|3|0|0|1|7" lightTypes="0"/>
+			
+            <light realLight="0>24|3|0|0|1|8" lightTypes="0"/>
+            <light realLight="0>24|3|0|0|1|9" lightTypes="0"/>
+			
+            <light realLight="0>24|3|0|0|1|10" lightTypes="0"/>
+			
+			
+            <light realLight="0>24|3|0|1|0|0" decoration="0>24|1|0" lightTypes="1"/>
+            <light realLight="0>24|3|0|1|0|1" lightTypes="1"/>
+			
+			<light realLight="0>24|3|0|2|0|0" decoration="0>24|1|1" lightTypes="2"/>
+			<light realLight="0>24|3|0|2|0|1" lightTypes="2"/>
+			
+        </high>
+        <!--to be adjusted manually-->
+        <states>
+            <state lightTypes="0" />
+            <state lightTypes="0 1" />
+            <state lightTypes="0 1 2" />
+        </states>
+    </lights>
+
+    <brakeLights>
+        <brakeLight realLight="0>27|3" decoration="0>27"/>
+    </brakeLights>
+    
+	<turnLights>
+        <turnLightLeft  realLight="0>24|2|0|4" decoration="0>24|2|0"/>
+        <turnLightLeft  realLight="0>24|2|0|5" />
+        <turnLightRight realLight="0>24|2|1|4" decoration="0>24|2|1"/>
+        <turnLightRight realLight="0>24|2|1|5" />
+    </turnLights>
+	
+	<beaconLights>
+        <beaconLight index="0>35|4|17|1" speed="0.015" filename="$data/shared/beaconLights/beaconLight01.i3d"/>
+        <beaconLight index="0>35|4|18|1" speed="0.015" filename="$data/shared/beaconLights/beaconLight01.i3d"/>
+    </beaconLights>
+	
+	<BeifahrerScript>
+        <Beifahrer NicknameNodeIndex="0>48|1" FarmerNode="0>48|0">
+            <Kamera index="0>48|2" rotatable="true" limit="false" transMin="0" transMax="0" useMirror="true" isInside="true" useDefaultPositionSmoothing="false"/>
+        </Beifahrer>
+    </BeifahrerScript>
+    
+	<animParts>
+        <animPart index="0>43|0|0" id="CamAnimationRotate" showHelp="false" rotMin="0 0 0" rotMax="0 180 0" moveTime="0.2"/>
+        <animPart index="0>43|0|0|0" id="CamAnimationNick" showHelp="false" rotMin="0 0 0" rotMax="15 0 0" moveTime="0.1"/>
+        <animPart index="0>43|0|0|0|0" id="CamAnimationNickLeft" showHelp="false" rotMin="0 0 0" rotMax="0 55 0" moveTime="0.1" autoReturn="true"/>
+        <animPart index="0>43|0|0|0|0|0" id="CamAnimationNickRight" showHelp="false" rotMin="0 0 0" rotMax="0 -55 0" moveTime="0.1" autoReturn="true"/>
+    </animParts>
+    
+	<animations>
+        <!-- IC Animation -->
+        <animation name="backWindow">
+            <part node="0>35|3|1" startTime="0" duration="1" startRot="0 0 0" endRot="66.5 0 0"/>
+        </animation>
+        <animation name="frontWindow">
+            <part node="0>35|3|0" startTime="0" duration="1" startRot="0 0 0" endRot="-57.7 0 0"/>
+            <part node="0>35|4|0" startTime="0" duration="1" startRot="-8.501 11.536 46.695" endRot="-53.864 11.536 46.695"/>
+        </animation>
+        <animation name="leftDoor">
+            <part node="0>35|3|3" startTime="0" duration="0.75" startRot="0 0 0" endRot="-5.265 42.75 0"/>
+        </animation>
+        <animation name="rightDoor">
+            <part node="0>35|3|2" startTime="0" duration="0.75" startRot="0 0 0" endRot="-5.265 -42.75 0"/>
+        </animation>
+        <animation name="frontKraftheber">
+            <part node="0>17|0|2" startTime="0" duration="1" startRot="-70 0 0" endRot="0 0 0"/>
+        </animation>
+        <animation name="fuelDisplay">
+            <part node="0>35|1|0" startTime="0" endTime="1" startRot="0 0 0" endRot="0 0 -80"/>
+        </animation>
+        <animation name="rpmDisplay">
+            <part node="0>35|1|1" startTime="0" endTime="0.27" startRot="0 0 0" endRot="0 0 0"/>
+            <part node="0>35|1|1" startTime="0.27" endTime="1" startRot="0 0 0" endRot="0 0 -235"/>
+        </animation>
+    </animations>
+    
+	<interactiveComponents>
+        <windows>
+            <window name="backWindow" mark="0>35|3|1|1" size="0.1" animName="backWindow" onMessage="ic_component_open" offMessage="ic_component_close"/>
+            <window name="frontWindow" mark="0>35|3|0|2" size="0.1" animName="frontWindow" onMessage="ic_component_open" offMessage="ic_component_close"/>
+            <window name="leftDoor" mark="0>35|3|3|2" size="0.1" animName="leftDoor" onMessage="ic_component_open" offMessage="ic_component_close"/>
+            <window name="rightDoor" mark="0>35|3|2|2" size="0.1" animName="rightDoor" onMessage="ic_component_open" offMessage="ic_component_close"/>
+            <window name="frontKraftheber" mark="0>35|5" size="0.1" animName="frontKraftheber" onMessage="ic_component_close" offMessage="ic_component_open"/>
+        </windows>
+    </interactiveComponents>
+    
+	<doorOpener trigger="0>42" icIndex="3"/>
+    
+	<ZylinderV2>
+        <Zylinder count="6">
+            <Zylinder1 dir1="0>35|3|1|2|0" dir2="0>35|3|5|0"/>
+            <Zylinder2 dir1="0>35|3|1|3|0" dir2="0>35|3|6|0"/>
+            <Zylinder3 dir1="0>35|3|0|3|0" dir2="0>35|3|7|0"/>
+            <Zylinder4 dir1="0>35|3|0|4|0" dir2="0>35|3|8|0"/>
+            <Zylinder5 dir1="0>35|3|2|3|0" dir2="0>35|3|9|0"/>
+            <Zylinder6 dir1="0>35|3|3|3|0" dir2="0>35|3|10|0"/>
+        </Zylinder>
+    </ZylinderV2>
+    
+	<indoorHud>
+        <speed numbers="0>35|1|2" precision="1"/>
+        <fuel animName="fuelDisplay"/>
+        <rpm animName="rpmDisplay"/>
+    </indoorHud>
+	
+	<mirrors>
+        <mirror index="0>55|0" prio="1" />
+        <mirror index="0>55|1" prio="1" />
+    </mirrors>
+    
+	<enterReferenceNode index="0>"/>
+    <exitPoint index="0>8"/>
+    
+	<attacherJoints comboDuration="2">
+        <attacherJoint dynamicHoseIndice="0" index="0>12|0|0" rotationNode="0>12" lowerRotation="0 0 0" upperRotation="20 0 0" upperDistanceToGround="0.95" lowerDistanceToGround="0.247" rotationNode2="0>12|0" lowerRotation2="-10 0 0" upperRotation2="-17 0 0" lowerRotLimit="0 0 20" lowerTransLimit="0 0.5 0" moveTime="2.5" ptoOutputNode="0>51" comboTime="1">
+            <bottomArm rotationNode="0>13" translationNode="0>13|0" referenceNode="0>13|0|0" zScale="-1"/>
+            <topArm baseNode="0>53|0" filename="$data/shared/vehicleParts/upperLink.i3d" zScale="-1"/>
+            <schema position="1 0" rotation="0" invertX="false"/>
+        </attacherJoint>
+        <attacherJoint dynamicHoseIndice="0" index="0>16|0|0" rotationNode="0>16" lowerRotation="0 0 0" upperRotation="-33 0 0" upperDistanceToGround="1.1" lowerDistanceToGround="0.38" rotationNode2="16|0" lowerRotation2="0 0 0" upperRotation2="20 0 0" lowerRotLimit="0 0 20" lowerTransLimit="0 0.4 0" moveTime="2.5" ptoOutputNode="0>52" comboTime="0">
+            <bottomArm rotationNode="0>17" translationNode="17|0" referenceNode="17|0|0" zScale="1"/>
+            <topArm baseNode="0>53|1" filename="$data/shared/vehicleParts/upperLink.i3d" zScale="-1"/>
+            <schema position="0 0" rotation="0" invertX="true"/>
+        </attacherJoint>
+        <attacherJoint dynamicHoseIndice="0" index="0>20|0" jointType="trailer" allowsJointLimitMovement="false" upperRotationOffset="0" lowerRotLimit="10 50 50" ptoOutputNode="0>51" comboTime="1">
+            <schema position="1 0" rotation="0" invertX="false"/>
+        </attacherJoint>
+        <attacherJoint dynamicHoseIndice="0" index="0>20|1" jointType="trailerLow" allowsJointLimitMovement="false" upperRotationOffset="0" lowerRotLimit="10 50 50" ptoOutputNode="0>51" comboTime="1">
+            <schema position="1 0" rotation="0" invertX="false"/>
+			<objectChange node="0>13" rotationActive="30 0 0" rotationInactive="-17 0 0"/>
+		</attacherJoint>
+    </attacherJoints>
+	
+	<warningSigns>
+        <sign index="1>2|0|2" trigger="0>47" isVisible="true"/>
+        <sign index="1>1|0|2" trigger="0>46" isVisible="true"/>
+    </warningSigns>
+	
+	<dynamicHose>
+	   <!-- Anschluesse hinten -->
+		<set>			
+			<ref type="hydraulic" index="0>56|0|0" />
+			<ref type="hydraulic" index="0>56|0|1" />
+			<ref type="hydraulic" index="0>56|0|2" />			
+			<ref type="hydraulic" index="0>56|0|3" />
+			<ref type="hydraulic" index="0>56|0|4" />
+			<ref type="hydraulic" index="0>56|0|5" />
+			<ref type="air" 	  index="0>56|2|0" />
+			<ref type="air" 	  index="0>56|2|1" />			
+			<ref type="electric"  index="0>56|1|0" />
+		</set>
+		<set>
+			<ref index="0>57|0|0" type="hydraulic" />
+			<ref index="0>57|0|1" type="hydraulic" />
+		</set>
+	</dynamicHose>
+	
+	<frontloaderConfigurations>
+        <frontloaderConfiguration name="$l10n_ui_no" price="0" >
+            <objectChange node="0>54|0" visibilityActive="false" />
+        </frontloaderConfiguration>
+		<frontloaderConfiguration name="$l10n_Aloe" price="800" icon="$dataS2/menu/hud/configurations/config_loader.png" >
+            <objectChange node="0>54|1" visibilityActive="true" visibilityInactive="false"/>
+            <attacherJoint index="0>54|1|0" jointType="attachableFrontloader" upperRotation="0 0 0" lowerRotation="0 0 0" lowerTransLimit="0 0 0" lowerRotLimit="0 0 0" moveTime="2" >
+                <schema position="0 0.4" rotation="0" invertX="true" />
+            </attacherJoint>
+        </frontloaderConfiguration>
+        <frontloaderConfiguration name="$l10n_ui_yes" price="800" icon="$dataS2/menu/hud/configurations/config_loader.png" >
+            <objectChange node="0>54|0" visibilityActive="true" visibilityInactive="false"/>
+            <!-- frontloader attacher -->
+            <attacherJoint index="0>54|0|0" jointType="attachableFrontloader" upperRotation="0 0 0" lowerRotation="0 0 0" lowerTransLimit="0 0 0" lowerRotLimit="0 0 0" moveTime="2" >
+                <schema position="0 0.4" rotation="0" invertX="true" />
+            </attacherJoint>
+        </frontloaderConfiguration>
+    </frontloaderConfigurations>
+    
+	<movingTools>
+        <movingTool index="0>13">
+            <dependentPart index="0>28"/>
+        </movingTool>
+        <movingTool index="0>17">
+            <dependentPart index="0>31"/>
+        </movingTool>
+    </movingTools>
+    
+	<movingParts>
+        <!-- front -->
+        <movingPart index="0>31" referencePoint="0>17|0|1" referenceFrame="0>17|0|1">
+            <translatingPart index="0>31|0"/>
+        </movingPart>
+        <!-- back -->
+        <movingPart index="0>28" referencePoint="0>13|0|1" localReferencePoint="0>28|0" referenceFrame="0>36">
+            <dependentPart index="0>28|0"/>
+        </movingPart>
+        <!-- attacher joint back bottom cylinder 2b -->
+        <movingPart index="0>28|0" referencePoint="0>13|0|1" referenceFrame="0>13|0|1">
+            <dependentPart index="0>29"/>
+            <dependentPart index="0>30"/>
+            <dependentPart index="0>33"/>
+            <dependentPart index="0>34"/>
+        </movingPart>
+        <!-- hydraulic -->
+        <movingPart index="0>29" referencePoint="0>28|1" referenceFrame="0>28|1">
+            <translatingPart index="0>29|0"/>
+        </movingPart>
+        <movingPart index="0>30" referencePoint="0>28|2" referenceFrame="0>28|2">
+            <translatingPart index="0>30|0"/>
+        </movingPart>
+        <movingPart index="0>33" referencePoint="0>28|0|0" referenceFrame="0>28|0|0" scaleZ="true"/>
+        <movingPart index="0>34" referencePoint="0>28|0|1" referenceFrame="0>28|0|1" scaleZ="true"/>
+        <!-- steering -->
+        <movingPart index="1>1|0|1" referencePoint="1>4|1" referenceFrame="1>4|1" isActiveDirty="true" playSound="false" scaleZ="false"/>
+        <movingPart index="1>2|0|1" referencePoint="1>4|0" referenceFrame="1>4|0" isActiveDirty="true" playSound="false" scaleZ="false"/>
+    </movingParts>
+    
+	<steering index="0>11|0" indoorRotation="540" outdoorRotation="60"/>
+    
+	<characterNode index="0>21|0" cameraMinDistance="1.5" filename="$dataS2/character/player/player.xml" spineRotation="180 0 100">
+        <target ikChain="rightFoot" targetNode="0>21|1" setDirty="true"/>
+        <target ikChain="leftFoot" targetNode="0>21|2" setDirty="true"/>
+        <target ikChain="rightArm" targetNode="0>11|0|0" setDirty="true"/>
+        <target ikChain="leftArm" targetNode="0>11|0|1" setDirty="true"/>
+    </characterNode>
+    
+	<ai>
+        <trafficCollisionTrigger index="0>22"/>
+    </ai>
+    
+	<exhaustEffects>
+        <exhaustEffect filename="$data/particleSystems/shared/exhaust.i3d" index="0>23" minRpmColor="0 0 0 0.05" maxRpmColor="0.01 0.01 0.01 6" minRpmScale="0.05" maxRpmScale="0.4" xzRotationOffset="0 0" xzRotationsForward="-180 0" xzRotationsBackward="80 0" xzRotationsLeft="0 60" xzRotationsRight="0 -60"/>
+    </exhaustEffects>
+
+	<newExhaustEffects>
+        <particle node="0>23|0" position="0 0.5 0.1" rotation="0 0 0" file="scripts/newRealParticles.i3d"/>
+    </newExhaustEffects>
+	
+    <motorStartDuration>2500</motorStartDuration>
+    <attachSound file="$data/sounds/attach.wav" pitchOffset="1"/>
+    <motorStartSound file="SoundData/Deutz631Start.wav" pitchOffset="1" volume="0.80"/>
+    <motorSound file="SoundData/Deutz631Idle.wav" pitchOffset="1" pitchScale="0.026" pitchMax="1.43" volume="0.80" radius="55" innerRadius="30"/>
+    <!--motorSoundRun file="SoundData/Deutz631Run.wav" pitchOffset="0.5" pitchScale="0.0365" pitchMax="1.40" volume="1.6" radius="50" innerRadius="20"/-->
+	<!-- $data/vehicles/steerable/deutz/deutzAgrostar661_run.wav pitchOffset="0.50"  volume="1.00" indoorVolumeFactor="0.60"  indoorLowpassGain="0.95" pitchMax="1.00"-->
+    <motorSoundRun file="SoundData/Deutz631Run.wav" 		pitchOffset="0.5" pitchScale="0.0365" pitchMax="1.40" volume="1.6" radius="50" innerRadius="20"/>
+    <motorSoundLoad file="SoundData/Deutz631Run.wav"       pitchOffset="0.44"  volume="1.50" indoorVolumeFactor="0.54"  indoorLowpassGain="0.95" pitchMax="1.34"  minimalVolumeFactor="0.01" />
+	
+    <motorStopSound file="SoundData/Deutz631Stop.wav" pitchOffset="1" volume="1.5"/>
+    <motorSoundRun2 file="$data/vehicles/shared/transmissionOld.wav" pitchOffset="0.75" volume="0.3" pitchMax="1.25" volumeMax="0.7"/>
+    <compressedAirSound file="$data/sounds/technicalAccessories/brakeBig.wav" pitchOffset="1" volume="1.25"/>
+    <compressionSound file="$data/sounds/technicalAccessories/brakeBig.wav" pitchOffset="1" volume="1.5"/>
+    <hydraulicSound file="$data/sounds/hydraulicUp.wav" pitchOffset="0.55" volume="0.8"/>
+    <honkSound file="$data/sounds/horn.wav" pitchOffset="0.7" volume="1" innerRadius="10" radius="70"/>
+    <washable dirtDuration="50" washDuration="1" workMultiplier="4"/>
+    
+	<components count="2">
+        <component1 centerOfMass="0 1.2 -0.9" solverIterationCount="10" mrSetMass="2.7" />
+		<component2 centerOfMass="0 0 -0.1" solverIterationCount="10" mrSetMass="1.8" />
+		<joint component1="0" component2="1" index="1>0" rotLimit="0 0 10" 	transLimit="0 0 0" breakable="false"/>
+    </components>
+    
+	<schemaOverlay file="$dataS2/menu/schemas/vehicleSchema.png" fileSelected="$dataS2/menu/schemas/vehicleSchemaSelected.png" width="0.5" height="0.5" attacherJointPosition="0.5 0"/>
+
+	    <!-- vehicleTypeConfigurations -->
+	<vehicleTypeConfigurations>
+		<vehicleTypeConfiguration name="no beaconLight" price="0" vehicleType="DeutzAgrostar631MrFox">
+			<objectChange node="0>35|4|17" visibilityActive="false"/>
+        </vehicleTypeConfiguration>
+		<vehicleTypeConfiguration name="1 beaconLight" price="100" vehicleType="DeutzAgrostar631MrFox">
+			<objectChange node="0>35|4|17" visibilityActive="true"/>
+        </vehicleTypeConfiguration>
+        <vehicleTypeConfiguration name="2 beaconLights" price="200" vehicleType="DeutzAgrostar631MrFox">
+			<objectChange node="0>35|4|17" visibilityActive="true"/>
+			<objectChange node="0>35|4|18" visibilityActive="true"/>
+        </vehicleTypeConfiguration>
+    </vehicleTypeConfigurations>
+</vehicle>

@@ -1,0 +1,536 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="claasMega208">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved, VertexDezign, MadMax</annotation>
+
+	<!--
+		center of mass		
+		differentials
+		lowerTransLimit / rotLimitSpring / rotLimitDamping
+		
+				changes by passion78  7/4/2018 for V 2.0.1.0
+		reference: https://konedata.net/puimurit/claas/claas-mega-202-218-1994-2003/
+		mod website: https://www.farming-simulator.com/mod.php?lang=en&country=nl&mod_id=102581&title=fs2017
+		
+				
+		removed lateralForces (not used anymore)
+		changed moreRealistic part
+		deleted the front left right differential
+		deleted the front to back differential
+		added  brakeFactor="0"  to rear wheels, sins they have no brakes.
+		redone the wheels, 
+		redone the motor config
+		redone gearbox
+		redone the engine and fuelUsageFactor
+		foldGrainTank
+		allowFillFromAir set to true
+		exhaustEffect
+		fillVolumes capacity
+		added <part node="0>9|3|0" to animation foldGrainTank to make the ladder fold to front when graintank is folded.
+		added <objectChange node="0>9|2|0|0" to make the straw shoot, go higer when trailer is attached
+		changed  attacherJoint lowerDistanceToGround
+		changed maxAllowedHeapAngle from "0" to "30", cause you can tip on the ground.
+		
+		
+	-->		
+		
+	<moreRealistic useMrTransmission="true">		
+		<dragArea value="9" />
+		<engine transmissionEfficiency="0.855" fuelUsageFactor="1.1" minSpeed="0.5" engineBrakeRpm="2700" engineBrakeForceFx="1.5" />
+		<combine turnedOnPtoPower="27.36" areaDependantPtoPower="22.1" chopperPtoPower="12.3" unloadingAugerPtoPower="7.2" basePerf="410" strawFactor="1" />
+	</moreRealistic>
+	
+    <storeData>
+        <name>Mega 208</name>
+        <specs>
+            <power>255</power>
+            <maxSpeed>25</maxSpeed>
+            <combination>C600</combination>
+        </specs>
+        <functions>
+            <function>$l10n_function_combine</function>
+            <function>$l10n_function_combineNeedsCutter</function>
+        </functions>
+        <image>claasMega208/store_claasMega208.dds</image>
+        <price>46000</price>
+        <dailyUpkeep>740</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>CLAAS</brand>
+        <category>harvesters</category>
+        <vertexBufferMemoryUsage>0</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>0</indexBufferMemoryUsage>
+        <textureMemoryUsage>0</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <typeDesc>$l10n_typeDesc_combine</typeDesc>
+    <filename>claasMega208/ClaasMega208.i3d</filename>
+
+    <size width="4.5" length="10" lengthOffset="0.5" />
+
+    <wheelConfigurations>
+        <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
+            <wheels autoRotateBackSpeed="1.7" differentialIndex="1" ackermannSteeringIndex="1">
+                <wheel rotSpeed="-1" restLoad="3.2" repr="1>0" driveNode="1>0|0|0"        filename="$data/vehicles/wheels/trelleborg/T421_500_60R22_5.xml"  isLeft="true"  color="0.750 0.002 0.002 1" initialCompression="22" suspTravel="0.2" spring="60" damper="9" hasTireTracks="true" hasParticles="true"  brakeFactor="0" />
+                <wheel rotSpeed="-1" restLoad="3.2" repr="1>1" driveNode="1>1|0|0"        filename="$data/vehicles/wheels/trelleborg/T421_500_60R22_5.xml"  isLeft="false" color="0.750 0.002 0.002 1" initialCompression="22" suspTravel="0.2" spring="60" damper="9" hasTireTracks="true" hasParticles="true"  brakeFactor="0" />
+                <wheel rotSpeed="0"  restLoad="2.3" forcePointRatio="0.9" repr="0>0|0"    filename="claasMega208/TM3000_650_75R32.xml"                      isLeft="true"  color="0.750 0.002 0.002 1" initialCompression="19" suspTravel="0.2" spring="100" damper="20"  hasTireTracks="true" hasParticles="true" />
+                <wheel rotSpeed="0"  restLoad="2.3" forcePointRatio="0.9" repr="0>0|1"    filename="claasMega208/TM3000_650_75R32.xml"                      isLeft="false" color="0.750 0.002 0.002 1" initialCompression="19" suspTravel="0.2" spring="100" damper="20"  hasTireTracks="true" hasParticles="true" />
+            </wheels>
+        </wheelConfiguration>
+    </wheelConfigurations>
+
+    <axisColor>0.453 0.542 0.027 1</axisColor>
+
+    <ackermannSteeringConfigurations>
+        <ackermannSteering rotSpeed="55" rotMax="40" rotCenterWheel1="2" rotCenterWheel2="3" />
+    </ackermannSteeringConfigurations>
+
+    <differentialConfigurations>
+        <differentials>
+            <differential torqueRatio="0.5" maxSpeedRatio="1.8" wheelIndex1="2" wheelIndex2="3" /> <!-- back left-right -->
+        </differentials>
+    </differentialConfigurations>
+
+  <motorConfigurations>
+        <motorConfiguration name="$l10n_configuration_valueDefault" price="0">
+            <motor torqueScale="1.0932" minRpm="1000" maxRpm="2200" maxForwardSpeed="26" maxBackwardSpeed="15" brakeForce="5.5" lowBrakeForceScale="0.22" lowBrakeForceSpeedLimit="1" rotInertia="0.001" minForwardGearRatio="33" maxForwardGearRatio="115" minBackwardGearRatio="50" maxBackwardGearRatio="115">
+                <torque normRpm="0.45" torque="0.9"/>
+                <torque normRpm="0.5" torque="0.97"/>
+                <torque normRpm="0.59" torque="1"/>
+                <torque normRpm="0.72" torque="1"/>
+                <torque normRpm="0.86" torque="0.88"/>
+                <torque normRpm="1" torque="0.72"/>
+            </motor>
+        </motorConfiguration>
+    </motorConfigurations>
+		
+	<engines>
+		<engine idleRpm="900" ratedRpm="2100">
+			<torque rpm="0" motorTorque="0" motorTorqueEco="0" fuelUsageRatio="261"/><!-- 1900: 234(234) | 2100: 235(235) | 1000..1550: 1180(1180) | 97 | 1 | 300 | 2.2 -->
+			<torque rpm="100" motorTorque="194" motorTorqueEco="194" fuelUsageRatio="251"/>
+			<torque rpm="400" motorTorque="499" motorTorqueEco="499" fuelUsageRatio="228"/>
+			<torque rpm="700" motorTorque="927" motorTorqueEco="927" fuelUsageRatio="210"/>
+			<torque rpm="800" motorTorque="1051" motorTorqueEco="1051" fuelUsageRatio="206"/>
+			<torque rpm="900" motorTorque="1138" motorTorqueEco="1138" fuelUsageRatio="203"/>
+			<torque rpm="1000" motorTorque="1180" motorTorqueEco="1180" fuelUsageRatio="200"/>
+			<torque rpm="1100" motorTorque="1180" motorTorqueEco="1180" fuelUsageRatio="198"/>
+			<torque rpm="1200" motorTorque="1180" motorTorqueEco="1180" fuelUsageRatio="197"/>
+			<torque rpm="1300" motorTorque="1180" motorTorqueEco="1180" fuelUsageRatio="196"/>
+			<torque rpm="1400" motorTorque="1180" motorTorqueEco="1180" fuelUsageRatio="196"/>
+			<torque rpm="1500" motorTorque="1150" motorTorqueEco="1150" fuelUsageRatio="197"/><!-- manualData: 1050-->
+			<torque rpm="1600" motorTorque="1110" motorTorqueEco="1110" fuelUsageRatio="199"/><!-- manualData: 1010-->
+			<torque rpm="1700" motorTorque="1060" motorTorqueEco="1060" fuelUsageRatio="201"/><!-- manualData: 960-->
+			<torque rpm="1800" motorTorque="1010" motorTorqueEco="1010" fuelUsageRatio="204"/><!-- manualData: 910-->
+			<torque rpm="1900" motorTorque="965" motorTorqueEco="965" fuelUsageRatio="208"/>
+			<torque rpm="2000" motorTorque="922" motorTorqueEco="922" fuelUsageRatio="213"/>
+			<torque rpm="2100" motorTorque="886" motorTorqueEco="886" fuelUsageRatio="218"/>
+			<torque rpm="2200" motorTorque="816" motorTorqueEco="816" fuelUsageRatio="242"/>
+			<torque rpm="2300" motorTorque="564" motorTorqueEco="564" fuelUsageRatio="315"/>
+			<torque rpm="2400" motorTorque="0" motorTorqueEco="0" fuelUsageRatio="436"/>
+		</engine>
+	</engines>
+
+		<transmissions>
+		<transmission name="hydro-direct" speedLimiter="false" enableAI="true" maxAIGear="2" onlyHandThrottle="true">
+			<combine defaultWidth="6"/>
+			<blowOffVentilSound volume="0"/>
+			
+			<hydrostatic profile="Hydrostat"  correctGearSpeed="true" minRatio="0.14"/>
+			<gears shiftTimeMs="1000" clutchRatio="1" defaultGear="3" onlyStopped="true">
+				<gear speed="9"  name="1"/> 
+				<gear speed="15" name="2"/> 
+				<gear speed="23" name="3"/>
+			 </gears>
+		</transmission>
+	</transmissions>
+	
+    <fuelCapacity>500</fuelCapacity>
+	<oilChange oilChangeCheckString="changeOil" firstOilChange="1" interval="46" neededOilPerChange="16" /> 
+	
+    <cameras count="2">
+        <camera1 index="0>1|0|0" rotatable="true" rotateNode="0>1|0" limit="true" useWorldXZRotation="true" rotMinX="-1.4" rotMaxX="1" transMin="7" transMax="25" >
+            <raycastNode index="0>16"/>
+            <raycastNode index="0>17"/>
+        </camera1>
+        <camera2 index="0>1|1" rotatable="true" limit="true" rotMinX="-1.1" rotMaxX="0.4" transMin="0" transMax="0" useMirror="true" isInside="true" />
+    </cameras>
+
+    <lights>
+        <low>
+            <light                        decoration="0>2|0|0"    lightTypes="0 3" /> <!--Decoration for FrontLights and Highbeams-->
+            <light                        decoration="0>4|0|2|0"  lightTypes="0 3" /> <!--speedNeedle-->
+            <light                        decoration="0>4|0|3|0"  lightTypes="0 3" /> <!--fuelNeedle-->
+            <light                        decoration="0>4|0|4|0"  lightTypes="0 3" /> <!--coolingNeedle-->
+            <light                        decoration="0>11|0|0|0" lightTypes="0 3" /> <!--rpmNeedle-->
+            <light                        decoration="0>11|0|1|0" lightTypes="0 3" /> <!--fillLevelNeedle-->
+            <light                        decoration="0>11|0|2|0" lightTypes="0 3" /> <!--Needle02-->
+            <light                        decoration="0>4|0|6"    lightTypes="0 3" /> <!--steeringBaseLights-->
+            <light realLight="0>2|0|1"                            lightTypes="0" excludedLightTypes="3" /> <!--FrontLights-->
+            <light                        decoration="0>2|2|0"    lightTypes="0 1"/>  <!--BackLights-->
+            <light realLight="0>2|1|0|1"  decoration="0>2|1|0|0"  lightTypes="1"/>    <!--WorklightBack-->
+            <light                        decoration="0>2|1|1|0"  lightTypes="2"/>    <!--WorklightFront-->
+        </low>
+        <high>
+            <light                        decoration="0>2|0|0"    lightTypes="0 3" /> <!--Decoration for FrontLights and Highbeams-->
+            <light                        decoration="0>4|0|2|0"  lightTypes="0 3" /> <!--speedNeedle-->
+            <light                        decoration="0>4|0|3|0"  lightTypes="0 3" /> <!--fuelNeedle-->
+            <light                        decoration="0>4|0|4|0"  lightTypes="0 3" /> <!--coolingNeedle-->
+            <light                        decoration="0>11|0|0|0" lightTypes="0 3" /> <!--rpmNeedle-->
+            <light                        decoration="0>11|0|1|0" lightTypes="0 3" /> <!--fillLevelNeedle-->
+            <light                        decoration="0>11|0|2|0" lightTypes="0 3" /> <!--Needle02-->
+            <light                        decoration="0>4|0|6"    lightTypes="0 3" /> <!--steeringBaseLights-->
+            <light realLight="0>2|0|3"                            lightTypes="0" excludedLightTypes="2 3" /> <!--FrontLights-->
+            <light realLight="0>2|2|1"    decoration="0>2|2|0"    lightTypes="0 3" /> <!--BackLights-->
+            <light realLight="0>2|1|0|2"  decoration="0>2|1|0|0"  lightTypes="1" />   <!--WorklightBack  -->
+            <light realLight="0>2|1|1|1"  decoration="0>2|1|1|0"  lightTypes="2"  />  <!--WorklightFront -->
+            <light realLight="0>2|0|4"                            lightTypes="3" excludedLightTypes="2" /> <!--HighBeam-->
+        </high>
+        <states>
+            <state lightTypes="0" />
+            <state lightTypes="0 1" />
+            <state lightTypes="0 1 2" />
+        </states>
+    </lights>
+
+    <brakeLights>
+        <brakeLight realLight="0>2|2|1" decoration="0>2|4|0" />
+    </brakeLights>
+
+    <beaconLights>
+        <beaconLight index="0>2|5|0" speed="0.015" filename="$data/shared/beaconLights/beaconLight01.i3d"/>
+        <beaconLight index="0>2|5|1" speed="0.015" filename="$data/shared/beaconLights/beaconLight02.i3d"/>
+        <beaconLight index="0>2|5|2" speed="0.015" filename="$data/shared/beaconLights/beaconLight02.i3d"/>
+    </beaconLights>
+
+    <turnLights>
+        <turnLightLeft  realLight="0>2|3|0|1" decoration="0>2|3|0|0" />
+        <turnLightLeft  realLight="0>2|3|0|2" />
+        <turnLightRight realLight="0>2|3|1|1" decoration="0>2|3|1|0" />
+        <turnLightRight realLight="0>2|3|1|2" />
+    </turnLights>
+
+    <mirrors>
+        <mirror index="0>12|0" prio="2" />
+        <mirror index="0>12|1" prio="2" />	
+    </mirrors>
+
+    <steering index="0>4|0|0|0" indoorRotation="360" outdoorRotation="30" />
+
+    <characterNode index="0>6|0" cameraMinDistance="1.5" filename="$dataS2/character/player/player.xml" spineRotation="180 0 100" >
+        <target ikChain="rightFoot" targetNode="0>6|1" />
+        <target ikChain="leftFoot"  targetNode="0>6|2" />
+        <target ikChain="rightArm"  targetNode="0>6|3" />
+        <target ikChain="leftArm"   targetNode="0>4|0|0|0|0" setDirty="true" />
+    </characterNode>
+
+    <attacherJoints>
+        <attacherJoint jointType="cutter" index="0>5|0|0|0" jointPositionOffset="0 0 -1.185" rotationNode="0>5|0|0" upperRotation="-20 0 0" lowerRotation="19 0 0" lowerTransLimit="0 0.2 0" lowerRotLimit="0 0 15" lockDownRotLimit="true" upperDistanceToGround="1.34" lowerDistanceToGround="1.1" rotLimitSpring="250 0 0" rotLimitDamping="100 0 0" moveTime="3.1" ptoOutputNode="0>5|0|1|3" ptoFilename="$data/shared/vehicleParts/powerTakeoff.i3d" pto2OutputNode="0>5|0|1|4" pto2Filename="$data/shared/vehicleParts/powerTakeoff.i3d" comboTime="0">
+            <bottomArm rotationNode="0>5|0|1" />
+            <schema position="0 0" rotation="0" invertX="true" />
+        </attacherJoint>
+        <attacherJoint index="0>5|1|0" jointType="trailerLow" lowerRotLimit="10 80 50" upperRotationOffset="0" allowsJointLimitMovement="false" canTurnOnImplement="false" comboTime="1" >
+            <schema position="1 0" rotation="0" invertX="false" />
+			<objectChange node="0>9|2|0|0" rotationActive="12 0 0" rotationInactive="0 0 0" />
+        </attacherJoint>
+        <attacherJoint index="0>5|1|0" jointType="trailer"    lowerRotLimit="10 80 50" upperRotationOffset="0" allowsJointLimitMovement="false" canTurnOnImplement="false" comboTime="1" >
+            <schema position="1 0" rotation="0" invertX="false" />
+		<objectChange node="0>9|2|0|0" rotationActive="12 0 0" rotationInactive="0 0 0" />
+        </attacherJoint>
+    </attacherJoints>
+
+    <enterReferenceNode index="0>" />
+    <exitPoint index="0>3" />
+
+    <motorStartDuration>2500</motorStartDuration>
+    <motorStartSound          file="$data/vehicles/steerable/caseIH/caseIH1660_start.wav"     pitchOffset="0.8" volume="1.00" indoorVolumeFactor="0.50" indoorLowpassGain="0.75"  />
+    <motorSound               file="$data/vehicles/steerable/caseIH/caseIH1660_idle.wav"      pitchOffset="0.8" volume="1.00" indoorVolumeFactor="0.50" indoorLowpassGain="0.75" pitchMax="1.45" volumeMin="0.74" volumeMinSpeed="5" radius="50" innerRadius="20" />
+    <motorStopSound           file="$data/vehicles/steerable/caseIH/caseIH130Series_stop.wav" pitchOffset="0.8" volume="1.00" indoorVolumeFactor="0.15" indoorLowpassGain="0.75"/>
+
+    <motorSoundRun            file="$data/sounds/engine/runHP380.wav"                         pitchOffset="0.60" volume="0.75" indoorVolumeFactor="0.35" indoorLowpassGain="0.85" volumeMax="0.85" pitchMax="1.00"  />
+    <gearboxSound             file="$data/sounds/transmission/transmissionOmega.wav"          pitchOffset="0.56" volume="0.20" indoorVolumeFactor="1.10" indoorLowpassGain="0.75" pitchMax="0.95" volumeMax="0.30"/>
+    <retarderSound            file="$data/sounds/transmission/module1.wav"                    pitchOffset="0.95" volume="0.08" indoorVolumeFactor="0.85" indoorLowpassGain="0.45" pitchMax="1.80" volumeMax="0.15" minSpeed="1" />
+    <reverseDriveSound        file="$data/sounds/reverseDrivingBeep_3.wav"                    pitchOffset="1.00" volume="1.00" indoorVolumeFactor="0.25" indoorLowpassGain="0.75" />
+
+    <threshingStartSound      file="$data/vehicles/steerable/caseIH/caseIH1660_startwork.wav" pitchOffset="1.10" volume="1.00" indoorVolumeFactor="0.45" indoorLowpassGain="0.75" />
+    <threshingSound           file="$data/vehicles/steerable/caseIH/caseIH1660_work.wav"      pitchOffset="1.10" volume="1.00" indoorVolumeFactor="0.45" indoorLowpassGain="0.75" cuttingPitchOffset="0.95" radius="35" innerRadius="25" />
+    <threshingStopSound       file="$data/vehicles/steerable/caseIH/caseIH1660_stopwork.wav"  pitchOffset="1.10" volume="1.00" indoorVolumeFactor="0.45" indoorLowpassGain="0.75"/>
+
+    <attachSound              file="$data/sounds/header_attach.wav"                           pitchOffset="1.00" volume="1.00" indoorVolumeFactor="0.45" />
+    <honkSound                file="$data/sounds/horn.wav"                                    pitchOffset="1.00" volume="1.00" indoorVolumeFactor="0.55" indoorLowpassGain="0.75" radius="70" innerRadius="10" />
+    <cylinderedHydraulicSound file="$data/sounds/cultivatorHydraulic.wav"                     pitchOffset="0.80" volume="1.10" indoorVolumeFactor="0.75" />
+    <hydraulicSound           file="$data/sounds/cultivatorHydraulic.wav"                     pitchOffset="1.05" volume="0.95" indoorVolumeFactor="0.55" indoorLowpassGain="0.75"/>
+    <fillSound                file="$data/maps/sounds/siloFillSound.wav"                      pitchOffset="1.0"  volume="0.70" indoorVolumeFactor="0.55" indoorLowpassGain="0.75"/>
+
+    <overloading capacity="142"> <!-- 72IRL-->
+        <trailerTriggers>
+            <trailerTrigger index="0>7|1" />
+        </trailerTriggers>
+    </overloading>
+
+    <allowFillFromAir value="true" />
+
+    <pipe numStates="2" unloadingStates="2" raycastNodeIndex="0>9|0|0|0" raycastDistance="6" foldMinState="0" foldMaxState="2" foldMinLimit="0" foldMaxLimit="0" delay="0.5" effectExtraDistanceOnTrailer="-1">
+        <node index="0>9|0|0" rotationSpeeds="1 15 0">
+            <state1 rotation="0 0 0"/>
+            <state2 rotation="8 -95 0"/>
+        </node>
+    </pipe>
+
+    <turnedOnRotationNodes>
+        <turnedOnRotationNode index="0>5|0|1|2" type="combine" rotSpeed="700" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+        <turnedOnRotationNode index="0>9|7|1" type="combine" rotSpeed="1500" rotAxis="1" turnOnFadeTime="4" turnOffFadeTime="3" />
+    </turnedOnRotationNodes>
+
+    <foldingParts startMoveDirection="1" turnOnFoldMinLimit="0" turnOnFoldMaxLimit="0.02" >
+        <foldingPart animationName="foldGrainTank" speedScale="0.5" />
+    </foldingParts>
+
+    <indoorHud>
+        <speed     animName="speedNeedle" minValueAnim="1" maxValueAnim="28" />
+        <speed     animName="driveLeveler" minValueAnim="1" maxValueAnim="28" />
+        <fuel      animName="fuelNeedle" />
+        <fillLevel animName="fillLevelDisplay" />
+        <rpm       animName="rpmDisplay" />
+    </indoorHud>
+
+    <animations>
+        <animation name="foldGrainTank">
+            <!-- grain tank -->
+            <part node="0>9|1|0"   startTime="0" endTime="1" startRot="0 0 0" endRot="25 0 0"/>
+            <part node="0>9|1|0|0" startTime="0" endTime="1" startRot="0 0 0" endRot="-65 0 0"/>
+            <part node="0>9|1|1" startTime="0" endTime="1" startRot="-70 0 0" endRot="0 0 0"/>
+            <part node="0>9|2|0" startTime="0" endTime="1" startRot="70 0 0" endRot="102.909 0 0"/>
+			<part node="0>9|3|0" startTime="0" duration="1" startRot="0 0 0" endRot="0 -90 0" />
+        </animation>
+        <animation name="toggleChopper">
+            <part node="0>9|2|0|0|0|0" startTime="0" endTime="1" startRot="0 65 0" endRot="0 0 0"/>
+            <part node="0>9|2|0|0|0|1" startTime="0" endTime="1" startRot="0 -65 0" endRot="0 0 0"/>
+            <part node="0>9|2|0|0|0" startTime="1" endTime="2" startRot="90 0 0" endRot="0 0 0"/>
+            <part node="0>9|2|0|0" startTime="2" endTime="3.5" startRot="-50 0 0" endRot="0 0 0"/>
+        </animation>
+        <animation name="enterAnimation">
+            <part node="0>4|0" startTime="0" duration="1" startRot="0 0 0" endRot="-15 0 0" />
+        </animation>
+        <animation name="speedNeedle">
+            <part node="0>4|0|2" startTime="0" endTime="1" startRot="0 0 0" endRot="0 -210 0" />
+        </animation>
+        <animation name="driveLeveler">
+            <part node="0>9|4" startTime="0" endTime="1" startRot="0 0 0" endRot="20 0 0" />
+        </animation>
+        <animation name="fuelNeedle">
+            <part node="0>4|0|3" startTime="0" endTime="1" startRot="0 -45 0" endRot="0 -108 0" />
+        </animation>
+        <animation name="fillLevelDisplay">
+            <part node="0>11|1|0" startTime="0" endTime="0.6999" visibility="false" />
+            <part node="0>11|1|0" startTime="0.7" endTime="1" visibility="true" />
+            <part node="0>11|1|1" startTime="0" endTime="0.98" visibility="false" />
+            <part node="0>11|1|1" startTime="0.99" endTime="1" visibility="true" />
+            <part node="0>11|0|1" startTime="0" endTime="1" startRot="0 -38.156 0" endRot="0 -115 0" />
+        </animation>
+        <animation name="rpmDisplay">
+            <part node="0>11|0|0" startTime="0" endTime="1" startRot="0 0 0" endRot="0 -180 0" />
+        </animation>
+        <animation name="leftDoor">
+            <part node="0>9|5|0" startTime="0" endTime="2" startRot="0 0 0" endRot="0 0 -65"/>
+        </animation>
+        <animation name="ladderAnim">
+            <part node="0>9|3|0" startTime="0" duration="1" startRot="0 0 0" endRot="0 -90 0" />
+            <part node="0>10|4|0|0|0" startTime="0" duration="1" startTrans="0 -0.25 0" endTrans="0 0 0" />	
+            <part node="0>10|4|1|0|0" startTime="0" duration="1" startTrans="0 -0.25 0" endTrans="0 0 0" />	
+        </animation>
+        <animation name="dirtNodesAnimation"> <!-- 0 to 1 -->
+            <part node="0>5|0|1|6" startTime="0" endTime="0.1" visibility="false" />
+            <part node="0>5|0|1|6" startTime="0.05" endTime="1" visibility="true" />
+            <part node="0>5|0|1|6" startTime="0" endTime="1" startTrans="0.029 -0.037 1.11344004" endTrans="0.029 0.0382155 1.11344004" />
+
+            <part node="0>5|0|1|7" startTime="0" endTime="0.1" visibility="false" />
+            <part node="0>5|0|1|7" startTime="0.05" endTime="1" visibility="true" />
+            <part node="0>5|0|1|7" startTime="0" endTime="1" startScale="1 0.1 1" endScale="1 1 1"/>
+
+            <part node="0>5|0|1|8" startTime="0" endTime="0.1" visibility="false" />
+            <part node="0>5|0|1|8" startTime="0.05" endTime="1" visibility="true" />
+        </animation>
+    </animations>
+
+    <interactiveComponents>
+        <windows>
+            <window name="door"  mark="0>9|5|0|5|0"   size="0.1" animName="leftDoor" onMessage="ic_component_open" offMessage="ic_component_close" />
+            <window name="ladder"    mark="0>9|3|0|0|0" size="0.1" animName="ladderAnim" onMessage="ic_component_close" offMessage="ic_component_open" />
+        </windows>
+    </interactiveComponents>
+
+    <movingTools>
+        <!-- pipe -->
+        <movingTool index="0>9|0|0" playSound="true">
+            <dependentPart index="0>10|0" />
+        </movingTool>
+        <!-- attacher -->
+        <movingTool index="0>5|0|1">
+            <dependentPart index="0>10|1" />
+        </movingTool>
+        <!-- chopperRotDummy -->
+        <movingTool index="0>9|2|0">
+            <dependentPart index="0>9|2|0|0|1" />
+        </movingTool>
+        <!-- chopperRot -->
+        <movingTool index="0>9|2|0|0">
+            <dependentPart index="0>9|2|0|0|1" />
+        </movingTool>				
+        <!-- grain tank -->
+        <movingTool index="0>9|1|0">
+            <dependentPart index="0>9|1|0|1" />
+        </movingTool>
+        <!-- steeringBase and wiperHose -->
+        <movingTool index="0>4|0">
+            <dependentPart index="0>10|3" />
+        </movingTool>
+        <!-- door -->
+        <movingTool index="0>9|5|0">
+            <dependentPart index="0>10|2" />
+            <dependentPart index="0>9|5|0|5" />
+        </movingTool>	
+        <!-- ladder -->
+        <movingTool index="0>9|3|0">
+            <dependentPart index="0>10|4|0" />
+            <dependentPart index="0>10|4|1" />
+            <dependentPart index="0>10|4|2" />
+            <dependentPart index="0>10|4|3" />
+            <dependentPart index="0>10|4|2|0" />
+            <dependentPart index="0>10|4|3|0" />
+            <dependentPart index="0>9|3|0|0" />
+        </movingTool>	
+        <!-- turnedOnRotation -->
+        <movingTool index="0>9|7|1">
+            <dependentPart index="0>9|7|0" />
+        </movingTool>
+    </movingTools>
+
+    <movingParts>
+        <!-- pipe -->
+        <movingPart index="0>10|0" referencePoint="0>9|0|0|2" referenceFrame="0>10|0|0" isActiveDirty="true">
+            <translatingPart index="0>10|0|0" />
+        </movingPart>
+        <!-- attacher -->
+        <movingPart index="0>10|1" referencePoint="0>5|0|1|1" referenceFrame="0>" >
+            <translatingPart index="0>10|1|0" />
+        </movingPart>
+        <!-- chopperRotDummy -->
+        <movingPart index="0>9|2|0|0|1" referencePoint="0>9|2|1" referenceFrame="0>9|2|1" />
+        <!-- chopperRot -->
+        <movingPart index="0>9|2|0|0|1" referencePoint="0>9|2|1" referenceFrame="0>9|2|1" />
+        <!-- steering -->
+        <movingPart index="1>0|1" referencePoint="1>1|1" referenceFrame="0>" isActiveDirty="true" />
+        <movingPart index="1>2" referencePoint="1>0|0|1" referenceFrame="0>" isActiveDirty="true" >
+            <translatingPart index="1>2|0" />
+        </movingPart>        
+        <!-- grain tank -->		
+        <movingPart index="0>9|1|0|1" referencePoint="0>9|1|2" referenceFrame="0>" >
+            <translatingPart index="0>9|1|0|1|0" />
+        </movingPart>
+        <!-- steeringBase and wiperHose -->
+        <movingPart index="0>10|3" referencePoint="0>4|0|1" referenceFrame="0>4|0|1" scaleZ="true"/>
+        <!-- turnedOnArm -->
+        <movingPart index="0>9|7|0" referencePoint="0>9|7|1|0" referenceFrame="0>" />
+        <!-- door -->		
+        <movingPart index="0>10|2" referencePoint="0>9|5|0|3" referenceFrame="0>" >
+            <translatingPart index="0>10|2|0" />
+        </movingPart>	
+        <movingPart index="0>9|5|0|5" referencePoint="0>6" referenceFrame="0>" />
+        <!-- ladder -->
+        <movingPart index="0>9|3|0|0" referencePoint="0>6" referenceFrame="0>" />
+        <movingPart index="0>10|4|0" referencePoint="0>9|3|0|1" referenceFrame="0>16|0" scaleZ="true"/>
+        <movingPart index="0>10|4|1" referencePoint="0>9|3|0|2" referenceFrame="0>16|0" scaleZ="true"/>
+        <movingPart index="0>10|4|2" referencePoint="0>10|4|0|0|0" referenceFrame="0>16|0" scaleZ="true"/>
+        <movingPart index="0>10|4|3" referencePoint="0>10|4|1|0|0" referenceFrame="0>16|0" scaleZ="true"/>
+        <movingPart index="0>10|4|2|0" referencePoint="0>9|3|0|1" referenceFrame="0>16|0" scaleZ="true"/>
+        <movingPart index="0>10|4|3|0" referencePoint="0>9|3|0|2" referenceFrame="0>16|0" scaleZ="true"/>
+    </movingParts>
+
+    <pipeEffect>
+        <effectNode effectClass="PipeEffect" effectNode="0>9|0|0|3|0" materialType="pipe"  materialTypeId="1" delay="0"   maxBending="1" positionUpdateNodes="0>9|0|0|3|1"/>
+        <effectNode                          effectNode="0>9|0|0|3|1" materialType="smoke" materialTypeId="1" delay="0.1" alignToWorldY="true"/>
+    </pipeEffect>
+
+    <combine toggleTime="3500">
+        <chopperSwitch available="true" strawModeOnStart="false" />
+        <chopperEffect>
+            <effectNode effectNode="0>8|1|0" materialType="chopper" materialTypeId="1" delay="0" />
+        </chopperEffect>
+        <strawEffect>
+            <effectNode effectNode="0>8|2|0" materialType="straw" materialTypeId="1" delay="0" />
+        </strawEffect>
+        <fillEffect>
+            <effectNode effectNode="0>9|1|3" materialType="smoke"     materialTypeId="1" delay="0.1" />
+        </fillEffect>
+        <chopperParticleSystems>
+            <emitterShape node="0>8|1|1" particleType="chopper" worldSpace="false" emitCountScale="0.5"/>
+            <emitterShape node="0>8|1|2" particleType="smoke" />
+        </chopperParticleSystems>
+        <strawParticleSystems>
+            <emitterShape node="0>8|2|1" particleType="smoke" />
+        </strawParticleSystems>
+    </combine>
+
+    <exhaustEffects>
+        <exhaustEffect index="0>8|0" filename="$data/particleSystems/shared/exhaust.i3d" minRpmColor="0.9 0.9 0.9 0.05" maxRpmColor="0.01 0.01 0.01 5" minRpmScale="0.08" maxRpmScale="0.6" xzRotationsOffset="0 0" xzRotationsForward="-100 0" xzRotationsBackward="100 0" xzRotationsLeft="0 -100" xzRotationsRight="0 100" />
+    </exhaustEffects>
+
+    <fillUnits>
+        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="combine" capacity="8000" />
+    </fillUnits>
+
+    <fillVolumes>
+        <volumes>
+            <volume index="0>14|0" maxAllowedHeapAngle="30" maxDelta="0" />
+        </volumes>
+
+        <unloadInfos>
+            <unloadInfo>
+                <node index="0>14|1" width="0.4" length="0.4" />
+            </unloadInfo>
+        </unloadInfos>
+
+        <loadInfos>
+            <loadInfo>
+                <node index="0>14|2" width="0.4" length="0.4" />
+            </loadInfo>
+        </loadInfos>
+
+        <dischargeInfos>
+            <dischargeInfo>
+                <node index="0>9|0|0|2" width="0.4" length="0.4" />
+            </dischargeInfo>
+        </dischargeInfos>
+    </fillVolumes>
+	<fillMassNode index="0>" mrCOMtransWithMass="0 0.21.1 -0.3" />
+	
+    <enterAnimation name="enterAnimation" />
+
+    <combineWorkAddons maxLiterPerHour="120000" >
+        <hud filename="hud/hud_background.png" />
+        <brand filename="brandClaas.dds" posX="0.01" posY="0.375" height="0.65454" width="0.45" />
+        <hudBar filename="hud/hud_bar.png" posX="0.03125" posY="0.09375" height="0.03125" width="0.9375" />
+        <hectareCounterIcon filename="hud/hectareCounter_icon.png" posX="0.46" posY="0.69531" height="0.25" width="0.125" />
+        <quantimeterIcon 	filename="hud/quantimeter_icon.png"    posX="0.46" posY="0.42187" height="0.25" width="0.125" />
+		
+    </combineWorkAddons>
+
+    <workAreas>
+        <workArea startIndex="0>15|0" widthIndex="0>15|1" heightIndex="0>15|2" type="combine" />
+    </workAreas>
+
+    <ai>
+        <trafficCollisionTrigger index="0>7|0" />
+    </ai>
+
+    <washable dirtDuration="300" washDuration="1" workMultiplier="2" dirtNodesAnimation="dirtNodesAnimation"/>
+
+    <components count="2">
+        <component1 centerOfMass="0 1.1 2.2" solverIterationCount="10" mrSetMass="8.1" />
+        <component2 centerOfMass="0 0 0" solverIterationCount="10" mrSetMass="3.5" />
+        <joint component1="0" component2="1" index="0>0|2" rotLimit="0 0 5" transLimit="0 0 0" maxRotDriveForce="0 0 50" rotDriveRotation="- - 0" rotDriveSpring="0 0 5" rotDriveDamping="0 0 5" breakable="false"/>
+    </components>
+
+    <schemaOverlay file="$dataS2/menu/schemas/vehicleSchema.png" fileSelected="$dataS2/menu/schemas/vehicleSchemaSelected.png" fileTurnedOn="$dataS2/menu/schemas/vehicleSchemaTurnedOn.png" fileSelectedTurnedOn="$dataS2/menu/schemas/vehicleSchemaSelectedTurnedOn.png" width="0.5" height="0.5" attacherJointPosition="0.5 0" />
+</vehicle>
