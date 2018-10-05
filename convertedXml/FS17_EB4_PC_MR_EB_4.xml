@@ -1,0 +1,292 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="EB_4">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+	<!-- 
+	changes by passion78  8/21/2018 for V 1.0.0.1
+	added mr tag dragArea
+	added specs
+	wheels
+	changed the sprayerwheels
+	added 4 extra types of wheels
+	maximalAirConsumptionPerFullStop
+	brakeForce
+	maxAllowedHeapAngle
+	mrSetMass
+	centerOfMass
+	added movingCenterOfMass
+	mrCOMtransWithMass
+	added playSound to movingTool ( so there is a sound when the trailer tips and moves)
+	added powerConsumer ( i am aware that the trailer has no PTO connection, so this will act to rev the RPM for the hydraulic to move extend the platform )
+	attacherHeight
+	ajusted designConfiguration
+	added mrPressureFx
+	-->
+	<moreRealistic>		
+	<dragArea value="2.99" />
+	<trailer unloadingPtoPower="15" />
+	<movingCenterOfMass componentIndex="1" animationName="upperAnimation" startAnimCenterOfMass="0 0.7 0.2" endAnimCenterOfMass="0 2.7 0.2" />
+	</moreRealistic>
+
+    <storeData>
+        <name>Hodgep EB-4</name>
+        <functions>
+            <function>$l10n_function_tipper</function>
+        </functions>
+		<specs>
+			<capacity unit="$l10n_unit_liter">6360</capacity> <!-- measured in GE -->
+		</specs>
+        <image>store_EB_4.png</image>
+        <price>9500</price>
+        <dailyUpkeep>5</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>HODGEP</brand>
+        <category>tippers</category>
+        <vertexBufferMemoryUsage>1313080</vertexBufferMemoryUsage>
+        <indexBufferMemoryUsage>222462</indexBufferMemoryUsage>
+        <textureMemoryUsage>33009008</textureMemoryUsage>
+        <instanceVertexBufferMemoryUsage>0</instanceVertexBufferMemoryUsage>
+        <instanceIndexBufferMemoryUsage>0</instanceIndexBufferMemoryUsage>
+    </storeData>
+
+    <typeDesc>$l10n_typeDesc_tipper</typeDesc>
+    <filename>EB_4.i3d</filename>
+
+    <size width="3.5" length="9" lengthOffset="0.3" />
+	
+	<powerConsumer ptoRpm="540" neededPtoPower="10"/>
+
+	<wheelConfigurations>
+        <wheelConfiguration name="$l10n_configuration_valueDefault" price="0">
+            <wheels>
+                <wheel restLoad="0.7" repr="0>0|0|0|0" driveNode="0>0|0|0|0|0" forcePointRatio="0.2" filename="Tires/Wheel_20_31.xml" isLeft="true"  initialCompression="0" suspTravel="0.03" spring="140" damper="25" hasTireTracks="true" hasParticles="true" />
+                <wheel restLoad="0.7" repr="0>0|0|1|0" driveNode="0>0|0|1|0|0" forcePointRatio="0.2" filename="Tires/Wheel_20_31.xml" isLeft="false" initialCompression="0" suspTravel="0.03" spring="140" damper="25" hasTireTracks="true" hasParticles="true" />
+            </wheels>
+        </wheelConfiguration>
+        <wheelConfiguration name="SprayerWheels normal" price="500" icon="$dataS2/menu/hud/configurations/config_wheel_broad.png">
+            <wheels>
+                <wheel restLoad="0.7" repr="0>0|0|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_360_70R16.xml" isLeft="true"  useCropDestruction="false" initialCompression="0" suspTravel="0.03" spring="173" damper="25" hasTireTracks="true" hasParticles="true" />
+                <wheel restLoad="0.7" repr="0>0|0|1|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_360_70R16.xml" isLeft="false" useCropDestruction="false" initialCompression="0" suspTravel="0.03" spring="173" damper="25" hasTireTracks="true" hasParticles="true" />
+            </wheels>
+		</wheelConfiguration>
+			<wheelConfiguration name="SprayerWheels thin" price="450" icon="$dataS2/menu/hud/configurations/config_wheel_broad.png">
+            <wheels>
+                <wheel restLoad="0.7" repr="0>0|0|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_300_80R15_3.xml" isLeft="true"  useCropDestruction="false" initialCompression="0" suspTravel="0.03" spring="204" damper="25" hasTireTracks="true" hasParticles="true" />
+                <wheel restLoad="0.7" repr="0>0|0|1|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_300_80R15_3.xml" isLeft="false" useCropDestruction="false" initialCompression="0" suspTravel="0.03" spring="204" damper="25" hasTireTracks="true" hasParticles="true" />
+            </wheels>
+        </wheelConfiguration>
+		 <wheelConfiguration name="TH400_400_70R18" price="1250">
+            <wheels>
+                <wheel restLoad="0.7" repr="0>0|0|0|0" driveNode="0>0|0|0|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/TH400_400_70R18.xml" isLeft="true"  initialCompression="0" suspTravel="0.03" spring="140" damper="25" hasTireTracks="true" hasParticles="true" mrPressureFx="1.35"/>
+                <wheel restLoad="0.7" repr="0>0|0|1|0" driveNode="0>0|0|1|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/TH400_400_70R18.xml" isLeft="false" initialCompression="0" suspTravel="0.03" spring="140" damper="25" hasTireTracks="true" hasParticles="true" mrPressureFx="1.35"/>
+            </wheels>
+        </wheelConfiguration>
+		 <wheelConfiguration name="T421_420_55R17" price="1400">
+            <wheels>
+                <wheel restLoad="0.7" repr="0>0|0|0|0" driveNode="0>0|0|0|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T421_420_55R17.xml" isLeft="true"  initialCompression="0" suspTravel="0.03" spring="140" damper="25" hasTireTracks="true" hasParticles="true" />
+                <wheel restLoad="0.7" repr="0>0|0|1|0" driveNode="0>0|0|1|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T421_420_55R17.xml" isLeft="false" initialCompression="0" suspTravel="0.03" spring="140" damper="25" hasTireTracks="true" hasParticles="true" />
+            </wheels>
+        </wheelConfiguration>
+		 <wheelConfiguration name="T404_500_60R22_5" price="1600">
+            <wheels>
+                <wheel restLoad="0.7" repr="0>0|0|0|0" driveNode="0>0|0|0|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_500_60R22_5.xml" isLeft="true"  initialCompression="0" suspTravel="0.03" spring="140" damper="25" hasTireTracks="true" hasParticles="true" />
+                <wheel restLoad="0.7" repr="0>0|0|1|0" driveNode="0>0|0|1|0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_500_60R22_5.xml" isLeft="false" initialCompression="0" suspTravel="0.03" spring="140" damper="25" hasTireTracks="true" hasParticles="true" />
+            </wheels>
+        </wheelConfiguration>
+    </wheelConfigurations>
+		
+	<rimColorConfigurations>
+		<rimColorConfiguration color="0.5 0.2 0.0 1"  />
+		<rimColorConfiguration color="1 0.02 0.0 1" 	price="200" icon="$dataS2/menu/hud/configurations/config_rimColor.png" />
+		<rimColorConfiguration color="0.0 0.3 0.6 1"    price="200" icon="$dataS2/menu/hud/configurations/config_rimColor.png" />	
+      
+        <colorNode node="0>0|0|0|0" />
+		<colorNode node="0>0|0|1|0" />
+    </rimColorConfigurations>
+	
+	<baseColorConfigurations>        
+		<baseColorConfiguration color="0.5 0.2 0.0 1"  />
+		<baseColorConfiguration color="1 0.02 0.0 1" 	price="200" icon="$dataS2/menu/hud/configurations/config_color.png" />
+		<baseColorConfiguration color="0.0 0.3 0.6 1"   price="200" icon="$dataS2/menu/hud/configurations/config_color.png" />
+		
+        <colorNode node="0>0|3|0|0|0|0" />
+        <colorNode node="0>0|3|0|0|0|8" />
+		
+    </baseColorConfigurations>
+
+	<designColorConfigurations>		
+		<designColorConfiguration color="0.01 0.1 0.02 1"  />
+		<designColorConfiguration color="0.0 0.3 0.6 1"    price="200"  icon="$dataS2/menu/hud/configurations/config_color.png"/>
+		
+        <colorNode node="0>0|2" />
+        <colorNode node="0>0|2|0" />
+        <colorNode node="0>0|3|0" />
+        <colorNode node="0>0|3|0|0" />
+        <colorNode node="0>0|3|0|0|1|0" />
+        <colorNode node="0>0|3|0|0|1|0|0|0|0|0" />
+        <colorNode node="0>0|3|0|3" />
+        <colorNode node="0>0|3|0|0|1|0" />
+        <colorNode node="0>0|0|0|0|0" />
+        <colorNode node="0>0|0|1|0|0" />
+        <colorNode node="0>1|0" />
+        <colorNode node="0>1|0|0|0|0|0" />
+      
+    </designColorConfigurations>
+	
+	<designConfigurations>
+	<designConfiguration name="Hodgep original Sticker" price="0" icon="$dataS2/menu/hud/configurations/config_edition.png">
+            <objectChange node="0>0|3|0|0|0|8|0|2" visibilityActive="false" visibilityInactive="true"/>
+            <objectChange node="0>0|3|0|0|0|8|0|6" visibilityActive="false" visibilityInactive="true"/>
+            <objectChange node="0>0|3|0|0|0|8|0|3" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="0>0|3|0|0|0|8|0|7" visibilityActive="true" visibilityInactive="false"/>
+        </designConfiguration>
+        <designConfiguration name="Hodgep Simple sticker" price="100" icon="$dataS2/menu/hud/configurations/config_edition.png">
+            <objectChange node="0>0|3|0|0|0|8|0|2" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="0>0|3|0|0|0|8|0|6" visibilityActive="true" visibilityInactive="false"/>
+            <objectChange node="0>0|3|0|0|0|8|0|3" visibilityActive="false" visibilityInactive="true"/>
+            <objectChange node="0>0|3|0|0|0|8|0|7" visibilityActive="false" visibilityInactive="true"/>
+        </designConfiguration>
+		
+	</designConfigurations>
+	
+    <maximalAirConsumptionPerFullStop value="0.1" />
+    <brakeForce>2.5</brakeForce>
+	
+    <lights>
+        <low>
+            <light 						 decoration="0>0|5|0|0" lightTypes="0 3"/>
+        </low>
+        <high>
+            <light realLight="0>0|5|0|1" decoration="0>0|5|0|0" lightTypes="0 3"/>
+        </high>				
+    </lights>
+
+    <brakeLights>
+        <brakeLight realLight="0>0|5|0|1" decoration="0>0|5|2|0" />
+    </brakeLights>
+
+    <turnLights>
+        <turnLightLeft  realLight="0>0|5|1|0|1" decoration="0>0|5|1|0|0" />
+        <turnLightRight realLight="0>0|5|1|1|1" decoration="0>0|5|1|1|0" />
+    </turnLights> 
+	
+	<fillUnits>
+        <fillUnit unit="$l10n_unit_literShort" fillTypeCategories="bulk" capacity="6360" />
+    </fillUnits>
+	
+	<fillVolumes>
+        <volumes>	
+            <volume index="0>0|3|0|0|0|2|0" maxDelta="0.95" maxAllowedHeapAngle="31"/>						
+        </volumes>
+        <dischargeInfos>
+            <dischargeInfo>
+                <node index="0>0|3|0|0|0|2|2" width="1" length="1"/>
+            </dischargeInfo>
+        </dischargeInfos>
+        <unloadInfos>
+            <unloadInfo fillVolumeIndex="1" > <!-- back -->
+                <node index="0>0|3|0|0|0|2|1|0" width="0.15" length="0.3"/>
+            </unloadInfo>
+        </unloadInfos>
+    </fillVolumes>
+	
+	<fillMassNode index="0>" mrCOMtransWithMass="0 0.08 -0.058" />
+	
+    <shovel tipReferenceNode="0>0|3|0|0|0|7" emptyStartAngle="110" emptyFullAngle="140" emptySpeed="1500" />
+
+    <shovelEmptyEffect rotationNode="0>0|3|0|0|0|5" >
+        <effectNode effectNode="0>0|3|0|0|0|5|0" materialType="unloading" materialTypeId="3" fadeTime="0.5" />
+        <effectNode effectNode="0>0|3|0|0|0|5|1" materialType="smoke"     materialTypeId="1" fadeTime="0.5"  />
+    </shovelEmptyEffect>
+    <emptyParticleSystems>
+        <emitterShape node="0>0|3|0|0|0|6|0|0|0" emitCountScale="8" />
+    </emptyParticleSystems>
+	
+    <exactFillRootNode index="0>0|3|0|0|0|3|0" />
+    <fillAutoAimTargetNode index="0>0|3|0|0|0|3|1" startZ="-3" endZ="0" invert="false" fillUnitIndex="1" startPercentage="90"/>
+	
+	<movingTools>
+		<movingTool index="0>0|3|0|0|0" playSound="true" >
+            <dependentPart index="0>0|3|0|0|1|0" />
+        </movingTool>
+		<movingTool index="0>0|3|0" playSound="true" >
+            <dependentPart index="0>1|0" />
+        </movingTool>
+      <movingTool index="0>0|3|0" playSound="true" >
+            <controls axis="AXIS_FRONTLOADER_ARM" invertAxis="false" mouseSpeedFactor="0.6" iconFilename="Textures/eb4_emel.png" />
+            <animation animName="upperAnimation" animSpeed="0.2" />
+            <dependentPart index="0>1|0"/>
+        </movingTool>
+      <movingTool index="0>0|3|0|0|0" playSound="true" >
+            <controls axis="AXIS_FRONTLOADER_TOOL" invertAxis="false" mouseSpeedFactor="0.6" iconFilename="Textures/eb4_billent.png" />
+            <animation animName="lowerAnimation" animSpeed="0.2" />
+            <dependentPart index="0>0|3|0|0|1|0"/>
+        </movingTool>	
+    </movingTools>
+	
+	<movingParts isActiveDirtyTimeOffset="2">				
+        <movingPart index="0>0|3|0|0|1|0" referencePoint="0>0|3|0|0|0|1" referenceFrame="0>0|3|0|0|0|1" isActiveDirty="true" playSound="false">
+            <translatingPart index="0>0|3|0|0|1|0|0" />
+            <translatingPart index="0>0|3|0|0|1|0|0|0" />
+			<translatingPart index="0>0|3|0|0|1|0|0|0|0" />
+			<translatingPart index="0>0|3|0|0|1|0|0|0|0|0" />
+        </movingPart>
+	
+		<movingPart index="0>1|0" referencePoint="0>0|3|0|1" referenceFrame="0>0|3|0|1">
+            <translatingPart index="0>1|0|0" />
+            <translatingPart index="0>1|0|0|0" />
+			<translatingPart index="0>1|0|0|0|0" />
+			<translatingPart index="0>1|0|0|0|0|0" />
+        </movingPart>
+    </movingParts>
+
+	<animations>
+		<animation name="lowerAnimation">
+            <part node="0>0|3|0|0|0" startTime="0" endTime="8" startRot="0 0 0" endRot="50 0 0" />
+			<part node="0>0|3|0|0|0|0" startTime="0" endTime="8" startRot="0 0 0" endRot="-50 0 0" />
+        </animation>
+		
+		<animation name="upperAnimation">
+            <part node="0>0|3|0" startTime="0" endTime="8" startRot="0 0 0" endRot="37 0 0" />
+			<part node="0>0|3|0|0" startTime="0" endTime="8" startRot="0 0 0" endRot="-37 0 0" />
+			<part node="0>0|3|0|3" startTime="0" endTime="8" startRot="0 0 0" endRot="-74 0 0" />
+			<part node="0>0|3|0|3" startTime="0" endTime="8" startTrans="0 0.034 -1.636" endTrans="0 0.028 -1.548" />
+        </animation>
+		
+        <animation name="moveSupport">
+            <part node="0>0|2|0" startTime="0" endTime="0.25" startRot="57 0 0" endRot="0 0 0" />
+        </animation>
+    </animations>
+
+    <support animationName="moveSupport" />
+
+    <attachSound file="$data/sounds/attach.wav"                    pitchOffset="1.0" volume="1.0" indoorVolumeFactor="0.45" />
+    <cylinderedHydraulicSound file="$data/sounds/hydraulicUp.wav" pitchOffset="0.8" volume="0.6" indoorVolumeFactor="0.75" />
+    <fillSound file="$data/maps/sounds/siloFillSound.wav"         pitchOffset="1.0" volume="1.5" indoorVolumeFactor="0.75" />
+
+    <inputAttacherJoints>
+        <inputAttacherJoint index="0>0|1" jointType="trailerLow" rootNode="0>" attacherHeight="0.225" dynamicHoseIndice="0" />
+    </inputAttacherJoints>
+	
+    <washable dirtDuration="90" washDuration="1" workMultiplier="4" />
+
+    <components count="3">
+        <component1 mrSetMass="3" centerOfMass="0 0.7 0.2" solverIterationCount="10"/>
+        <component2 mrSetMass="0.02" solverIterationCount="10" />
+        <component3 mrSetMass="0.02" solverIterationCount="10" />
+		
+        <joint component1="0" component2="1" index="1>0" rotLimit="20 0 0" transLimit="0 0 0" />
+        <joint component1="0" component2="2" index="2>0" rotLimit="20 0 0" transLimit="0 0 0" />
+    </components>	
+	
+	<dynamicHose>
+		<set toolIndices="0">
+			<hose type="electric" attached="0>2|0|0|0" detached="0>2|1|0|0" lastHoseIKNode="0>2|0|0|1|0" />
+			<hose type="air" attached="0>2|0|1|0" detached="0>2|1|1|0" lastHoseIKNode="0>2|0|1|1|0" />
+			<hose type="hydraulic" attached="0>2|0|2|0" detached="0>2|1|2|0" lastHoseIKNode="0>2|0|2|1|0" />
+		</set>
+	</dynamicHose>
+	
+    <schemaOverlay file="Textures/eb_4.dds" fileSelected="Textures/eb_4ON.png" width="0.5" height="0.5" attacherJointPosition="0 0"/>
+
+</vehicle>
