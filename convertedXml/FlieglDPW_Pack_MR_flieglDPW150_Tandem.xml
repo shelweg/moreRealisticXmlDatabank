@@ -1,0 +1,1067 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="FlieglDPWPack">
+    <annotation>Ifko[nator] - www.modding-welt.com - HoFFi</annotation>
+	
+	<moreRealistic isMrVehicle="true" >		
+		<dragArea value="2.6" />
+	</moreRealistic>
+	
+    <storeData>
+        <name>Fliegl DPW 150 Tandem</name>
+        <functions>
+            <function>
+				<en>This bale trailer can hold: 22 round bales, 18 square bales, 180 HP-bales, 18 1,4m Ultima, 18 1,5m Ultima, 10 pallets, 4 wood pallets, 12 big bales, 118 apple/chicken boxes, 102 milk/veg./rennet/bat., 39 butter/cheese/egg/trash, 82 geese/chicken feed. Max. wood log lenght: 8.5m</en>
+				<de>Dieser Ballenwagen fasst: 22 Rundballen, 18 Quaderballen, 180 HD-Ballen, 18 1,4m Ultima, 18 1,5m Ultima, 10 Paletten, 4 Holzpaletten, 12 BigBales, 118 Apfel-/Kükenkisten, 102 Milch/Gemüse/Lab/Batt., 39 Butter/Käse/Eier/Müll, 82 Hühner-/Gänsefutter. Max. Baumstamm Länge: 8,5m</de>
+			</function>
+        </functions>
+        <image>Store/store_flieglDPW150_Tandem.dds</image>
+        <price>14900</price>
+        <dailyUpkeep>5</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>FLIEGL</brand>
+        <category>DPWPack</category>
+    </storeData>
+	
+	<typeDesc>Fliegl DPW 150 T</typeDesc>
+    <filename>flieglDPW150_Tandem.i3d</filename>
+
+    <size width="3.5" length="10.5" />
+	
+	<wheelConfigurations>
+        <wheelConfiguration name="380 55R17" price="0" icon="$dataS2/menu/hud/configurations/config_wheel_default.png">
+            <wheels>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.9" repr="0>0" driveNode="0>0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="true"  initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2"/>
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.9" repr="0>1" 				   forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="false" initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2"/>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.9" repr="0>11"                  forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="false"  initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2"/>
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.9" repr="0>12"                  forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="true" initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    		mrPressureFx="2"/>
+            </wheels>
+        </wheelConfiguration>
+		<wheelConfiguration name="300 80R15" price="0" icon="$dataS2/menu/hud/configurations/config_wheel_thin.png">
+            <wheels>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.9" repr="0>0" driveNode="0>0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_300_80R15_3.xml" isLeft="true"  initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2"/>
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.9" repr="0>1" 				   forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_300_80R15_3.xml" isLeft="false" initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2"/>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.9" repr="0>11"                  forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/AW305_300_80R15_3.xml" isLeft="false"  initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2"/>
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.9" repr="0>12"                  forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/AW305_300_80R15_3.xml" isLeft="true" initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2"/>
+            </wheels>
+        </wheelConfiguration>
+		<wheelConfiguration name="500 50R17" price="0" icon="$dataS2/menu/hud/configurations/config_wheel_broad.png">
+            <wheels>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.9" repr="0>0" driveNode="0>0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW309_500_50R17.xml" isLeft="true"  initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" tireType="offRoad"/>
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.9" repr="0>1" 				   forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW309_500_50R17.xml" isLeft="false" initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" tireType="offRoad"/>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.9" repr="0>11"                  forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/AW309_500_50R17.xml" isLeft="false"  initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" tireType="offRoad"/>
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.9" repr="0>12"                  forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/AW309_500_50R17.xml" isLeft="true" initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    		mrPressureFx="2" tireType="offRoad"/>
+            </wheels>
+        </wheelConfiguration>
+		<wheelConfiguration name="380 55R17 + LA/SA" price="2500" icon="$dataS2/menu/hud/configurations/config_wheel_default.png">
+            <wheels>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.9" repr="0>0" driveNode="0>0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="true"  initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" steeringAxleScale="-0.5" steeringAxleRotMax="20" steeringAxleRotMin="-20"/>
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.9" repr="0>1" 				   forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="false" initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" steeringAxleScale="-0.5" steeringAxleRotMax="20" steeringAxleRotMin="-20"/>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.9" repr="0>11"                  forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="false"  initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" />
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.9" repr="0>12"                  forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/AW305_380_55R17.xml" isLeft="true" initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" />
+            </wheels>
+        </wheelConfiguration>
+		<wheelConfiguration name="300 80R15 + LA/SA" price="2500" icon="$dataS2/menu/hud/configurations/config_wheel_thin.png">
+            <wheels>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.9" repr="0>0" driveNode="0>0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_300_80R15_3.xml" isLeft="true"  initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" steeringAxleScale="-0.5" steeringAxleRotMax="20" steeringAxleRotMin="-20"/>
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.9" repr="0>1" 				   forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW305_300_80R15_3.xml" isLeft="false" initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" steeringAxleScale="-0.5" steeringAxleRotMax="20" steeringAxleRotMin="-20"/>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.9" repr="0>11"                  forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/AW305_300_80R15_3.xml" isLeft="false"  initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" />
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.9" repr="0>12"                  forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/AW305_300_80R15_3.xml" isLeft="true" initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" />
+            </wheels>
+        </wheelConfiguration>
+		<wheelConfiguration name="500 50R17 + LA/SA" price="2500" icon="$dataS2/menu/hud/configurations/config_wheel_broad.png">
+            <wheels>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.9" repr="0>0" driveNode="0>0|0" forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW309_500_50R17.xml" isLeft="true"  initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" tireType="offRoad" steeringAxleScale="-0.5" steeringAxleRotMax="20" steeringAxleRotMin="-20"/>
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.9" repr="0>1" 				   forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/AW309_500_50R17.xml" isLeft="false" initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" tireType="offRoad" steeringAxleScale="-0.5" steeringAxleRotMax="20" steeringAxleRotMin="-20"/>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="0.9" repr="0>11"                  forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/AW309_500_50R17.xml" isLeft="false"  initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    	mrPressureFx="2" tireType="offRoad"/>
+                <wheel tipOcclusionAreaGroupId="2" restLoad="0.9" repr="0>12"                  forcePointRatio="0.3" filename="$data/vehicles/wheels/trelleborg/AW309_500_50R17.xml" isLeft="true" initialCompression="30" suspTravel="0.2" spring="25" damper="16" hasTireTracks="true" hasParticles="true"  maxDeformation="0.08"    		mrPressureFx="2" tireType="offRoad"/>
+            </wheels>
+        </wheelConfiguration>
+    </wheelConfigurations>
+        
+	<steeringAxleAngleScale startSpeed="5" endSpeed="90" />
+    <brakeForce>1.4</brakeForce>
+
+    <lights>
+		<low>
+			<light 							decoration="0>3|1|2|0" lightTypes="0 3"/>
+			<light 							decoration="0>3|13|0" lightTypes="0 3"/>
+		</low>
+		<high>
+			<light realLight="0>3|1|2|1" 	decoration="0>3|1|2|0" lightTypes="0 3"/>
+			<light 							decoration="0>3|13|0" lightTypes="0 3"/>
+		</high>
+		<states>0 1</states>
+    </lights>
+
+    <brakeLights>
+        <brakeLight realLight="0>3|1|1|1" decoration="0>3|1|1|0" />
+    </brakeLights>
+
+    <turnLights>
+        <turnLightLeft realLight="0>3|1|0|0|1" decoration="0>3|1|0|0|0" />
+        <turnLightRight realLight="0>3|1|0|1|1" decoration="0>3|1|0|1|0" />
+		<turnLightLeft  						decoration="0>3|14|0" />
+        <turnLightRight  						decoration="0>3|14|1" />
+    </turnLights>
+	
+	<beaconLights>
+        <beaconLight realLight="0>3|1|11|0|0|0|0" index="0>3|1|11|0|0|0" rotationNode="0>3|1|11|0|0" speed="0.015" />
+    </beaconLights>
+	
+	<timedVisibilitys>
+		<!--default light beam's-->
+		<timedVisibility index="0>3|1|0|0|0|2"    eveningTime="20" morningTime="7" showOnFog="true"/>
+		<timedVisibility index="0>3|1|0|1|0|2"    eveningTime="20" morningTime="7" showOnFog="true"/>
+		<timedVisibility index="0>3|1|1|1|2"      eveningTime="20" morningTime="7" showOnFog="true"/>
+		<timedVisibility index="0>3|1|1|1|0|0"    eveningTime="20" morningTime="7" showOnFog="true"/>
+		<timedVisibility index="0>3|1|2|1|2"      eveningTime="20" morningTime="7" showOnFog="true"/>
+		<timedVisibility index="0>3|1|2|1|0|0"    eveningTime="20" morningTime="7" showOnFog="true"/>
+		<timedVisibility index="0>3|1|11|0|0|0|1" eveningTime="20" morningTime="7" showOnFog="true"/>
+	</timedVisibilitys>
+
+    <attacherJoints>
+        <attacherJoint dynamicHoseIndice="0" index="0>3|2" jointType="trailer" lowerRotLimit="10 80 80" upperRotationOffset="0" allowsJointLimitMovement="false" canTurnOnImplement="false" >
+			<schema position="1 0" rotation="0" invertX="false" />
+		</attacherJoint>
+    </attacherJoints>
+	
+	<!--
+	<inputAttacherJoints>
+        <inputAttacherJoint index="0>10" jointType="trailerLow"/>
+    </inputAttacherJoints>
+	-->
+	
+	<baseColorConfigurations useDefaultColors="true" price="250" defaultColorIndex="8" icon="$dataS2/menu/hud/configurations/config_color.png">
+        <colorNode node="0>3|0" />
+		<colorNode node="0>3|1" />
+		<colorNode node="0>3|1|3|0" />
+		<colorNode node="0>3|1|3|1" />
+		<colorNode node="0>3|1|4|0" />
+		<colorNode node="0>3|1|4|1" />
+		<colorNode node="0>3|3" />
+		<colorNode node="0>3|4" />
+		<colorNode node="0>3|5" />
+		<colorNode node="0>3|7" />
+		<colorNode node="0>3|8" />
+		<colorNode node="0>3|9|0" />
+		<colorNode node="0>3|9|1" />
+		<colorNode node="0>3|10|0" />
+		<colorNode node="0>3|10|1" />
+		
+		<colorNode node="0>27|0|0" />
+		<colorNode node="0>27|0|1" />
+		<colorNode node="0>27|0|2" />
+		<colorNode node="0>27|0|3" />
+		<colorNode node="0>27|0|4" />
+		<colorNode node="0>27|0|5" />
+		<colorNode node="0>27|0|6" />
+		<colorNode node="0>27|0|7" />
+		<colorNode node="0>27|0|8" />
+		<colorNode node="0>27|0|9" />
+		<colorNode node="0>27|0|10" />
+		<colorNode node="0>27|0|11" />
+		<colorNode node="0>27|0|12" />
+		<colorNode node="0>27|0|13" />
+		<colorNode node="0>27|0|14" />
+		<colorNode node="0>27|0|15" />
+		<colorNode node="0>27|0|16" />
+		<colorNode node="0>27|0|17" />
+		<colorNode node="0>27|0|18" />
+		<colorNode node="0>27|0|19" />
+		<colorNode node="0>27|0|20" />
+		<colorNode node="0>27|0|21" />
+		<colorNode node="0>27|0|22" />
+		<colorNode node="0>27|0|23" />
+		<colorNode node="0>27|1|0" />
+		<colorNode node="0>27|1|1" />
+		<colorNode node="0>27|1|2" />
+		<colorNode node="0>27|1|3" />
+		<colorNode node="0>27|1|4" />
+		<colorNode node="0>27|1|5" />
+		<colorNode node="0>27|1|6" />
+		<colorNode node="0>27|1|7" />
+		<colorNode node="0>27|1|8" />
+		<colorNode node="0>27|1|9" />
+		<colorNode node="0>27|1|10" />
+		<colorNode node="0>27|1|11" />
+		<colorNode node="0>27|1|12" />
+		<colorNode node="0>27|1|13" />
+		<colorNode node="0>27|1|14" />
+		<colorNode node="0>27|1|15" />
+		<colorNode node="0>27|1|16" />
+		<colorNode node="0>27|1|17" />
+		<colorNode node="0>27|1|18" />
+		<colorNode node="0>27|1|19" />
+		<colorNode node="0>27|1|20" />
+		<colorNode node="0>27|1|21" />
+		<colorNode node="0>27|1|22" />
+		<colorNode node="0>27|1|23" />
+		<colorNode node="0>27|2|0" />
+		<colorNode node="0>27|2|0|0" />
+		<colorNode node="0>27|2|0|3" />
+		<colorNode node="0>27|3|0" />
+		<colorNode node="0>27|3|0|0" />
+		<colorNode node="0>27|3|0|3" />
+	</baseColorConfigurations>
+
+    <rimColorConfigurations useDefaultColors="true" price="200" icon="$dataS2/menu/hud/configurations/config_rimColor.png">
+        <colorNode node="0>0|0" />
+    </rimColorConfigurations>
+	
+	<AufbauConfigurations>
+		<AufbauConfiguration name="$l10n_configuration_valueDefault" price="0" >
+			<objectChange node="0>6" scaleActive="0 0 0" scaleInactive="1 1 1" collisionActive="false" collisionInactive="true"/>
+			<objectChange node="0>7" scaleActive="0 0 0" scaleInactive="1 1 1" collisionActive="false" collisionInactive="true"/>
+		</AufbauConfiguration>
+        <AufbauConfiguration name="$l10n_configuration_RundballenAufbau" price="1250" icon="Store/shop_icon_r-aufbau.png">
+			<objectChange node="0>3|9" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="0>3|1|3" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="0>6" rotationActive="40 0 0" rotationInactive="0 0 0"/>
+			<objectChange node="0>7" rotationActive="-40 0 0" rotationInactive="0 0 0"/>
+		</AufbauConfiguration>
+		<AufbauConfiguration name="$l10n_configuration_geraderAufbau" price="1250" icon="Store/shop_icon_g-aufbau.png">
+			<objectChange node="0>3|10" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="0>3|1|4" visibilityActive="true" visibilityInactive="false"/>
+		</AufbauConfiguration>
+		<AufbauConfiguration name="$l10n_configuration_geraderAufbauSeiten" price="1850" icon="Store/shop_icon_g-aufbau+side.png">
+			<objectChange node="0>3|10" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="0>3|1|4" visibilityActive="true" visibilityInactive="false"/>
+			<!-- vis sides low --> 
+			<objectChange node="0>27" visibilityActive="true" visibilityInactive="false"/>
+			<!-- collision left low --> 
+			<objectChange node="0>27|2|1" scaleActive="1 1 1" scaleInactive="0 0 0"  collisionActive="true" collisionInactive="false"/>
+			<!-- collision right low --> 
+			<objectChange node="0>27|3|1" scaleActive="1 1 1" scaleInactive="0 0 0"  collisionActive="true" collisionInactive="false"/>
+		</AufbauConfiguration>
+		<AufbauConfiguration name="$l10n_configuration_timber" price="3500" icon="Store/shop_icon_t-aufbau.png">
+			<objectChange node="0>24" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="0>24|1|0" scaleActive="1 1 1" scaleInactive="0 0 0" collisionActive="true" collisionInactive="false"/>
+			<objectChange node="0>24|1|1" scaleActive="1 1 1" scaleInactive="0 0 0" collisionActive="true" collisionInactive="false"/>
+			<objectChange node="0>24|1|2" scaleActive="1 1 1" scaleInactive="0 0 0" collisionActive="true" collisionInactive="false"/>
+			<objectChange node="0>24|1|3" scaleActive="1 1 1" scaleInactive="0 0 0" collisionActive="true" collisionInactive="false"/>
+			<objectChange node="0>24|1|4" scaleActive="1 1 1" scaleInactive="0 0 0" collisionActive="true" collisionInactive="false"/>
+			<objectChange node="0>24|1|5" scaleActive="1 1 1" scaleInactive="0 0 0" collisionActive="true" collisionInactive="false"/>
+			<objectChange node="0>24|2|0|0" scaleActive="1 1 1" scaleInactive="0 0 0" collisionActive="true" collisionInactive="false"/>
+			<objectChange node="0>24|2|0|1" scaleActive="1 1 1" scaleInactive="0 0 0" collisionActive="true" collisionInactive="false"/>
+			<objectChange node="0>24|2|0|2" scaleActive="1 1 1" scaleInactive="0 0 0" collisionActive="true" collisionInactive="false"/>
+			<objectChange node="0>24|2|0|3" scaleActive="1 1 1" scaleInactive="0 0 0" collisionActive="true" collisionInactive="false"/>
+			<objectChange node="0>25" scaleActive="1 1 1" scaleInactive="0 0 0" collisionActive="true" collisionInactive="false"/>
+			<objectChange node="0>7" rotationActive="90 0 0" rotationInactive="0 0 0"/>
+		</AufbauConfiguration>
+	</AufbauConfigurations>
+	
+	<vehicleTypeConfigurations>
+        <vehicleTypeConfiguration name="$l10n_configuration_valueDefault" 	price="0" vehicleType="FlieglDPWPack"/>
+		<vehicleTypeConfiguration name="UniversalAutoLoad" 					price="0" vehicleType="FlieglDPWPackUALHBR" icon="Store/shop_icon_ual.png">
+			<objectChange node="0>16" visibilityActive="true" visibilityInactive="false"/>
+		</vehicleTypeConfiguration>
+		<vehicleTypeConfiguration name="WoodAutoLoad" 						price="0" vehicleType="FlieglDPWPackWAL" icon="Store/shop_icon_wal.png">
+			<!--<objectChange node="0>26" visibilityActive="true" visibilityInactive="false"/>-->
+		</vehicleTypeConfiguration>
+	</vehicleTypeConfigurations>
+	
+	<MaterialConfigurations>
+        <MaterialConfiguration name="$l10n_configuration_Holz" price="0" icon="Store/shop_icon_stahl.png">
+            <objectChange node="0>3|8"  visibilityActive="true" visibilityInactive="false"/>
+        </MaterialConfiguration>
+		<MaterialConfiguration name="$l10n_configuration_Metall" price="1250" >
+			<objectChange node="0>3|7"  visibilityActive="true" visibilityInactive="false"/>
+		</MaterialConfiguration>
+    </MaterialConfigurations>
+	
+	<AbstreifkanteConfigurations>
+        <AbstreifkanteConfiguration name="$l10n_ui_no" price="0"  />
+		<AbstreifkanteConfiguration name="$l10n_ui_yes" price="75" icon="Store/shop_icon_kanteYes.png">
+            <objectChange node="0>23" scaleActive="1 1 1" scaleInactive="0 0 0" collisionActive="true" collisionInactive="false"/>
+			<objectChange node="0>22" scaleActive="1 1 1" scaleInactive="0 0 0" collisionActive="true" collisionInactive="false"/>
+			<objectChange node="0>21" visibilityActive="true" visibilityInactive="false"/>
+        </AbstreifkanteConfiguration>
+    </AbstreifkanteConfigurations>
+	
+	<mudguardConfigurations>
+        <mudguardConfiguration name="$l10n_ui_no" price="0"  />
+		<mudguardConfiguration name="$l10n_ui_yes" price="100" icon="Store/shop_icon_mudguard.png">
+			<objectChange node="0>3|16" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="0>3|17" visibilityActive="true" visibilityInactive="false"/>
+        </mudguardConfiguration>
+    </mudguardConfigurations>
+	
+	<UFSConfigurations>
+        <UFSConfiguration name="$l10n_ui_no" price="0"  />
+		<UFSConfiguration name="$l10n_ui_yes" price="249" icon="Store/shop_icon_UFS.png">
+			<objectChange node="0>3|15" visibilityActive="true" visibilityInactive="false"/>
+        </UFSConfiguration>
+    </UFSConfigurations>
+	
+	<UFScolorConfigurations useDefaultColors="true" price="90" defaultColorIndex="8" icon="Store/shop_icon_UFScolor.png">
+        <colorNode node="0>3|15" recursive="true"/>
+    </UFScolorConfigurations>
+	
+	<inputAttacherJointConfigurations>
+		<inputAttacherJointConfiguration name="$l10n_configuration_Silver" price="0" >
+			<inputAttacherJoint index="0>10" jointType="trailerLow" attacherHeight="0.63" lowerRotLimitScale="1 0.9 1"/>
+			<objectChange node="0>3|4" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="0>13|0" visibilityActive="true" visibilityInactive="false"/>
+		</inputAttacherJointConfiguration>
+		<inputAttacherJointConfiguration name="$l10n_configuration_Schwarz" price="0" icon="Store/shop_icon_d-schwarz.png">
+			<inputAttacherJoint index="0>10" jointType="trailerLow" attacherHeight="0.63" lowerRotLimitScale="1 0.9 1"/>
+			<objectChange node="0>3|5" visibilityActive="true" visibilityInactive="false"/>
+			<objectChange node="0>13|1" visibilityActive="true" visibilityInactive="false"/>
+		</inputAttacherJointConfiguration>
+	</inputAttacherJointConfigurations>
+
+	<cylinderedHydraulicSound file="$data/sounds/hydraulicUp.wav"  pitchOffset="0.8" volume="0.5" indoorVolumeFactor="0.75" />
+	<attachSound file="$data/sounds/attach.wav"                    pitchOffset="1.0" volume="1.0" indoorVolumeFactor="0.35" indoorLowpassGain="0.75"/>
+
+    <allowFillFromAir value="false" />
+    <allowTipDischarge value="false" />
+
+    <animations>
+        <!-- move support arm down/up -->
+        <animation name="moveSupport">
+            <part node="0>13" startTime="0" duration="0.9" startTrans="-0.26 0.28 4.135" endTrans="-0.26 0.03 4.135" />
+			
+			<part node="0>0|1" startTime="0" endTime="0.05" visibility="false" />
+            <part node="0>3|6" startTime="0" endTime="0.05" visibility="true" />
+			
+            <part node="0>0|1" startTime="0.05" endTime="0.1" visibility="true" />
+            <part node="0>3|6" startTime="0.05" endTime="0.1" visibility="false" />
+        </animation>
+		<!-- moveable Bridge -->
+		<animation name="folding">
+            <part node="0>3|1" startTime="0" endTime="2" startTrans="0 0 -1.22" endTrans="0 0 0.029" />
+			<part node="0>7" startTime="0" endTime="2" startTrans="0 1.077 -5.332" endTrans="0 1.077 -4.061" />
+			<part node="0>4" startTime="0" endTime="2" startTrans="0 1.763 -1.034" endTrans="0 1.763 -0.339" />
+		</animation>
+		
+		<animation name="MoveTriggerUp">
+            <part node="0>17" startTime="0" endTime="0.001" startTrans="0 -30 0" endTrans="0 0 0" />
+		</animation>
+		<animation name="MoveTriggerDn">
+            <part node="0>17" startTime="0" endTime="0.001" startTrans="0 0 0" endTrans="0 -30 0" />
+		</animation>
+    </animations>
+
+    <support animationName="moveSupport" />
+	<foldingParts startMoveDirection="1" >
+        <foldingPart animationName="folding" speedScale="1" />
+    </foldingParts>
+
+    <washable dirtDuration="90" washDuration="1" workMultiplier="4" />
+
+	<dynamicMountAttacher triggerNode="0>4|0" rootNode="0>" jointNode="0>" forceAcceleration="0"/>
+	
+	<AutoLoadWood  SizeY="5"  SizeX="10"  Speed="250">
+        <woodTrigger  xOff="1.2"   yOff="-3"   zOff="1.5" />
+        <fillPose     xOff="0"     yOff="2"    zOff="0" />
+        <unloadPose   xOff="3.5"     yOff="0"    zOff="0" />
+        <limitToLen   minLen="2.1" maxLen="8.52" delimbOk="0" />
+    </AutoLoadWood>
+	<marker2 index="0>26"/>
+	
+	<movingTools>
+		<movingTool index="0>24|2" playSound="true">
+			<controls axis="AXIS_FRONTLOADER_TOOL" invertAxis="false" mouseSpeedFactor="0.7" />
+            <rotation rotationAxis="3" rotSpeed="120" rotAcceleration="50" rotMax="0" rotMin="-110"/>
+        </movingTool>
+		
+		<movingTool index="0>27|2" playSound="true">
+			<controls axis="AXIS_FRONTLOADER_TOOL" invertAxis="false" mouseSpeedFactor="1" />
+            <rotation rotationAxis="3" rotSpeed="120" rotAcceleration="50" rotMax="0" rotMin="-170"/>
+        </movingTool>
+		<movingTool index="0>27|3" >
+			<controls axis="AXIS_FRONTLOADER_TOOL" invertAxis="true" mouseSpeedFactor="1" />
+            <rotation rotationAxis="3" rotSpeed="120" rotAcceleration="50" rotMax="170" rotMin="0"/>
+        </movingTool>
+    </movingTools>
+
+	<tensionBelts linkNode="0>18" jointNode="0>" width="0.075" maxEdgeLength="0.1" geometryBias="0.01" ratchetPosition="0.2" defaultOffset="0.1" defaultOffsetSide="0.1" defaultHeight="5">
+        <tensionBelt startNode="0>18|0" endNode="0>18|0|0" offsetLeft="1.3"/>
+        <tensionBelt startNode="0>18|1" endNode="0>18|1|0"/>
+        <tensionBelt startNode="0>18|2" endNode="0>18|2|0"/>
+        <tensionBelt startNode="0>18|3" endNode="0>18|3|0"/>
+        <tensionBelt startNode="0>18|4" endNode="0>18|4|0"/>
+		<tensionBelt startNode="0>18|5" endNode="0>18|5|0"/>
+		<tensionBelt startNode="0>18|6" endNode="0>18|6|0"/>
+		<tensionBelt startNode="0>18|7" endNode="0>18|7|0"/>
+        <tensionBelt startNode="0>18|8" endNode="0>18|8|0" offsetRight="1.2"/>
+    </tensionBelts>
+	
+	<balesJoint index="0>16|0" rounds="0>16|1" center="0>16|2" wool="0>16|7|0" ultima="0>16|7|1" ultima4="0>16|7|2" hdbales="0>16|7|3" bigbales="0>16|7|4" varBodyIndex="0" search="0>17" search2="0>17|0" wood2="0>16|7|5" apfel="0>16|7|6" milk="0>16|7|7" muell="0>16|7|8" futter="0>16|7|9"/>
+    <hayBales>
+        <bale index="0>16|0|0"/>
+        <bale index="0>16|0|1"/>
+        <bale index="0>16|0|2"/>
+        <bale index="0>16|0|3"/>
+        <bale index="0>16|0|4"/>
+        <bale index="0>16|0|5"/>
+        <bale index="0>16|0|6"/>
+        <bale index="0>16|0|7"/>
+        <bale index="0>16|0|8"/>
+        <bale index="0>16|0|9"/>
+        <bale index="0>16|0|10"/>
+        <bale index="0>16|0|11"/>
+        <bale index="0>16|0|12"/>
+        <bale index="0>16|0|13"/>
+        <bale index="0>16|0|14"/>
+        <bale index="0>16|0|15"/>
+        <bale index="0>16|0|16"/>
+        <bale index="0>16|0|17"/>
+    </hayBales>
+    <hayRounds>
+        <bale index="0>16|1|0"/>
+        <bale index="0>16|1|1"/>
+        <bale index="0>16|1|2"/>
+        <bale index="0>16|1|3"/>
+        <bale index="0>16|1|4"/>
+        <bale index="0>16|1|5"/>
+        <bale index="0>16|1|6"/>
+        <bale index="0>16|1|7"/>
+        <bale index="0>16|1|8"/>
+        <bale index="0>16|1|9"/>
+        <bale index="0>16|1|10"/>
+        <bale index="0>16|1|11"/>
+        <bale index="0>16|1|12"/>
+        <bale index="0>16|1|13"/>
+        <bale index="0>16|1|14"/>
+        <bale index="0>16|1|15"/>
+        <bale index="0>16|1|16"/>
+        <bale index="0>16|1|17"/>
+        <bale index="0>16|1|18"/>
+        <bale index="0>16|1|19"/>
+        <bale index="0>16|1|20"/>
+        <bale index="0>16|1|21"/>
+    </hayRounds>
+    <ultima>
+        <place index="0>16|7|1|0"/>
+        <place index="0>16|7|1|1"/>
+        <place index="0>16|7|1|2"/>
+        <place index="0>16|7|1|3"/>
+        <place index="0>16|7|1|4"/>
+        <place index="0>16|7|1|5"/>
+        <place index="0>16|7|1|6"/>
+        <place index="0>16|7|1|7"/>
+        <place index="0>16|7|1|8"/>
+        <place index="0>16|7|1|9"/>
+        <place index="0>16|7|1|10"/>
+        <place index="0>16|7|1|11"/>
+        <place index="0>16|7|1|12"/>
+        <place index="0>16|7|1|13"/>
+        <place index="0>16|7|1|14"/>
+        <place index="0>16|7|1|15"/>
+        <place index="0>16|7|1|16"/>
+        <place index="0>16|7|1|17"/>
+    </ultima>
+	<ultima4>
+        <place index="0>16|7|2|0"/>
+        <place index="0>16|7|2|1"/>
+        <place index="0>16|7|2|2"/>
+        <place index="0>16|7|2|3"/>
+        <place index="0>16|7|2|4"/>
+        <place index="0>16|7|2|5"/>
+        <place index="0>16|7|2|6"/>
+        <place index="0>16|7|2|7"/>
+        <place index="0>16|7|2|8"/>
+        <place index="0>16|7|2|9"/>
+        <place index="0>16|7|2|10"/>
+        <place index="0>16|7|2|11"/>
+        <place index="0>16|7|2|12"/>
+        <place index="0>16|7|2|13"/>
+        <place index="0>16|7|2|14"/>
+        <place index="0>16|7|2|15"/>
+        <place index="0>16|7|2|16"/>
+        <place index="0>16|7|2|17"/>
+    </ultima4>
+    <hdbales>
+        <place index="0>16|7|3|0"/>
+        <place index="0>16|7|3|1"/>
+        <place index="0>16|7|3|2"/>
+        <place index="0>16|7|3|3"/>
+        <place index="0>16|7|3|4"/>
+        <place index="0>16|7|3|5"/>
+        <place index="0>16|7|3|6"/>
+        <place index="0>16|7|3|7"/>
+        <place index="0>16|7|3|8"/>
+        <place index="0>16|7|3|9"/>
+        <place index="0>16|7|3|10"/>
+        <place index="0>16|7|3|11"/>
+        <place index="0>16|7|3|12"/>
+        <place index="0>16|7|3|13"/>
+        <place index="0>16|7|3|14"/>
+        <place index="0>16|7|3|15"/>
+        <place index="0>16|7|3|16"/>
+        <place index="0>16|7|3|17"/>
+        <place index="0>16|7|3|18"/>
+        <place index="0>16|7|3|19"/>
+        <place index="0>16|7|3|20"/>
+        <place index="0>16|7|3|21"/>
+        <place index="0>16|7|3|22"/>
+        <place index="0>16|7|3|23"/>
+        <place index="0>16|7|3|24"/>
+        <place index="0>16|7|3|25"/>
+        <place index="0>16|7|3|26"/>
+        <place index="0>16|7|3|27"/>
+        <place index="0>16|7|3|28"/>
+        <place index="0>16|7|3|29"/>
+        <place index="0>16|7|3|30"/>
+        <place index="0>16|7|3|31"/>
+        <place index="0>16|7|3|32"/>
+        <place index="0>16|7|3|33"/>
+        <place index="0>16|7|3|34"/>
+        <place index="0>16|7|3|35"/>
+        <place index="0>16|7|3|36"/>
+        <place index="0>16|7|3|37"/>
+        <place index="0>16|7|3|38"/>
+        <place index="0>16|7|3|39"/>
+        <place index="0>16|7|3|40"/>
+        <place index="0>16|7|3|41"/>
+        <place index="0>16|7|3|42"/>
+        <place index="0>16|7|3|43"/>
+        <place index="0>16|7|3|44"/>
+        <place index="0>16|7|3|45"/>
+        <place index="0>16|7|3|46"/>
+        <place index="0>16|7|3|47"/>
+        <place index="0>16|7|3|48"/>
+        <place index="0>16|7|3|49"/>
+        <place index="0>16|7|3|50"/>
+        <place index="0>16|7|3|51"/>
+        <place index="0>16|7|3|52"/>
+        <place index="0>16|7|3|53"/>
+        <place index="0>16|7|3|54"/>
+        <place index="0>16|7|3|55"/>
+        <place index="0>16|7|3|56"/>
+        <place index="0>16|7|3|57"/>
+        <place index="0>16|7|3|58"/>
+        <place index="0>16|7|3|59"/>
+        <place index="0>16|7|3|60"/>
+        <place index="0>16|7|3|61"/>
+        <place index="0>16|7|3|62"/>
+        <place index="0>16|7|3|63"/>
+        <place index="0>16|7|3|64"/>
+        <place index="0>16|7|3|65"/>
+        <place index="0>16|7|3|66"/>
+        <place index="0>16|7|3|67"/>
+        <place index="0>16|7|3|68"/>
+        <place index="0>16|7|3|69"/>
+        <place index="0>16|7|3|70"/>
+        <place index="0>16|7|3|71"/>
+        <place index="0>16|7|3|72"/>
+        <place index="0>16|7|3|73"/>
+        <place index="0>16|7|3|74"/>
+        <place index="0>16|7|3|75"/>
+        <place index="0>16|7|3|76"/>
+        <place index="0>16|7|3|77"/>
+        <place index="0>16|7|3|78"/>
+        <place index="0>16|7|3|79"/>
+        <place index="0>16|7|3|80"/>
+        <place index="0>16|7|3|81"/>
+        <place index="0>16|7|3|82"/>
+        <place index="0>16|7|3|83"/>
+        <place index="0>16|7|3|84"/>
+        <place index="0>16|7|3|85"/>
+        <place index="0>16|7|3|86"/>
+        <place index="0>16|7|3|87"/>
+        <place index="0>16|7|3|88"/>
+        <place index="0>16|7|3|89"/>
+        <place index="0>16|7|3|90"/>
+        <place index="0>16|7|3|91"/>
+        <place index="0>16|7|3|92"/>
+        <place index="0>16|7|3|93"/>
+        <place index="0>16|7|3|94"/>
+        <place index="0>16|7|3|95"/>
+        <place index="0>16|7|3|96"/>
+        <place index="0>16|7|3|97"/>
+        <place index="0>16|7|3|98"/>
+        <place index="0>16|7|3|99"/>
+        <place index="0>16|7|3|100"/>
+        <place index="0>16|7|3|101"/>
+        <place index="0>16|7|3|102"/>
+        <place index="0>16|7|3|103"/>
+        <place index="0>16|7|3|104"/>
+        <place index="0>16|7|3|105"/>
+        <place index="0>16|7|3|106"/>
+        <place index="0>16|7|3|107"/>
+        <place index="0>16|7|3|108"/>
+        <place index="0>16|7|3|109"/>
+        <place index="0>16|7|3|110"/>
+        <place index="0>16|7|3|111"/>
+        <place index="0>16|7|3|112"/>
+        <place index="0>16|7|3|113"/>
+        <place index="0>16|7|3|114"/>
+        <place index="0>16|7|3|115"/>
+        <place index="0>16|7|3|116"/>
+        <place index="0>16|7|3|117"/>
+        <place index="0>16|7|3|118"/>
+        <place index="0>16|7|3|119"/>
+        <place index="0>16|7|3|120"/>
+        <place index="0>16|7|3|121"/>
+        <place index="0>16|7|3|122"/>
+        <place index="0>16|7|3|123"/>
+        <place index="0>16|7|3|124"/>
+        <place index="0>16|7|3|125"/>
+        <place index="0>16|7|3|126"/>
+        <place index="0>16|7|3|127"/>
+        <place index="0>16|7|3|128"/>
+        <place index="0>16|7|3|129"/>
+        <place index="0>16|7|3|130"/>
+        <place index="0>16|7|3|131"/>
+        <place index="0>16|7|3|132"/>
+        <place index="0>16|7|3|133"/>
+        <place index="0>16|7|3|134"/>
+        <place index="0>16|7|3|135"/>
+        <place index="0>16|7|3|136"/>
+        <place index="0>16|7|3|137"/>
+        <place index="0>16|7|3|138"/>
+        <place index="0>16|7|3|139"/>
+        <place index="0>16|7|3|140"/>
+        <place index="0>16|7|3|141"/>
+        <place index="0>16|7|3|142"/>
+        <place index="0>16|7|3|143"/>
+        <place index="0>16|7|3|144"/>
+        <place index="0>16|7|3|145"/>
+        <place index="0>16|7|3|146"/>
+        <place index="0>16|7|3|147"/>
+        <place index="0>16|7|3|148"/>
+        <place index="0>16|7|3|149"/>
+        <place index="0>16|7|3|150"/>
+        <place index="0>16|7|3|151"/>
+        <place index="0>16|7|3|152"/>
+        <place index="0>16|7|3|153"/>
+        <place index="0>16|7|3|154"/>
+        <place index="0>16|7|3|155"/>
+        <place index="0>16|7|3|156"/>
+        <place index="0>16|7|3|157"/>
+        <place index="0>16|7|3|158"/>
+        <place index="0>16|7|3|159"/>
+        <place index="0>16|7|3|160"/>
+        <place index="0>16|7|3|161"/>
+        <place index="0>16|7|3|162"/>
+        <place index="0>16|7|3|163"/>
+        <place index="0>16|7|3|164"/>
+        <place index="0>16|7|3|165"/>
+        <place index="0>16|7|3|166"/>
+        <place index="0>16|7|3|167"/>
+        <place index="0>16|7|3|168"/>
+        <place index="0>16|7|3|169"/>
+        <place index="0>16|7|3|170"/>
+        <place index="0>16|7|3|171"/>
+        <place index="0>16|7|3|172"/>
+        <place index="0>16|7|3|173"/>
+        <place index="0>16|7|3|174"/>
+        <place index="0>16|7|3|175"/>
+        <place index="0>16|7|3|176"/>
+        <place index="0>16|7|3|177"/>
+        <place index="0>16|7|3|178"/>
+        <place index="0>16|7|3|179"/>
+    </hdbales>
+	<wool>
+        <place index="0>16|7|0|0"/>
+        <place index="0>16|7|0|1"/>
+        <place index="0>16|7|0|2"/>
+        <place index="0>16|7|0|3"/>
+        <place index="0>16|7|0|4"/>
+        <place index="0>16|7|0|5"/>
+        <place index="0>16|7|0|6"/>
+        <place index="0>16|7|0|7"/>
+        <place index="0>16|7|0|8"/>
+        <place index="0>16|7|0|9"/>
+    </wool>
+	<bigbales>
+        <place index="0>16|7|4|0"/>
+        <place index="0>16|7|4|1"/>
+        <place index="0>16|7|4|2"/>
+        <place index="0>16|7|4|3"/>
+        <place index="0>16|7|4|4"/>
+        <place index="0>16|7|4|5"/>
+        <place index="0>16|7|4|6"/>
+        <place index="0>16|7|4|7"/>
+        <place index="0>16|7|4|8"/>
+        <place index="0>16|7|4|9"/>
+        <place index="0>16|7|4|10"/>
+        <place index="0>16|7|4|11"/>
+    </bigbales>
+	<wood2>
+        <place index="0>16|7|5|0"/>
+        <place index="0>16|7|5|1"/>
+        <place index="0>16|7|5|2"/>
+        <place index="0>16|7|5|3"/>
+            
+    </wood2>
+	<apfel>
+        <place index="0>16|7|6|0"/>
+        <place index="0>16|7|6|1"/>
+        <place index="0>16|7|6|2"/>
+        <place index="0>16|7|6|3"/>
+        <place index="0>16|7|6|4"/>
+        <place index="0>16|7|6|5"/>
+        <place index="0>16|7|6|6"/>
+        <place index="0>16|7|6|7"/>
+        <place index="0>16|7|6|8"/>
+        <place index="0>16|7|6|9"/>
+        <place index="0>16|7|6|10"/>
+        <place index="0>16|7|6|11"/>
+        <place index="0>16|7|6|12"/>
+        <place index="0>16|7|6|13"/>
+        <place index="0>16|7|6|14"/>
+        <place index="0>16|7|6|15"/>
+        <place index="0>16|7|6|16"/>
+        <place index="0>16|7|6|17"/>
+        <place index="0>16|7|6|18"/>
+        <place index="0>16|7|6|19"/>
+        <place index="0>16|7|6|20"/>
+        <place index="0>16|7|6|21"/>
+        <place index="0>16|7|6|22"/>
+        <place index="0>16|7|6|23"/>
+        <place index="0>16|7|6|24"/>
+        <place index="0>16|7|6|25"/>
+        <place index="0>16|7|6|26"/>
+        <place index="0>16|7|6|27"/>
+        <place index="0>16|7|6|28"/>
+        <place index="0>16|7|6|29"/>
+        <place index="0>16|7|6|30"/>
+        <place index="0>16|7|6|31"/>
+        <place index="0>16|7|6|32"/>
+        <place index="0>16|7|6|33"/>
+        <place index="0>16|7|6|34"/>
+        <place index="0>16|7|6|35"/>
+        <place index="0>16|7|6|36"/>
+        <place index="0>16|7|6|37"/>
+        <place index="0>16|7|6|38"/>
+        <place index="0>16|7|6|39"/>
+        <place index="0>16|7|6|40"/>
+        <place index="0>16|7|6|41"/>
+        <place index="0>16|7|6|42"/>
+        <place index="0>16|7|6|43"/>
+        <place index="0>16|7|6|44"/>
+        <place index="0>16|7|6|45"/>
+        <place index="0>16|7|6|46"/>
+        <place index="0>16|7|6|47"/>
+        <place index="0>16|7|6|48"/>
+        <place index="0>16|7|6|49"/>
+        <place index="0>16|7|6|50"/>
+        <place index="0>16|7|6|51"/>
+        <place index="0>16|7|6|52"/>
+        <place index="0>16|7|6|53"/>
+        <place index="0>16|7|6|54"/>
+        <place index="0>16|7|6|55"/>
+        <place index="0>16|7|6|56"/>
+        <place index="0>16|7|6|57"/>
+        <place index="0>16|7|6|58"/>
+        <place index="0>16|7|6|59"/>
+        <place index="0>16|7|6|60"/>
+        <place index="0>16|7|6|61"/>
+        <place index="0>16|7|6|62"/>
+        <place index="0>16|7|6|63"/>
+        <place index="0>16|7|6|64"/>
+        <place index="0>16|7|6|65"/>
+        <place index="0>16|7|6|66"/>
+        <place index="0>16|7|6|67"/>
+        <place index="0>16|7|6|68"/>
+        <place index="0>16|7|6|69"/>
+        <place index="0>16|7|6|70"/>
+        <place index="0>16|7|6|71"/>
+        <place index="0>16|7|6|72"/>
+        <place index="0>16|7|6|73"/>
+        <place index="0>16|7|6|74"/>
+        <place index="0>16|7|6|75"/>
+        <place index="0>16|7|6|76"/>
+        <place index="0>16|7|6|77"/>
+        <place index="0>16|7|6|78"/>
+        <place index="0>16|7|6|79"/>
+        <place index="0>16|7|6|80"/>
+        <place index="0>16|7|6|81"/>
+        <place index="0>16|7|6|82"/>
+        <place index="0>16|7|6|83"/>
+        <place index="0>16|7|6|84"/>
+        <place index="0>16|7|6|85"/>
+        <place index="0>16|7|6|86"/>
+        <place index="0>16|7|6|87"/>
+        <place index="0>16|7|6|88"/>
+        <place index="0>16|7|6|89"/>
+        <place index="0>16|7|6|90"/>
+        <place index="0>16|7|6|91"/>
+        <place index="0>16|7|6|92"/>
+        <place index="0>16|7|6|93"/>
+        <place index="0>16|7|6|94"/>
+        <place index="0>16|7|6|95"/>
+        <place index="0>16|7|6|96"/>
+        <place index="0>16|7|6|97"/>
+        <place index="0>16|7|6|98"/>
+        <place index="0>16|7|6|99"/>
+        <place index="0>16|7|6|100"/>
+        <place index="0>16|7|6|101"/>
+        <place index="0>16|7|6|102"/>
+        <place index="0>16|7|6|103"/>
+        <place index="0>16|7|6|104"/>
+        <place index="0>16|7|6|105"/>
+        <place index="0>16|7|6|106"/>
+        <place index="0>16|7|6|107"/>
+        <place index="0>16|7|6|108"/>
+        <place index="0>16|7|6|109"/>
+        <place index="0>16|7|6|110"/>
+        <place index="0>16|7|6|111"/>
+        <place index="0>16|7|6|112"/>
+        <place index="0>16|7|6|113"/>
+        <place index="0>16|7|6|114"/>
+        <place index="0>16|7|6|115"/>
+        <place index="0>16|7|6|116"/>
+    </apfel>
+	<milk>
+        <place index="0>16|7|7|0"/>
+        <place index="0>16|7|7|1"/>
+        <place index="0>16|7|7|2"/>
+        <place index="0>16|7|7|3"/>
+        <place index="0>16|7|7|4"/>
+        <place index="0>16|7|7|5"/>
+        <place index="0>16|7|7|6"/>
+        <place index="0>16|7|7|7"/>
+        <place index="0>16|7|7|8"/>
+        <place index="0>16|7|7|9"/>
+        <place index="0>16|7|7|10"/>
+        <place index="0>16|7|7|11"/>
+        <place index="0>16|7|7|12"/>
+        <place index="0>16|7|7|13"/>
+        <place index="0>16|7|7|14"/>
+        <place index="0>16|7|7|15"/>
+        <place index="0>16|7|7|16"/>
+        <place index="0>16|7|7|17"/>
+        <place index="0>16|7|7|18"/>
+        <place index="0>16|7|7|19"/>
+        <place index="0>16|7|7|20"/>
+        <place index="0>16|7|7|21"/>
+        <place index="0>16|7|7|22"/>
+        <place index="0>16|7|7|23"/>
+        <place index="0>16|7|7|24"/>
+        <place index="0>16|7|7|25"/>
+        <place index="0>16|7|7|26"/>
+        <place index="0>16|7|7|27"/>
+        <place index="0>16|7|7|28"/>
+        <place index="0>16|7|7|29"/>
+        <place index="0>16|7|7|30"/>
+        <place index="0>16|7|7|31"/>
+        <place index="0>16|7|7|32"/>
+        <place index="0>16|7|7|33"/>
+        <place index="0>16|7|7|34"/>
+        <place index="0>16|7|7|35"/>
+        <place index="0>16|7|7|36"/>
+        <place index="0>16|7|7|37"/>
+        <place index="0>16|7|7|38"/>
+        <place index="0>16|7|7|39"/>
+        <place index="0>16|7|7|40"/>
+        <place index="0>16|7|7|41"/>
+        <place index="0>16|7|7|42"/>
+        <place index="0>16|7|7|43"/>
+        <place index="0>16|7|7|44"/>
+        <place index="0>16|7|7|45"/>
+        <place index="0>16|7|7|46"/>
+        <place index="0>16|7|7|47"/>
+        <place index="0>16|7|7|48"/>
+        <place index="0>16|7|7|49"/>
+        <place index="0>16|7|7|50"/>
+        <place index="0>16|7|7|51"/>
+        <place index="0>16|7|7|52"/>
+        <place index="0>16|7|7|53"/>
+        <place index="0>16|7|7|54"/>
+        <place index="0>16|7|7|55"/>
+        <place index="0>16|7|7|56"/>
+        <place index="0>16|7|7|57"/>
+        <place index="0>16|7|7|58"/>
+        <place index="0>16|7|7|59"/>
+        <place index="0>16|7|7|60"/>
+        <place index="0>16|7|7|61"/>
+        <place index="0>16|7|7|62"/>
+        <place index="0>16|7|7|63"/>
+        <place index="0>16|7|7|64"/>
+        <place index="0>16|7|7|65"/>
+        <place index="0>16|7|7|66"/>
+        <place index="0>16|7|7|67"/>
+        <place index="0>16|7|7|68"/>
+        <place index="0>16|7|7|69"/>
+        <place index="0>16|7|7|70"/>
+        <place index="0>16|7|7|71"/>
+        <place index="0>16|7|7|72"/>
+        <place index="0>16|7|7|73"/>
+        <place index="0>16|7|7|74"/>
+        <place index="0>16|7|7|75"/>
+        <place index="0>16|7|7|76"/>
+        <place index="0>16|7|7|77"/>
+        <place index="0>16|7|7|78"/>
+        <place index="0>16|7|7|79"/>
+        <place index="0>16|7|7|80"/>
+        <place index="0>16|7|7|81"/>
+        <place index="0>16|7|7|82"/>
+        <place index="0>16|7|7|83"/>
+        <place index="0>16|7|7|84"/>
+        <place index="0>16|7|7|85"/>
+        <place index="0>16|7|7|86"/>
+        <place index="0>16|7|7|87"/>
+        <place index="0>16|7|7|88"/>
+        <place index="0>16|7|7|89"/>
+        <place index="0>16|7|7|90"/>
+        <place index="0>16|7|7|91"/>
+        <place index="0>16|7|7|92"/>
+        <place index="0>16|7|7|93"/>
+        <place index="0>16|7|7|94"/>
+        <place index="0>16|7|7|95"/>
+        <place index="0>16|7|7|96"/>
+        <place index="0>16|7|7|97"/>
+        <place index="0>16|7|7|98"/>
+        <place index="0>16|7|7|99"/>
+        <place index="0>16|7|7|100"/>
+        <place index="0>16|7|7|101"/>
+    </milk>
+	<muell>
+        <place index="0>16|7|8|0"/>
+        <place index="0>16|7|8|1"/>
+        <place index="0>16|7|8|2"/>
+        <place index="0>16|7|8|3"/>
+        <place index="0>16|7|8|4"/>
+        <place index="0>16|7|8|5"/>
+        <place index="0>16|7|8|6"/>
+        <place index="0>16|7|8|7"/>
+        <place index="0>16|7|8|8"/>
+        <place index="0>16|7|8|9"/>
+        <place index="0>16|7|8|10"/>
+        <place index="0>16|7|8|11"/>
+        <place index="0>16|7|8|12"/>
+        <place index="0>16|7|8|13"/>
+        <place index="0>16|7|8|14"/>
+        <place index="0>16|7|8|15"/>
+        <place index="0>16|7|8|16"/>
+        <place index="0>16|7|8|17"/>
+        <place index="0>16|7|8|18"/>
+        <place index="0>16|7|8|19"/>
+        <place index="0>16|7|8|20"/>
+        <place index="0>16|7|8|21"/>
+        <place index="0>16|7|8|22"/>
+        <place index="0>16|7|8|23"/>
+        <place index="0>16|7|8|24"/>
+        <place index="0>16|7|8|25"/>
+        <place index="0>16|7|8|26"/>
+        <place index="0>16|7|8|27"/>
+        <place index="0>16|7|8|28"/>
+        <place index="0>16|7|8|29"/>
+        <place index="0>16|7|8|30"/>
+        <place index="0>16|7|8|31"/>
+        <place index="0>16|7|8|32"/>
+        <place index="0>16|7|8|33"/>
+        <place index="0>16|7|8|34"/>
+        <place index="0>16|7|8|35"/>
+        <place index="0>16|7|8|36"/>
+        <place index="0>16|7|8|37"/>
+        <place index="0>16|7|8|38"/>
+    </muell>
+	<futter>
+        <place index="0>16|7|9|0"/>
+        <place index="0>16|7|9|1"/>
+        <place index="0>16|7|9|2"/>
+        <place index="0>16|7|9|3"/>
+        <place index="0>16|7|9|4"/>
+        <place index="0>16|7|9|5"/>
+        <place index="0>16|7|9|6"/>
+        <place index="0>16|7|9|7"/>
+        <place index="0>16|7|9|8"/>
+        <place index="0>16|7|9|9"/>
+        <place index="0>16|7|9|10"/>
+        <place index="0>16|7|9|11"/>
+        <place index="0>16|7|9|12"/>
+        <place index="0>16|7|9|13"/>
+        <place index="0>16|7|9|14"/>
+        <place index="0>16|7|9|15"/>
+        <place index="0>16|7|9|16"/>
+        <place index="0>16|7|9|17"/>
+        <place index="0>16|7|9|18"/>
+        <place index="0>16|7|9|19"/>
+        <place index="0>16|7|9|20"/>
+        <place index="0>16|7|9|21"/>
+        <place index="0>16|7|9|22"/>
+        <place index="0>16|7|9|23"/>
+        <place index="0>16|7|9|24"/>
+        <place index="0>16|7|9|25"/>
+        <place index="0>16|7|9|26"/>
+        <place index="0>16|7|9|27"/>
+        <place index="0>16|7|9|28"/>
+        <place index="0>16|7|9|29"/>
+        <place index="0>16|7|9|30"/>
+        <place index="0>16|7|9|31"/>
+        <place index="0>16|7|9|32"/>
+        <place index="0>16|7|9|33"/>
+        <place index="0>16|7|9|34"/>
+        <place index="0>16|7|9|35"/>
+        <place index="0>16|7|9|36"/>
+        <place index="0>16|7|9|37"/>
+        <place index="0>16|7|9|38"/>
+        <place index="0>16|7|9|39"/>
+        <place index="0>16|7|9|40"/>
+        <place index="0>16|7|9|41"/>
+        <place index="0>16|7|9|42"/>
+        <place index="0>16|7|9|43"/>
+        <place index="0>16|7|9|44"/>
+        <place index="0>16|7|9|45"/>
+        <place index="0>16|7|9|46"/>
+        <place index="0>16|7|9|47"/>
+        <place index="0>16|7|9|48"/>
+        <place index="0>16|7|9|49"/>
+        <place index="0>16|7|9|50"/>
+        <place index="0>16|7|9|51"/>
+        <place index="0>16|7|9|52"/>
+        <place index="0>16|7|9|53"/>
+        <place index="0>16|7|9|54"/>
+        <place index="0>16|7|9|55"/>
+        <place index="0>16|7|9|56"/>
+        <place index="0>16|7|9|57"/>
+        <place index="0>16|7|9|58"/>
+        <place index="0>16|7|9|59"/>
+        <place index="0>16|7|9|60"/>
+        <place index="0>16|7|9|61"/>
+        <place index="0>16|7|9|62"/>
+        <place index="0>16|7|9|63"/>
+        <place index="0>16|7|9|64"/>
+        <place index="0>16|7|9|65"/>
+        <place index="0>16|7|9|66"/>
+        <place index="0>16|7|9|67"/>
+        <place index="0>16|7|9|68"/>
+        <place index="0>16|7|9|69"/>
+        <place index="0>16|7|9|70"/>
+        <place index="0>16|7|9|71"/>
+        <place index="0>16|7|9|72"/>
+        <place index="0>16|7|9|73"/>
+        <place index="0>16|7|9|74"/>
+        <place index="0>16|7|9|75"/>
+        <place index="0>16|7|9|76"/>
+        <place index="0>16|7|9|77"/>
+        <place index="0>16|7|9|78"/>
+        <place index="0>16|7|9|79"/>
+        <place index="0>16|7|9|80"/>
+        <place index="0>16|7|9|81"/>
+    </futter>
+	
+    <marker index="0>16|3" left="0>16|5" right="0>16|4" back="0>16|6"/>
+	
+	<moveTriggerUp animationName="MoveTriggerUp" />
+	<moveTriggerDn animationName="MoveTriggerDn" />
+	
+	<numberplates interfacePath="Textur/">
+		<plate index="0>3|1|9" />
+	</numberplates>
+	
+	<dynamicHose>
+		<set toolIndices="0>19">
+			<hose type="hydraulic" 	attached="0>19|0|2" detached="0>19|1|1" lastHoseIKNode="0>19|0|0|0|1" /> 
+			<hose type="electric" 	attached="0>19|0|3" detached="0>19|1|2" lastHoseIKNode="0>19|0|0|0|2" />
+			<hose type="air" 		attached="0>19|0|1" detached="0>19|1|0" lastHoseIKNode="0>19|0|0|0|0" />
+			<ref type="hydraulic" index="0>3|1|5|0" />
+			<ref type="air" index="0>3|1|6|1" />			
+			<ref type="electric" index="0>3|1|6|2" />
+		</set>
+	</dynamicHose>
+	
+    <components count="1">
+        <component1 centerOfMass="0 0.45 0" solverIterationCount="10" mrSetMass="2"/>
+    </components>
+
+    <schemaOverlay file="Textur/DPW_T_Schema.dds" fileSelected="Textur/DPW_T_SchemaSelected.dds" width="0.75" height="0.75" attacherJointPosition="0 0" />
+	
+	
+</vehicle>

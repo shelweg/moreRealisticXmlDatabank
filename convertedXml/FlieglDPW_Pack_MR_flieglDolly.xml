@@ -1,0 +1,143 @@
+﻿<?xml version="1.0" encoding="utf-8" standalone="no" ?>
+<vehicle type="FlieglDPWPack2">
+    <annotation>Copyright (C) GIANTS Software GmbH, All Rights Reserved.</annotation>
+	
+	<moreRealistic isMrVehicle="true" >		
+		<dragArea value="1" />
+	</moreRealistic>
+	
+	<storeData>
+        <name>Fliegl Dolly EA</name>
+        <functions>
+            <function>
+				<en>$l10n_configuration_dolly</en>
+				<de>$l10n_configuration_dolly</de>
+			</function>
+        </functions>
+        <image>$data/store/store_flieglDolly.png</image>
+        <price>8500</price>
+        <dailyUpkeep>5</dailyUpkeep>
+        <lifetime>600</lifetime>
+        <rotation>0</rotation>
+        <brand>FLIEGL</brand>
+        <category>DPWPack</category>
+    </storeData>
+
+	<typeDesc>Fliegl Dolly EA</typeDesc>
+    <filename>flieglDolly.i3d</filename>
+
+    <size width="4.5" length="6" lengthOffset="0.9" />
+	
+	<wheelConfigurations>
+        <wheelConfiguration name="315 80R22" price="0" icon="$dataS2/menu/hud/configurations/config_wheel_default.png">
+            <wheels>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="1" repr="0>0"  					forcePointRatio="0.2" filename="$data/vehicles/wheels/lizard/315_80R22_5.xml" isLeft="true"  initialCompression="30" suspTravel="0.20" spring="100" damper="30" hasTireTracks="true" hasParticles="true" maxDeformation="0.08"    	mrPressureFx="2"/>
+                <wheel tipOcclusionAreaGroupId="2" restLoad="1" repr="0>1" driveNode="0>1|0"	forcePointRatio="0.2" filename="$data/vehicles/wheels/lizard/315_80R22_5.xml" isLeft="false" initialCompression="30" suspTravel="0.20" spring="100" damper="30" hasTireTracks="true" hasParticles="true" maxDeformation="0.08"    	mrPressureFx="2"/>
+            </wheels>
+        </wheelConfiguration>
+		<wheelConfiguration name="560 45R22" price="0" icon="$dataS2/menu/hud/configurations/config_wheel_broad.png">
+            <wheels>
+                <wheel tipOcclusionAreaGroupId="1" restLoad="1" repr="0>0" 						forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_560_45R22_5.xml" isLeft="true"  initialCompression="40" suspTravel="0.20" spring="90" damper="35" hasTireTracks="true" hasParticles="true" maxDeformation="0.08"    	mrPressureFx="2"/>
+                <wheel tipOcclusionAreaGroupId="2" restLoad="1" repr="0>1" driveNode="0>1|0"   	forcePointRatio="0.2" filename="$data/vehicles/wheels/trelleborg/T404_560_45R22_5.xml" isLeft="false" initialCompression="40" suspTravel="0.20" spring="90" damper="35" hasTireTracks="true" hasParticles="true" maxDeformation="0.08"    	mrPressureFx="2"/>
+            </wheels>
+        </wheelConfiguration>
+    </wheelConfigurations>
+
+
+    <brakeForce>2.5</brakeForce>
+
+    <lights>
+		<low>
+			<light 						decoration="0>2|3|0" lightTypes="0 3"/>
+		</low>
+		<high>
+			<light realLight="0>2|3|1" 	decoration="0>2|3|0" lightTypes="0 3"/>
+		</high>
+		<states>0 1</states>
+    </lights>
+
+    <brakeLights>
+        <brakeLight realLight="0>2|4|1" decoration="0>2|4|0" />
+    </brakeLights>
+
+    <turnLights>
+        <turnLightLeft 	realLight="0>2|5|0|1" 	decoration="0>2|5|0|0" />
+        <turnLightRight realLight="0>2|5|1|1" 	decoration="0>2|5|1|0" />
+    </turnLights>
+	
+	<reverseLights>
+        <reverseLight 	realLight="0>2|6|1"	decoration="0>2|6|0"/>
+    </reverseLights>
+	
+	<timedVisibilitys>
+		<!--default light beam's-->
+		<timedVisibility index="0>2|3|1|0|0" eveningTime="20" morningTime="7" showOnFog="true"/>
+		<timedVisibility index="0>2|3|1|2"   eveningTime="20" morningTime="7" showOnFog="true"/>
+		<timedVisibility index="0>2|4|1|0|0" eveningTime="20" morningTime="7" showOnFog="true"/>
+		<timedVisibility index="0>2|4|1|2"   eveningTime="20" morningTime="7" showOnFog="true"/>
+		<timedVisibility index="0>2|5|0|0|1" eveningTime="20" morningTime="7" showOnFog="true"/>
+		<timedVisibility index="0>2|5|1|0|1" eveningTime="20" morningTime="7" showOnFog="true"/>
+		<timedVisibility index="0>2|6|1|0|0" eveningTime="20" morningTime="7" showOnFog="true"/>
+		<timedVisibility index="0>2|6|1|2"   eveningTime="20" morningTime="7" showOnFog="true"/>
+	</timedVisibilitys>
+	
+	<numberplates interfacePath="Textur/">
+		<plate index="0>3" />
+	</numberplates>
+    
+	<dynamicHose>
+		<set toolIndices="0>4">
+			<hose type="hydraulic" 	attached="0>4|0|2" detached="0>4|1|1" lastHoseIKNode="0>4|0|0|0|1" /> 
+			<hose type="electric" 	attached="0>4|0|3" detached="0>4|1|2" lastHoseIKNode="0>4|0|0|0|2" />
+			<hose type="air" 		attached="0>4|0|1" detached="0>4|1|0" lastHoseIKNode="0>4|0|0|0|0" />
+			<ref type="hydraulic" 	index="0>5|0" />
+			<ref type="electric" 	index="0>5|1|0" />
+			<ref type="air" 		index="0>6|1" />			
+		</set>
+	</dynamicHose>
+
+	<baseColorConfigurations useDefaultColors="true" price="250" defaultColorIndex="8" icon="$dataS2/menu/hud/configurations/config_color.png">
+        <colorNode node="0>2" />
+	</baseColorConfigurations>
+	
+	<rimColorConfigurations useDefaultColors="true" price="200" icon="$dataS2/menu/hud/configurations/config_rimColor.png">
+        <colorNode node="0>0|0" />
+    </rimColorConfigurations>
+	
+	<inputAttacherJointConfigurations>
+		<inputAttacherJointConfiguration name="$l10n_configuration_Silver" price="0" >
+			<inputAttacherJoint index="0>2|0" jointType="trailerLow" attacherHeight="0.5" lowerRotLimitScale="1 0.93 1"/>
+		</inputAttacherJointConfiguration>
+		<inputAttacherJointConfiguration name="$l10n_configuration_Schwarz" price="0" icon="Store/shop_icon_d-schwarz.png">
+			<inputAttacherJoint index="0>2|0" jointType="trailerLow" attacherHeight="0.5" lowerRotLimitScale="1 0.93 1"/>
+				<material node="0>2" refNode="0>2|8" />
+			</inputAttacherJointConfiguration>
+	</inputAttacherJointConfigurations>
+	
+    <attacherJoints>
+        <attacherJoint dynamicHoseIndice="0" index="0>2|1" jointType="semitrailer" allowsJointLimitMovement="false" allowsLowering="false" lowerRotLimit="0 175 0" enableCollision="false" rotLimitSpring="500 0 500" rotLimitDamping="100 1 100" >
+			<schema position="0.5 0" rotation="0" invertX="false" />
+		</attacherJoint>
+    </attacherJoints>
+	
+	<attachSound file="$data/sounds/truck_attach.wav" pitchOffset="1.00" volume="1.00" indoorVolumeFactor="0.25" indoorLowpassGain="0.90"/>
+
+    <animations>
+        <!-- move support -->
+        <animation name="moveSupport">
+            <part node="0>2|2" startTime="0" duration="0.1" startTrans="-0.216 0.337 1.239" endTrans="-0.216 0 1.239" />
+        </animation>
+    </animations>
+
+    <support animationName="moveSupport"/>
+
+    <washable dirtDuration="90" washDuration="1" workMultiplier="4" />
+
+    <components count="1">
+        <component1 centerOfMass="0 0.65 0" solverIterationCount="10" mrSetMass="1.8"/>
+    </components>
+
+    <schemaOverlay file="Textur/DPW_Doll_Schema.dds" fileSelected="Textur/DPW_Doll_SchemaSelected.dds" width="0.5" height="0.5" attacherJointPosition="0 0"/>
+
+
+</vehicle>
